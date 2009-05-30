@@ -11,6 +11,4 @@ My(jeremy.cothran@gmail.com) development background is more with Perl so I'll be
 The initial goals of the project are:
 
   # Java - figure out how to properly break my files up so functions and variables are scoped properly
-
   # begin modifying bot behavior in interesting ways based on sqlite database lookups(locational/situational memory)
-
