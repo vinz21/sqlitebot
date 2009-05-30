@@ -15,6 +15,21 @@ The initial goals of the project are:
   # Java - figure out how to properly break my files up so functions and variables are scoped properly
   # begin modifying bot behavior in interesting ways based on sqlite database lookups(locational/situational memory)
 
+The initial sqlite table would be structured something like:
+
+{{{
+CREATE TABLE obs_type (
+    row_id integer PRIMARY KEY,
+    row_entry_date text,
+    location text,
+    status text
+);
+}}}
+
+with *location* reflecting the bots map location when a specified *status* (made a kill, was killed,etc) at a specified time(row_entry_date).
+
+Tracking those things initially should allow a bot to begin selecting better and worse map locations for optimal scoring or begin time-based tactics or behaviors relating to location and predicted location of opponents.
+
 ----
 
 = Links = 
@@ -22,4 +37,3 @@ The initial goals of the project are:
 http://delicious.com/giraclarc/pogamut
 
 http://delicious.com/giraclarc/bots
-
