@@ -23,12 +23,13 @@ The initial sqlite table would be structured something like:
 CREATE TABLE obs_type (
     row_id integer PRIMARY KEY,
     row_entry_date text,
+    map_id int,
     location text,
-    status text
+    status int
 );
 }}}
 
-with *location* reflecting the bots map location when a specified *status* (made a kill, was killed,etc) at a specified time(row_entry_date).
+with *location* reflecting the bots map(*map_id*) location when a specified *status* (made a kill, was killed,etc) at a specified time(*row_entry_date*).
 
 Tracking those things initially should allow a bot to begin selecting better and worse map locations for optimal scoring or begin time-based tactics or behaviors relating to location and predicted location of opponents.
 
