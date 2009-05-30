@@ -32,8 +32,13 @@ Tracking those things initially should allow a bot to begin selecting better and
 
 ----
 
+For notes on using subversion for this project, see the notes at http://code.google.com/p/rcoos/wiki/SubversionNotes which should apply the same for this project except that the project name is 'sqlitebot' instead of 'rcoos'
+
+----
+
 = Links = 
 
 http://delicious.com/giraclarc/pogamut
 
 http://delicious.com/giraclarc/bots
+
