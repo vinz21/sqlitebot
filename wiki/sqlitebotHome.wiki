@@ -4,7 +4,7 @@
 
 = Introduction =
 
-This is an open source project which is trying to utilize a sqlite database to store gaming bot location and situational awareness to help better adapt gaming AI(Artificial Intelligence) and behaviors for games.
+This is an open source project which is trying to utilize a [http://sqlite.org sqlite] database to store gaming bot location and situational awareness to help better adapt gaming AI(Artificial Intelligence) and behaviors for games.
 
 The project is starting utilizing the [http://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php Pogamut] Java/NetBeans based project code.
 
@@ -34,7 +34,9 @@ Tracking those things initially should allow a bot to begin selecting better and
 
 = botv1 =
 
-For the first version bot (botv1) all I've done is hack the basic pogamut bot [http://code.google.com/p/sqlitebot/source/browse/#svn/trunk/bot1 script] to write out its location to a sqlite table when the navpoint path is broken.
+For the first version bot (botv1) all I've done is hack the basic pogamut bot [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/Main.java script] to write out its location to a [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/sample.db sqlite table] when the navpoint path is broken.
+
+The write function is called 'nasty' and the table called 'people' for no good reason.  Will rename these more appropriately later.
 
 == Gotchas ==
 
