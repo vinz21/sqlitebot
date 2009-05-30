@@ -32,7 +32,25 @@ Tracking those things initially should allow a bot to begin selecting better and
 
 ----
 
-For notes on using subversion for this project, see the notes at http://code.google.com/p/rcoos/wiki/SubversionNotes which should apply the same for this project except that the project name is 'sqlitebot' instead of 'rcoos'
+= botv1 =
+
+For the first version bot (botv1) all I've done is hack the basic pogamut bot [http://code.google.com/p/sqlitebot/source/browse/#svn/trunk/bot1 script] to write out its location to a sqlite table when the navpoint path is broken.
+
+== Gotchas ==
+
+Two things that took me a while to figure out:
+
+  # Set your java (and netbeans?) thread priorities in Windows to 'realtime' (and UT2004 to 'low') via the Task Manager - otherwise the bot seems to lag/hang in its environment waiting for the Java to execute.
+
+  # To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ although the connection was refused by the program until I added the .jar to both the netbeans classpath and the java/jre/lib/ext folder (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
+
+I'd like to try the Xerial sqlite .jar http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC as it should be faster executing, but the zentus seems to work for the time being.
+
+----
+
+= Subversion =
+
+For notes on using [http://code.google.com/p/sqlitebot/source/browse/#svn/trunk subversion] for this project, see the notes at http://code.google.com/p/rcoos/wiki/SubversionNotes which should apply the same for this project except that the project name is 'sqlitebot' instead of 'rcoos'
 
 ----
 
@@ -41,4 +59,3 @@ For notes on using subversion for this project, see the notes at http://code.goo
 http://delicious.com/giraclarc/pogamut
 
 http://delicious.com/giraclarc/bots
-
