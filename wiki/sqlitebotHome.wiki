@@ -15,6 +15,8 @@ The initial goals of the project are:
   # Java - figure out how to properly break my files up so functions and variables are scoped properly
   # begin modifying bot behavior in interesting ways based on sqlite database lookups(locational/situational memory)
 
+Initially I'm looking for help with the above two goals - writing Java classes/functions/packages appropriately split up across files in the project - figuring some interesting behaviors to tackle - and being familiar enough with the standing bot functions to leverage those without rewriting them.
+
 The initial sqlite table would be structured something like:
 
 {{{
