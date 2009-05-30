@@ -1,5 +1,7 @@
 #summary sqliteBot homepage
 
+<wiki:toc max_depth="6">
+
 = Introduction =
 
 This is an open source project which is trying to utilize a sqlite database to store gaming bot location and situational awareness to help better adapt gaming AI(Artificial Intelligence) and behaviors for games.
@@ -12,3 +14,12 @@ The initial goals of the project are:
 
   # Java - figure out how to properly break my files up so functions and variables are scoped properly
   # begin modifying bot behavior in interesting ways based on sqlite database lookups(locational/situational memory)
+
+----
+
+= Links = 
+
+http://delicious.com/giraclarc/pogamut
+
+http://delicious.com/giraclarc/bots
+
