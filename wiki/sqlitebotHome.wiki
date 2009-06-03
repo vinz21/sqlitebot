@@ -4,6 +4,8 @@
 
 = Introduction =
 
+Many gaming AI's utilize behavioral decision trees, few incorporate locational/situational memory as logged say via a lightweight relational database like sqlite
+
 This is an open source project which is trying to utilize a [http://sqlite.org sqlite] database to store gaming bot location and situational awareness to help better adapt gaming AI(Artificial Intelligence) and behaviors for games.
 
 The project is starting utilizing the [http://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php Pogamut] Java/NetBeans based project code.
