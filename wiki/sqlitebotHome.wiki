@@ -118,7 +118,7 @@ For the first version bot (botv1) all I've done is hack the basic pogamut bot [h
 
 The write function is called 'nasty' and the table called 'people' for no good reason.  Will rename these more appropriately later.
 
-== Update June 22, 2009 ==
+== Update June 22 2009 ==
 
 I've modified the bot, borrowing mostly from the 'hunter' bot example and a strafing function from the 'amis/loque' bot(many, many thanks to folks sharing their example code, which helps much with the learning/syntax curve).  Found it helpful to display all message events to the log and then filter ones out that I wasn't interested in.  The bot now records the map, location and timestamp when it kills or is killed(a database INSERT function) and uses one of these most recent 3 locations recorded in the last 45 game seconds to return to(a database SELECT function).
 
