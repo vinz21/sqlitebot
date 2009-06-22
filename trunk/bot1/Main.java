@@ -20,12 +20,14 @@ import java.util.logging.LogRecord;
 import java.sql.*;
 
 /**
- * This bot will show you how to shoot down your opponets, it's extension
- * of the SimpleBot ... it just checks whether it sees an opponent and 
- * if so - shoot him down.
- * 
- * @author Horatko
+ * This bot currently is copied code from the hunter bot example,
+ * plus a strafing fuction from the amis/loque bot.
+ *
+ * The part which is mine are the functions dbWrite(database INSERT) and SetNavpoint(database SELECT)
+ * which demonstrate the beginning utilization of a sqlite database to persist the bots memory/events
+ * for better analysis and planning by the bot in gameplay
  */
+
 public class Main extends Agent {
 
    String sqliteClass = "org.sqlite.JDBC";
