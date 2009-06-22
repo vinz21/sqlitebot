@@ -47,6 +47,12 @@ Then click the 'Find' button for 'Driver Class' which should populate the field 
 
 For the driver 'Name' field enter 'sqlite' and *be sure it is all lower case and spelled the same* for it to work with the existing code example.  If the name/case is different than 'sqlite' you'll need to correct it in your *project.properties file* to get it to stop looking at the wrong/bad example for the sqlite driver.
 
+= Working with sql, sqlite database =
+
+Copy
+
+:\Documents and Settings\logan\Desktop>sqlite3 c:\progra~1\pogamu~1\PogamutPlatform\projects\AdvancedBot\src\advancedbot\sample.db
+
 ----
 
 = google group discussion =
@@ -73,6 +79,7 @@ Things that took me a while to figure out:
 
   * In netbeans, to set the 'main project' to compile/debug/run, right click on the project of interest and choose the 'Set as main project' option
   * Set your java (and netbeans?) thread priorities in Windows to 'realtime' (and UT2004 to 'low') via the Task Manager - otherwise the bot seems to lag/hang in its environment waiting for the Java to execute.
+  * When monitoring the bots via Unreal Tournament, press alt-enter for windowed version of game(instead of full screen) and ctrl-esc to move control back to the desktop
   * The format for setting the 'attributes' of the various 'ControlServer commands' listed at [https://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=Gamebots+API+list Gamebot API] is use of the curly brackets, e.g. like below for setting added bots skill level
 {{{addbot {skill 1}{name harry}}}}
   * set the game speed - 'set speed of game' in the UT Server Control' project window to about 1/2 of the default value to better follow along the action and the bot log/thoughts as they happen.
