@@ -124,6 +124,31 @@ The bot could also experiment with behavioral types like 'camping/sniping' at ce
 
 Would also like to move into recording of pathing and enemy predicted pathing and outcomes as might be utilized in leading or flanking maneuvers.
 
+The current sqlite table 'obs' is organized as follows
+
+{{{
+sqlite> .schema obs
+CREATE TABLE obs (
+  row_id integer PRIMARY KEY,
+  row_entry_date text,
+  map_level text,
+  map_id int,
+  navpoint_id int,
+  location text,
+  unreal_id text,
+  event_location text,
+  event_time real,
+  event_weight real);
+
+sqlite> select * from obs;
+1|2009-06-22 12:13:06|DM-Flux2|234|180|-1226.0,-1258.0,-319.99|DM-Flux2.PathNode
+16|-255.48,1193.43,-315.15|1225.19|1.0
+2|2009-06-22 12:13:15|DM-Flux2|234|180|-1226.0,-1258.0,-319.99|DM-Flux2.PathNode
+16|-286.4,1357.37,-296.91|1234.79|1.0
+3|2009-06-22 12:13:20|DM-Flux2|234|180|-1226.0,-1258.0,-319.99|DM-Flux2.PathNode
+16|-29.54,1288.36,-296.94|1239.97|1.0
+}}}
+
 === Issues ===
 
 When the bot is 'hit' (receives a BOT_DAMAGED message), the hit message stays in memory for a while causing the bot to focus on reacting by turning for seconds longer than is necessary after the event.  To get around this, I tried adding some code to get the bot to only pay attention to hits within a certain narrower time window by keeping track of the hit time/gametime and subsequent requests.
