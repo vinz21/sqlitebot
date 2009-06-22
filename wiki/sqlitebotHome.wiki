@@ -69,10 +69,11 @@ http://delicious.com/giraclarc/bots
 
 == Gotchas, Tips ==
 
-Two things that took me a while to figure out:
+Things that took me a while to figure out:
 
+  * In netbeans, to set the 'main project' to compile/debug/run, right click on the project of interest and choose the 'Set as main project' option
   * Set your java (and netbeans?) thread priorities in Windows to 'realtime' (and UT2004 to 'low') via the Task Manager - otherwise the bot seems to lag/hang in its environment waiting for the Java to execute.
-  * The format for setting the 'attributes' of the various 'ControlServer commands' listed ad [https://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=Gamebots+API+list Gamebot API] is use of the curly brackets, e.g. like below
+  * The format for setting the 'attributes' of the various 'ControlServer commands' listed at [https://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=Gamebots+API+list Gamebot API] is use of the curly brackets, e.g. like below for setting added bots skill level
 {{{addbot {skill 1}{name harry}}}}
   * set the game speed - 'set speed of game' in the UT Server Control' project window to about 1/2 of the default value to better follow along the action and the bot log/thoughts as they happen.
 
@@ -91,6 +92,13 @@ This database could be utilized to build additional summary tables(something lik
 The bot could also experiment with behavioral types like 'camping/sniping' at certain locations to determine the most effective spots/regions of the map or player conditions to do so.
 
 Would also like to move into recording of pathing and enemy predicted pathing and outcomes as might be utilized in leading or flanking maneuvers.
+
+=== Issues ===
+
+When the bot is 'hit' (receives a BOT_DAMAGED message), the hit message stays in memory for a while causing the bot to focus on reacting by turning for seconds longer than is necessary after the event.  To get around this, I tried adding some code to get the bot to only pay attention to hits within a certain narrower time window by keeping track of the hit time/gametime and subsequent requests.
+
+
+
 
 
   
