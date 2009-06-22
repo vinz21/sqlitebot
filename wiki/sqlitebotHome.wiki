@@ -37,7 +37,7 @@ Tracking those things initially should allow a bot to begin selecting better and
 
 = Installing sqlite driver = 
 
-To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ , [http://sqlitebot.googlecode.com/files/sqlitejdbc-v056.jar .jar file here] although the connection was refused by the program until I added the .jar file to both the netbeans classpath and the java/jre/lib/ext folder (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
+To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ , [http://sqlitebot.googlecode.com/files/sqlitejdbc-v056.jar .jar file here] although the connection was refused by the program until I added the .jar file to both the netbeans classpath and the location C:\Program Files\Java\jre6\lib\ext\sqlitejdbc-v056.jar (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
 
 I'd like to try the Xerial sqlite .jar http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC as it should be faster executing, but the zentus seems to work for the time being.
 
@@ -46,6 +46,10 @@ To establish the 'sqlite' driver in the netbeans IDE, goto Window->Services, the
 Then click the 'Find' button for 'Driver Class' which should populate the field with 'org.sqlite.JDBC'
 
 For the driver 'Name' field enter 'sqlite' and *be sure it is all lower case and spelled the same* for it to work with the existing code example.  If the name/case is different than 'sqlite' you may need to correct it in your *project.properties file* to get it to stop looking at the wrong/bad example for the sqlite driver.
+
+To add the sqlite driver to the netbeans libraries, from the netbeans IDE menu choose Tools->Libraries  On the pop-up window under 'Class Libraries' choose 'New Library'and on the subsequent pop-up name the library 'sqlite' (all lower case).  Then on the following options use the 'Add JAR/Folder' button to navigate to the sqlite jar file (path is C:\Program Files\Java\jre6\lib\ext\sqlitejdbc-v056.jar )
+
+To add the sqlite driver to the project library, under the Project->Libraries folder, choose 'Add Library' and choose the sqlite library.
 
 == Working with sql, sqlite database ==
 
