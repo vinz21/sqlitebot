@@ -49,9 +49,16 @@ For the driver 'Name' field enter 'sqlite' and *be sure it is all lower case and
 
 = Working with sql, sqlite database =
 
-Copy
+Download the sqlite3 windows executable .exe (in a [http://www.sqlite.org/sqlite-3_6_15.zip zip file]) from the [http://www.sqlite.org/download.html sqlite download page].
 
-:\Documents and Settings\logan\Desktop>sqlite3 c:\progra~1\pogamu~1\PogamutPlatform\projects\AdvancedBot\src\advancedbot\sample.db
+My current path to the database is 
+{{{c:\progra~1\pogamu~1\PogamutPlatform\projects\AdvancedBot\src\advancedbot\sample.db}}}
+
+To open this database and get a sqlite command prompt I issue the following command from a command window.
+
+{{{c:\Documents and Settings\logan\Desktop>sqlite3 c:\progra~1\pogamu~1\PogamutPlatform\projects\AdvancedBot\src\advancedbot\sample.db}}}
+
+Notice also that the above database path is required or should be changed in the java functions which access the database(Main.java).
 
 ----
 
