@@ -37,7 +37,7 @@ Tracking those things initially should allow a bot to begin selecting better and
 
 = Installing sqlite driver = 
 
-To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ , file [http://sqlitebot.googlecode.com/files/sqlitejdbc-v056.jar here] although the connection was refused by the program until I added the .jar file to both the netbeans classpath and the java/jre/lib/ext folder (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
+To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ , [http://sqlitebot.googlecode.com/files/sqlitejdbc-v056.jar .jar file here] although the connection was refused by the program until I added the .jar file to both the netbeans classpath and the java/jre/lib/ext folder (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
 
 I'd like to try the Xerial sqlite .jar http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC as it should be faster executing, but the zentus seems to work for the time being.
 
