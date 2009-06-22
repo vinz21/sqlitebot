@@ -37,11 +37,15 @@ Tracking those things initially should allow a bot to begin selecting better and
 
 = Installing sqlite driver = 
 
-To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ although the connection was refused by the program until I added the .jar to both the netbeans classpath and the java/jre/lib/ext folder (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
+To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ although the connection was refused by the program until I added the .jar file to both the netbeans classpath and the java/jre/lib/ext folder (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
 
 I'd like to try the Xerial sqlite .jar http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC as it should be faster executing, but the zentus seems to work for the time being.
 
+To establish the 'sqlite' driver in the netbeans IDE, goto Window->Services, then from the pop-up window select Databases->Drivers, then right click on Drivers to add a 'New Driver' and on the pop-up after that click the 'Add' button and path to the location of the sqlite jar file (for me this is C:\Program Files\Java\jre6\lib\ext\sqlitejdbc-v056.jar )
 
+Then click the 'Find' button for 'Driver Class' which should populate the field with 'org.sqlite.JDBC'
+
+For the driver 'Name' field enter 'sqlite' and *be sure it is all lower case and spelled the same* for it to work with the existing code example.  If the name/case is different than 'sqlite' you'll need to correct it in your *project.properties file* to get it to stop looking at the wrong/bad example for the sqlite driver.
 
 ----
 
@@ -63,12 +67,6 @@ http://delicious.com/giraclarc/bots
 
 ----
 
-= botv1 =
-
-For the first version bot (botv1) all I've done is hack the basic pogamut bot [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/Main.java script] to write out its location to a [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/sample.db sqlite table] when the navpoint path is broken.
-
-The write function is called 'nasty' and the table called 'people' for no good reason.  Will rename these more appropriately later.
-
 == Gotchas, Tips ==
 
 Two things that took me a while to figure out:
@@ -76,3 +74,23 @@ Two things that took me a while to figure out:
   * Set your java (and netbeans?) thread priorities in Windows to 'realtime' (and UT2004 to 'low') via the Task Manager - otherwise the bot seems to lag/hang in its environment waiting for the Java to execute.
   * The format for setting the 'attributes' of the various 'ControlServer commands' listed ad [https://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=Gamebots+API+list Gamebot API] is use of the curly brackets, e.g. like below
 {{{addbot {skill 1}{name harry}}}}
+  * set the game speed - 'set speed of game' in the UT Server Control' project window to about 1/2 of the default value to better follow along the action and the bot log/thoughts as they happen.
+
+= botv1 =
+
+For the first version bot (botv1) all I've done is hack the basic pogamut bot [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/Main.java script] to write out its location to a [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/sample.db sqlite table] when the navpoint path is broken.
+
+The write function is called 'nasty' and the table called 'people' for no good reason.  Will rename these more appropriately later.
+
+== Update June 22, 2009 ==
+
+I've modified the bot, borrowing mostly from the 'hunter' bot example and a strafing function from the 'amis/loque' bot(many, many thanks to folks sharing their example code, which helps much with the learning/syntax curve).  Found it helpful to display all message events to the log and then filter ones out that I wasn't interested in.  The bot now records the map, location and timestamp when it kills or is killed(a database INSERT function) and uses one of these most recent 3 locations recorded in the last 45 game seconds to return to(a database SELECT function).
+
+This database could be utilized to build additional summary tables(something like a heat/influence map) which could reflect further analysis/statistics processing based on the locational data.  Also interesting would be to move beyond just the bots immediate 'recent' row-based memory and begin pattern analysis of the locational data to detect generalized trends/patterns which might recur during gameplay.
+
+The bot could also experiment with behavioral types like 'camping/sniping' at certain locations to determine the most effective spots/regions of the map or player conditions to do so.
+
+Would also like to move into recording of pathing and enemy predicted pathing and outcomes as might be utilized in leading or flanking maneuvers.
+
+
+  
