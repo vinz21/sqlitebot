@@ -62,19 +62,19 @@ Notice also that the above database path is required or should be changed in the
 
 == Basic SQL commands ==
 
-From the sqlite command prompt, to see a list of tables
+From the sqlite command prompt, to see a list of tables<br/>
 {{{.tables}}}
 
-The only table on the database is 'obs', to see the schema
+The only table on the database is 'obs', to see the schema<br/>
 {{{.schema obs}}}
 
-To see a listing of rows on the table
+To see a listing of rows on the table<br/>
 {{{select * from obs;}}}
 
-To certain rows on the table
+To certain rows on the table<br/>
 {{{delete from obs where row_id > 3;}}}
 
-To delete all rows from the table
+To delete all rows from the table<br/>
 {{{delete from obs;}}}
 
 ----
