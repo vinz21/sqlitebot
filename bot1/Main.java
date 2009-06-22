@@ -737,7 +737,7 @@ public class Main extends Agent {
       //stat.executeUpdate("drop table if exists obs;");
       //stat.executeUpdate("create table people (name, occupation);");
       PreparedStatement prep = conn.prepareStatement(
-          "insert into obs(map_level,map_id,navpoint_id,location,unreal_id,event_location,event_time,event_weight) values (?,?,?,?,?,?,?,?);");
+          "insert into obs(row_entry_date,map_level,map_id,navpoint_id,location,unreal_id,event_location,event_time,event_weight) values (datetime('now'),?,?,?,?,?,?,?,?);");
       
       log.fine("navpoint_ID="+ID);
 
@@ -771,7 +771,11 @@ public void setNavpoint() throws Exception {
       String map_level = memory.getGameInfo().level;
       //use locations within past # seconds, else randomSearch
       double recentTime = gameTime - 45;
-      ResultSet rs = stat.executeQuery("select navpoint_id,event_location from obs where event_time > "+recentTime+" and event_weight = 1 and map_level = '"+map_level+"' order by event_time desc limit 3;");
+      String sql = "select navpoint_id,event_location from obs where event_time > "+recentTime+" and event_weight = 1 and map_level = '"+map_level+"' order by row_entry_date desc limit 3;";
+      //log.info("sql:"+sql);
+      ResultSet rs = stat.executeQuery(sql);
+
+      log.info("myRand = " + myRand);
       String thisLocation = null;
 
       int i = 1;
