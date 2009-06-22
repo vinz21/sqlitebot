@@ -1,22 +1,21 @@
 package advancedbot;
 
 import cz.cuni.pogamut.Client.Agent;
-import java.util.logging.Level;
-
 import cz.cuni.pogamut.Client.RcvMsgEvent;
 import cz.cuni.pogamut.Client.RcvMsgListener;
 import cz.cuni.pogamut.MessageObjects.*;
 import cz.cuni.pogamut.introspection.PogProp;
-
+import cz.cuni.pogamut.exceptions.ConnectException;
 import cz.cuni.pogamut.exceptions.PogamutException;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.logging.Level;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
-import cz.cuni.pogamut.exceptions.ConnectException;
 
 import java.sql.*;
 
@@ -28,6 +27,9 @@ import java.sql.*;
  * @author Horatko
  */
 public class Main extends Agent {
+
+   String sqliteClass = "org.sqlite.JDBC";
+   String sqliteDBPath = "jdbc:sqlite:/Program Files/Pogamut 2/PogamutPlatform/projects/AdvancedBot/src/advancedbot/sample.db";
 
    NavPoint chosenNavigationPoint = null;
    Player enemy = null;
@@ -529,7 +531,7 @@ public class Main extends Agent {
     }
 
     /**
-     * runs along healths of strenght at least 8 to recover health
+     * runs along healths of strength at least 8 to recover health
      */
     protected void stateMedKit() {
         this.log.log(Level.INFO, "Decision is: RUN_MED_KITS:"+this.memory.getAgentHealth());
@@ -726,13 +728,10 @@ public class Main extends Agent {
     public static void main(String[] Args) {
     }
 
-    //public void nasty () { System.out.println("Hello World!"); }
-  //public void nasty(String[] location) throws Exception {
   public void dbWrite(String map_level, int nav_ID, int ID, String location, String UnrealID, String eventLocation, double eventTime, int eventWeight) throws Exception {
-  //public void dbWrite(String ID, String location, String UnrealID) throws Exception {
 
-      Class.forName("org.sqlite.JDBC");
-      Connection conn = DriverManager.getConnection("jdbc:sqlite:/Program Files/Pogamut 2/PogamutPlatform/projects/AdvancedBot/src/advancedbot/sample.db");
+      Class.forName(sqliteClass);
+      Connection conn = DriverManager.getConnection(sqliteDBPath);
       Statement stat = conn.createStatement();
       //stat.executeUpdate("drop table if exists obs;");
       //stat.executeUpdate("create table people (name, occupation);");
@@ -761,8 +760,8 @@ public class Main extends Agent {
 
 public void setNavpoint() throws Exception {
 
-      Class.forName("org.sqlite.JDBC");
-      Connection conn = DriverManager.getConnection("jdbc:sqlite:/Program Files/Pogamut 2/PogamutPlatform/projects/AdvancedBot/src/advancedbot/sample.db");
+      Class.forName(sqliteClass);
+      Connection conn = DriverManager.getConnection(sqliteDBPath);
       Statement stat = conn.createStatement();
       
       int myRand = random.nextInt(3)+1;
@@ -772,7 +771,7 @@ public void setNavpoint() throws Exception {
       //use locations within past # seconds, else randomSearch
       double recentTime = gameTime - 45;
       String sql = "select navpoint_id,event_location from obs where event_time > "+recentTime+" and event_weight = 1 and map_level = '"+map_level+"' order by row_entry_date desc limit 3;";
-      //log.info("sql:"+sql);
+      log.info("sql:"+sql);
       ResultSet rs = stat.executeQuery(sql);
 
       log.info("myRand = " + myRand);
