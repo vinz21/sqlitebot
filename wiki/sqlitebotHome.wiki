@@ -47,7 +47,7 @@ Then click the 'Find' button for 'Driver Class' which should populate the field 
 
 For the driver 'Name' field enter 'sqlite' and *be sure it is all lower case and spelled the same* for it to work with the existing code example.  If the name/case is different than 'sqlite' you may need to correct it in your *project.properties file* to get it to stop looking at the wrong/bad example for the sqlite driver.
 
-= Working with sql, sqlite database =
+== Working with sql, sqlite database ==
 
 Download the sqlite3 windows executable .exe (in a [http://www.sqlite.org/sqlite-3_6_15.zip zip file]) from the [http://www.sqlite.org/download.html sqlite download page].
 
@@ -59,6 +59,23 @@ To open this database and get a sqlite command prompt I issue the following comm
 {{{c:\Documents and Settings\logan\Desktop>sqlite3 c:\progra~1\pogamu~1\PogamutPlatform\projects\AdvancedBot\src\advancedbot\sample.db}}}
 
 Notice also that the above database path is required or should be changed in the java functions which access the database(Main.java).
+
+== Basic SQL commands ==
+
+From the sqlite command prompt, to see a list of tables
+{{{.tables}}}
+
+The only table on the database is 'obs', to see the schema
+{{{.schema obs}}}
+
+To see a listing of rows on the table
+{{{select * from obs;}}}
+
+To certain rows on the table
+{{{delete from obs where row_id > 3;}}}
+
+To delete all rows from the table
+{{{delete from obs;}}}
 
 ----
 
