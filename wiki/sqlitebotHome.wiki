@@ -45,7 +45,7 @@ To establish the 'sqlite' driver in the netbeans IDE, goto Window->Services, the
 
 Then click the 'Find' button for 'Driver Class' which should populate the field with 'org.sqlite.JDBC'
 
-For the driver 'Name' field enter 'sqlite' and *be sure it is all lower case and spelled the same* for it to work with the existing code example.  If the name/case is different than 'sqlite' you'll need to correct it in your *project.properties file* to get it to stop looking at the wrong/bad example for the sqlite driver.
+For the driver 'Name' field enter 'sqlite' and *be sure it is all lower case and spelled the same* for it to work with the existing code example.  If the name/case is different than 'sqlite' you may need to correct it in your *project.properties file* to get it to stop looking at the wrong/bad example for the sqlite driver.
 
 = Working with sql, sqlite database =
 
