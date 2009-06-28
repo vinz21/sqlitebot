@@ -35,6 +35,12 @@ with *location* reflecting the bots map(*map_id*) location when a specified *sta
 
 Tracking those things initially should allow a bot to begin selecting better and worse map locations for optimal scoring or begin time-based tactics or behaviors relating to location and predicted location of opponents.
 
+= Easy install (jar file) =
+
+Just download/unzip this [http://sqlitebot.googlecode.com/files/sqlitebot.zip zip file] to say 'c:\test' folder(includes necessary .jar and \lib) and run the following command.  Bot shows up using bot launcher as 'Player_Jeremy' for now.
+
+{{{java.exe -jar c:\test\sqlitebot.jar}}}
+
 = Installing sqlite driver = 
 
 To get going with sqlite and java I utilized the .jar at http://www.zentus.com/sqlitejdbc/ , [http://sqlitebot.googlecode.com/files/sqlitejdbc-v056.jar .jar file here] although the connection was refused by the program until I added the .jar file to both the netbeans classpath and the location C:\Program Files\Java\jre6\lib\ext\sqlitejdbc-v056.jar (see http://www.newsvoter.com/blog/TechNotes/java-lang-ClassNotFoundException--org-sqlite-JDBC.html )
