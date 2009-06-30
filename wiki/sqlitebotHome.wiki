@@ -37,9 +37,9 @@ Tracking those things initially should allow a bot to begin selecting better and
 
 = Easy install (jar file) =
 
-Just download/unzip this [http://sqlitebot.googlecode.com/files/sqlitebot.zip zip file] to say 'c:\test' folder(includes necessary .jar and \lib) and run the following command.  Bot shows up using bot launcher as 'Player_Jeremy' for now.
+Just download/unzip this [http://sqlitebot.googlecode.com/files/sqlitebot.zip zip file] to  'c:\sqlitebot' folder(includes necessary .jar and \lib) and run the following command. *The sqlite dbpath uses an absolute path of c:\sqlitebot' so the sample.db file must live there for the script to work.* Bot shows up using bot launcher as 'Player_Jeremy' for now.
 
-{{{java.exe -jar c:\test\sqlitebot.jar}}}
+{{{java.exe -jar c:\sqlitebot\sqlitebot.jar}}}
 
 = Installing sqlite driver = 
 
