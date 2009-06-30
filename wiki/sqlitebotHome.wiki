@@ -117,7 +117,7 @@ Things that took me a while to figure out:
   * The format for setting the 'attributes' of the various 'ControlServer commands' listed at [https://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=Gamebots+API+list Gamebot API] is use of the curly brackets, e.g. like below for setting added bots skill level
 {{{addbot {skill 1}{name harry}}}}
   * set the game speed - 'set speed of game' in the UT Server Control' project window to about 1/2 of the default value to better follow along the action and the bot log/thoughts as they happen.
-
+  * netbeans jar tutorial http://www.fsl.cs.sunysb.edu/~dquigley/cse219/index.php?it=netbeans&tt=jar&pf=y
 = botv1 =
 
 For the first version bot (botv1) all I've done is hack the basic pogamut bot [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/Main.java script] to write out its location to a [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/sample.db sqlite table] when the navpoint path is broken.
