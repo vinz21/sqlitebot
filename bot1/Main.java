@@ -18,6 +18,8 @@ import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This bot currently is copied code from the hunter bot example,
@@ -31,9 +33,28 @@ import java.sql.*;
 public class Main extends Agent {
 
    String sqliteClass = "org.sqlite.JDBC";
-   String sqliteDBPath = "jdbc:sqlite:/Program Files/Pogamut 2/PogamutPlatform/projects/AdvancedBot/src/advancedbot/sample.db";
+   //String sqliteDBPath = "jdbc:sqlite:/Program Files/Pogamut 2/PogamutPlatform/projects/AdvancedBot/src/advancedbot/sample.db";
+   String sqliteDBPath = "jdbc:sqlite:c:/sqlitebot/sample.db";
 
-   NavPoint chosenNavigationPoint = null;
+
+   @PogProp NavPoint chosenNavigationPoint = null;
+   @PogProp NavPoint lastNavigationPoint = null;
+
+   //int navSize = memory.getKnownNavPoints().size();
+   @PogProp int navCount = 0;
+   //behavior = normal,camp,navstep,navlog,hide
+   @PogProp String behavior = "hide";
+
+   // Create a hash table
+   Map navMap = new HashMap();
+   //navMap = new TreeMap();        // sorted map
+
+   Map visMap = new HashMap();
+
+   @PogProp int botYFocus = 0;
+   @PogProp double botYMin = 0.0;
+   @PogProp double botYMax = 0.0;
+
    Player enemy = null;
    double gameTime = 0.0;
    double turnTime = 0.0;
@@ -72,6 +93,7 @@ public class Main extends Agent {
     @PogProp
     public boolean shouldCollectItems = true;
 
+
    /** Creates a new instance of agent. */
    public Main() {
        super();
@@ -88,8 +110,40 @@ public class Main extends Agent {
        // this affects the bot's skill level ... 6 == GODLIKE, 0 == total newbie
        body.initializer.setBotSkillLevel(4);
 
-   }
+    // Add key/value pairs to the map
+    //navMap.put("x", new Integer(1));
+    //navMap.put("y", new Integer(2));
+    //navMap.put("z", new Integer(3));
 
+    for (int i=0; i<memory.getKnownNavPoints().size(); i++) {
+         navMap.put(Integer.toString(memory.getKnownNavPoints().get(i).ID), new Integer (Integer.toString(i)));
+    }
+
+    // Get number of entries in map
+    //int size = navMap.size();        // 2
+    //log.info("size:"+size);
+    //createNavArray();
+ 
+/*
+      Class.forName(sqliteClass);
+      Connection conn = DriverManager.getConnection(sqliteDBPath);
+      Statement stat = conn.createStatement();
+
+      String sql = null;
+      sql = "select from_navpoint_id from navpoint where from_navpoint_id = and map_level =  limit 1;";
+
+      log.info("sql:"+sql);
+      ResultSet rs = stat.executeQuery(sql);
+
+      boolean flagFound = false;
+      while (rs.next()) {
+             flagFound = true;
+      }
+
+      rs.close();
+      conn.close();
+ */
+}
 
     /**
      * Main method of the bot's brain - we're going to do some thinking about
@@ -104,6 +158,7 @@ public class Main extends Agent {
         // marking next iteration
         log.fine("doLogic iteration");
 
+        /*
         // IF-THEN RULES:
         // 1) see enemy and has better weapon? -> switch to better weapon
         if (this.shouldRearm && this.memory.getSeeAnyEnemy() && this.hasBetterWeapon()) {
@@ -111,19 +166,19 @@ public class Main extends Agent {
             return;
         }
 
-        // 2) do you see enemy? 	-> go to PURSUE (start shooting / hunt the enemy)
+        // 2) do you see enemy?         -> go to PURSUE (start shooting / hunt the enemy)
         if (this.shouldEngage && this.memory.getSeeAnyEnemy() && this.memory.hasAnyLoadedWeapon()) {
             this.stateEngage();
             return;
         }
 
-         // 3) are you shooting? 	-> go to STOP_SHOOTING (stop shooting, you've lost your target)
+         // 3) are you shooting?        -> go to STOP_SHOOTING (stop shooting, you've lost your target)
         if (this.memory.isShooting()) {
             this.stateStopShooting();
             return;
         }
 
-        // are you being shot? 	-> go to HIT (turn around - try to find your enemy)
+        // are you being shot?  -> go to HIT (turn around - try to find your enemy)
         if (this.memory.isBeingDamaged()) {
             this.stateHit();
             return;
@@ -135,32 +190,34 @@ public class Main extends Agent {
             return;
         }
 
-        // 6) are you walking? 	   	-> go to WALKING       (check WAL)
+        // 6) are you walking?          -> go to WALKING       (check WAL)
         if (this.memory.isColliding()) {
             log.info("collision");
             //strafingRight = !strafingRight;
             //this.stateWalking();
             //return;
         }
-        
-        // 7) do you see item? 		-> go to GRAB_ITEM	  (pick the most suitable item and run for)
+
+        // 7) do you see item?          -> go to GRAB_ITEM        (pick the most suitable item and run for)
         if (this.shouldCollectItems && this.seeAnyReachableItemAndWantIt()) {
             this.stateSeeItem();
             return;
         }
 
-        // are you hurt?			-> get yourself some medKit
+        // are you hurt?                        -> get yourself some medKit
         if (this.memory.getAgentHealth() < this.healthLevel && this.canRunAlongMedKit()) {
             this.stateMedKit();
             return;
         }
 
+*/
+
         // no enemy spotted ... just run randomly
-        
+
         // if don't have any navigation point chosen
         if (chosenNavigationPoint == null) {
             // let's pick one at random
-            try { setNavpoint(); } catch (Exception K) { System.out.println("Hello World!"); }
+            try { setNavpoint(behavior); } catch (Exception K) { System.out.println("Hello World!"); }
             //chosenNavigationPoint = memory.getKnownNavPoints().get(random.nextInt(memory.getKnownNavPoints().size()));
             log.fine("navpoint_logic="+chosenNavigationPoint.UnrealID);
             log.fine("map_id_logic="+chosenNavigationPoint.getID());
@@ -171,13 +228,18 @@ public class Main extends Agent {
             // if safeRunToLocation() returns false it means
             if (Triple.distanceInSpace(memory.getAgentLocation(), chosenNavigationPoint.location) < 100) {
                 // 1) we're at the navpoint
-                log.info("I've successfully arrived at navigation point!");
+                //log.info("I've successfully arrived at navigation point!");
+                //Triple campFocusLocation = new Triple (-1520.0,1450.0,-207.0);
+                //this.body.turnToLocation(campFocusLocation);
             } else {
                 // 2) something bad happens
                 log.info("Darn the path is broken :(");
+                //Triple campFocusLocation = new Triple (-1520.0,1450.0,-207.0);
+                //this.body.turnToLocation(campFocusLocation);
             }
             // nullify chosen navigation point and chose it during the
             // next iteration of the logic
+            lastNavigationPoint = chosenNavigationPoint;
             chosenNavigationPoint = null;
         }
     }
@@ -292,7 +354,7 @@ public class Main extends Agent {
             //if (this.memory.isMoving()) {
             if (1 == 1) {
                 //this.body.stop();
- 
+
             // compute new agent location (to where to run to)
             // note: resolves strafing and pick-ups
             Triple newAgentLocation = getStrafeAroundLocation (this.enemy);
@@ -582,7 +644,7 @@ public class Main extends Agent {
         double desiredEnemyDistance = 200;
         double strafingAmount = 100;
 
-        
+
 /*        // primary fire mode
         if (!alternateFire)
         {
@@ -673,6 +735,7 @@ public class Main extends Agent {
         if (e.getMessage().type.toString().equals("HEAR_NOISE")) { return; }
         if (e.getMessage().type.toString().equals("HEAR_PICKUP")) { return; }
         if (e.getMessage().type.toString().equals("PLAYER")) { return; }
+        if (e.getMessage().type.toString().equals("PATH")) { return; }
 
         if (!(e.getMessage().type.toString().equals("BEGIN"))) {
             getLogger().info("message: " + e.getMessage().type.toString());
@@ -720,7 +783,31 @@ public class Main extends Agent {
               break;
             case WALL_COLLISION:
               strafingRight = !strafingRight;
+              int myWCRand = random.nextInt(3)+1;
+              if (myWCRand == 1) { this.body.jump(); }
+              if (myWCRand == 2) { this.body.doubleJump(); }
               break;
+            case INCOMMING_PROJECTILE:
+  
+                int myRand = random.nextInt(5)+1;
+                
+                if (myRand == 2) {
+                  log.info("dodge right");
+                  Triple dodgeDirection = new Triple (0.0,1.0,0.0);
+                  this.body.dodge(dodgeDirection);
+                }
+                if (myRand == 3) {         
+                  log.info("dodge left");
+                  Triple dodgeDirection = new Triple (0.0,-1.0,0.0);
+                  this.body.dodge(dodgeDirection);
+                }
+                if (myRand == 4) {
+                  log.info("jump");
+                  this.body.jump();
+                }
+
+              break;
+           
         }
     }
 
@@ -739,7 +826,7 @@ public class Main extends Agent {
       //stat.executeUpdate("create table people (name, occupation);");
       PreparedStatement prep = conn.prepareStatement(
           "insert into obs(row_entry_date,map_level,map_id,navpoint_id,location,unreal_id,event_location,event_time,event_weight) values (datetime('now'),?,?,?,?,?,?,?,?);");
-      
+
       log.fine("navpoint_ID="+ID);
 
       prep.setString(1, map_level);
@@ -760,19 +847,236 @@ public class Main extends Agent {
       conn.close();
   }
 
-public void setNavpoint() throws Exception {
+  public void dbWriteNavpoint(String map_level, int from_navpoint_id, int to_navpoint_id) throws Exception {
 
       Class.forName(sqliteClass);
       Connection conn = DriverManager.getConnection(sqliteDBPath);
       Statement stat = conn.createStatement();
-      
+
+      //log.info(from_navpoint_id+":"+to_navpoint_id);
+
+      PreparedStatement prep = conn.prepareStatement(
+          "insert into navpoint(row_entry_date,map_level,from_navpoint_id,to_navpoint_id,visibility) values (datetime('now'),?,?,?,1);");
+
+      prep.setString(1, map_level);
+      prep.setInt(2, from_navpoint_id);
+      prep.setInt(3, to_navpoint_id);
+
+      prep.addBatch();
+
+      conn.setAutoCommit(false);
+      prep.executeBatch();
+      conn.setAutoCommit(true);
+
+      conn.close();
+  }
+
+public boolean dbLoggedNavpoint(String map_level,int from_navpoint_id) throws Exception {
+
+      //checks to see if this navpoint was logged on the database earlier or not
+
+      Class.forName(sqliteClass);
+      Connection conn = DriverManager.getConnection(sqliteDBPath);
+      Statement stat = conn.createStatement();
+
+      String sql = null;
+      sql = "select from_navpoint_id from navpoint where from_navpoint_id = "+from_navpoint_id+" and map_level = '"+map_level+"' limit 1;";
+
+      log.info("sql:"+sql);
+      ResultSet rs = stat.executeQuery(sql);
+
+      boolean flagFound = false;
+      while (rs.next()) {
+             flagFound = true;
+      }
+
+      rs.close();
+      conn.close();
+
+      return flagFound;
+
+      }
+
+public void setNavpoint(String behavior) throws Exception {
+
+      //set an initial location default if null
+      if (lastNavigationPoint == null) {
+        log.info("navpoint=null");
+        lastNavigationPoint = memory.getKnownNavPoints().get(27);
+        chosenNavigationPoint = memory.getKnownNavPoints().get(27);
+      }
+
+      Class.forName(sqliteClass);
+      Connection conn = DriverManager.getConnection(sqliteDBPath);
+      Statement stat = conn.createStatement();
+
       int myRand = random.nextInt(3)+1;
-      log.info("myRand = " + myRand);
+      //log.info("myRand = " + myRand);
 
       String map_level = memory.getGameInfo().level;
       //use locations within past # seconds, else randomSearch
       double recentTime = gameTime - 45;
-      String sql = "select navpoint_id,event_location from obs where event_time > "+recentTime+" and event_weight = 1 and map_level = '"+map_level+"' order by row_entry_date desc limit 3;";
+      String sql = null;
+      if (behavior.equals("normal")) {
+        sql = "select navpoint_id,event_location from obs where event_time > "+recentTime+" and event_weight = 1 and map_level = '"+map_level+"' order by row_entry_date desc limit 3;";
+      }
+      else if (behavior.equals("camp")) {
+         log.info("camp");
+         sql = "select navpoint_id,event_location from obs where event_weight = 2 and map_level = '"+map_level+"' order by row_entry_date desc limit 3;";
+      }
+      else if (behavior.equals("hide")) {
+         //log.info("hide");
+         sql = "select to_navpoint_id from navpoint where from_navpoint_id = "+lastNavigationPoint.ID+";";
+
+         log.info("sql:"+sql);
+         ResultSet rs = stat.executeQuery(sql);
+
+         //tried but failed to assign using getArray
+         //http://publib.boulder.ibm.com/infocenter/idshelp/v10/index.jsp?topic=/com.ibm.jdbc_pg.doc/jdbc126.htm
+         //http://forums.sun.com/thread.jspa?threadID=523675
+
+         //rs.next();
+
+         ArrayList<Integer> ArrayToGet = new ArrayList<Integer> ();
+         while (rs.next()) {
+             ArrayToGet.add(rs.getInt(1));
+         }
+         //ArrayToGet = (ArrayList<Integer>) rs.getArray(1)
+         //for (int j=0; j<ArrayToGet.size(); j++) {
+           //log.info("integer element = "+ArrayToGet.get(j).toString());
+         //}
+
+         //Object testVal = navMap.get("1");
+         //log.info("testval:"+testVal.toString());
+
+         //get navpoints from visible set
+         //int myRandHide = random.nextInt(ArrayToGet.size());
+         //int thisNavpoint = ArrayToGet.get(myRandHide);
+
+         //get navpoints from non-visible set
+         int myRandHide = random.nextInt(memory.getKnownNavPoints().size());
+         int thisNavpoint = memory.getKnownNavPoints().get(myRandHide).ID;
+         if (ArrayToGet.contains(thisNavpoint)) {
+             log.info("navpoint is visible");
+         }
+         else { log.info("navpoint not visible"); }
+
+
+         //log.info("hide_navpoint:"+thisNavpoint);
+         Object lookup = navMap.get(Integer.toString(thisNavpoint));
+         int i = Integer.parseInt(lookup.toString());
+
+         log.info("hide_navpoint:"+thisNavpoint+":"+i);
+         chosenNavigationPoint = memory.getKnownNavPoints().get(i);
+
+
+         //for (int i=0; i<memory.getKnownNavPoints().size(); i++) {
+         //for (int i=0; i<10; i++) {
+             //log.info(i+":"+memory.getKnownNavPoints().get(i).ID);
+            //if (memory.getKnownNavPoints().get(i).ID == thisNavpoint) {
+              //log.info("hide_navpoint:"+thisNavpoint+":"+i);
+              //chosenNavigationPoint = memory.getKnownNavPoints().get(i);
+            //}
+         //}
+        //}
+
+      rs.close();
+      conn.close();
+
+      return;
+
+      }
+      else if (behavior.equals("navstep")) {
+         //ArrayList<NeighNav> possibleNavPoints = new ArrayList<NeighNav> ();
+          log.info("debug1");
+         //possibleNavPoints. = chosenNavigationPoint.neighbours.;
+                   log.info("debug1");
+         //log.info("navstep:"+possibleNavPoints.toString());
+          if (lastNavigationPoint == null) {
+              log.info("null");
+              lastNavigationPoint = memory.getKnownNavPoints().get(27);
+          chosenNavigationPoint = memory.getKnownNavPoints().get(27);
+          }
+
+         log.info("myNav:begin=" + lastNavigationPoint.UnrealID);
+         log.info("myNav:begin=" + lastNavigationPoint.neighbours.size());
+log.info("debug1");
+         //int NavSetSize = lastNavigationPoint.neighboursMap.keySet().size();
+int NavSetSize = 1;
+         log.info("debug1");
+         //log.info("navstep("+NavSetSize+"):"+lastNavigationPoint.neighboursMap.keySet().toString());
+         //log.info("navstep("+NavSetSize+"):"+chosenNavigationPoint.neighbours.toString());
+log.info("debug1");
+         //int myRandNav = random.nextInt(NavSetSize);
+         int myRandNav = 1;
+         
+         //Object[] arr = lastNavigationPoint.neighboursMap.keySet().toArray();
+         //log.info("myRandNav("+myRandNav+")=" + arr[myRandNav]);
+         //int intNav = Integer.parseInt(arr[myRandNav].toString());
+
+         chosenNavigationPoint = memory.getKnownNavPoints().get(random.nextInt(memory.getKnownNavPoints().size()));
+         //chosenNavigationPoint = memory.getKnownNavPoints().get(intNav);
+         //chosenNavigationPoint = memory.getKnownNavPoints().get(intNav);
+         log.info("myRandNav:neighbor("+myRandNav+")=" + chosenNavigationPoint.UnrealID);
+         log.info("myRandNav("+myRandNav+")=" + memory.getKnownNavPoints().indexOf(chosenNavigationPoint));
+         log.info("myRandNav("+myRandNav+")=" + chosenNavigationPoint.getID());
+
+
+         //chosenNavigationPoint.location = this.getMap()..gameMap.memory.getLocation()..memory.getKnownNavPoints().indexOf(chosenNavigationPoint);
+         return;
+      }
+      else if (behavior.equals("navlog")) {
+
+          if ((botYFocus == 4) || (lastNavigationPoint == null)) {
+
+            botYFocus = 0;
+
+            int navSize = memory.getKnownNavPoints().size();
+            //int navSize = 130;
+
+            if (navCount >= navSize) { navCount = 0; }  //navCount = 128;
+
+            chosenNavigationPoint = memory.getKnownNavPoints().get(navCount);
+            log.info("navpoint("+navCount+"/"+navSize+"):"+chosenNavigationPoint.UnrealID);
+
+            navCount++;
+            //skip catalogging jumppads since we can't sit on them to inventory
+            while (memory.getKnownNavPoints().get(navCount).UnrealID.contains("JumpPad")) { navCount++; }
+            while (dbLoggedNavpoint(memory.getGameInfo().level.toString(),memory.getKnownNavPoints().get(navCount).ID)) { log.info("skipping navpoint:"+navCount); navCount++; }
+            return;
+          }
+          else {
+
+            chosenNavigationPoint = lastNavigationPoint;
+            double botY = this.memory.getAgentRotation().y;
+
+            if (botYFocus == 0) { botYMin = 0.0; botYMax = 2000.0; }
+            if (botYFocus == 1) { botYMin = 16000.0; botYMax = 18000.0; }
+            if (botYFocus == 2) { botYMin = 32000.0; botYMax = 34000.0; }
+            if (botYFocus == 3) { botYMin = 48000.0; botYMax = 50000.0; }
+
+            if ((botY < botYMin) || (botY > botYMax)) {
+               this.body.turnHorizontal(5);
+               return;
+            }
+            else {
+              log.info("rotation:"+this.memory.getAgentRotation().y);
+              ArrayList<NavPoint> testNavigationPoint = memory.getSeeNavPoints();
+              for (int i=0; i<=testNavigationPoint.size()-1; i++) {
+                if (testNavigationPoint.get(i).type.toString().equals("NAV_POINT")) {
+                   log.info("navVis("+botYFocus+"/"+i+")"+testNavigationPoint.get(i).UnrealID);
+                   try { dbWriteNavpoint(memory.getGameInfo().level.toString(),chosenNavigationPoint.getID(),testNavigationPoint.get(i).getID()); } catch (Exception K) { System.out.println("Hello World!"); }
+                }
+              }
+            }
+          
+            botYFocus++;
+
+            return;
+          }
+        }
+      //}
+
       log.info("sql:"+sql);
       ResultSet rs = stat.executeQuery(sql);
 
@@ -793,7 +1097,8 @@ public void setNavpoint() throws Exception {
       //}
       rs.close();
       conn.close();
-        
+
+      //default random, if database not populated
       if (thisLocation == null) {
           log.info("randomLocation");
           chosenNavigationPoint = memory.getKnownNavPoints().get(random.nextInt(memory.getKnownNavPoints().size()));
@@ -816,5 +1121,3 @@ public void setNavpoint() throws Exception {
   }
 
 }
-
-
