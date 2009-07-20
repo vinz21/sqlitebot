@@ -163,6 +163,7 @@ sqlite> select * from obs;
 
 When the bot is 'hit' (receives a BOT_DAMAGED message), the hit message stays in memory for a while causing the bot to focus on reacting by turning for seconds longer than is necessary after the event.  To get around this, I tried adding some code to get the bot to only pay attention to hits within a certain narrower time window by keeping track of the hit time/gametime and subsequent requests.
 
+= [Bot2] =
 
 
 
