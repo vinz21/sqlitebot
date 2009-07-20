@@ -18,6 +18,7 @@ To have the bot record/insert records for a given map, it should just be setting
 
 I'm a bit confused about whether I should use the unreal int id or the 'memory.KnownNavPoints' int id for recording - the memory.KnownNavPoints seem to keep their mapping reference to the unreal int id's between reboots and are easier to work with than the unreal int id's which 'skip' numbers and are more 'difficult' for processing.  In the end I ended up recording the unreal int id to the table and am using a hash on startup to provide a mapping back to the KnownNavPoints.  I think I'd like to just switch to using the KnownNavPoints as this is the usual frame of reference from within Pogamut scripting if that wont cause problems down the line.
 
+{{{
 ////////////////////////////////////////////
 //Hash code example
 
@@ -51,9 +52,11 @@ I'm a bit confused about whether I should use the unreal int id or the 'memory.K
          chosenNavigationPoint = memory.getKnownNavPoints().get(i);
          
 ////////////////////////////////////////////    
+}}}
 
 Anyway, the new table navpoint has the following schema and sample records for map_level=DM-1on1-Crash:
 
+{{{
 CREATE TABLE navpoint (
 row_id integer PRIMARY KEY,
 row_entry_date text,
@@ -73,11 +76,13 @@ sqlite> select * from navpoint where from_navpoint_id = 183;
 40|2009-07-18 20:29:10|DM-1on1-Crash|183|214|1
 41|2009-07-18 20:29:10|DM-1on1-Crash|183|215|1
 44|2009-07-18 20:29:26|DM-1on1-Crash|183|216|1
+}}}
 
 At this point, the 'visibility' column is defaulted to 1(=visible) and I might remove it unless it comes in handy for holding some other associative types.
 
 The following sql statement can be used to generate a listing of navpoints with the 'most' visibility to other navpoints to 'least' visible.  This is a bit deceiving as currently a bot could be in very isolated 'treasure room' with lots of goodies but with no visibility to the rest of the map.  I'll probably add a navpoint filter using the unreal id string for only navpoints containing 'PathNode' to get a better/truer idea of the overall map visibility.
 
+{{{
 SELECT from_navpoint_id, COUNT(*)
     FROM navpoint
     GROUP BY from_navpoint_id
@@ -91,6 +96,7 @@ SELECT from_navpoint_id, COUNT(*)
 141|51
 140|50
 ...
+}}}
 
 The sqlite database which includes the navpoint visibility mapping for the 'Crash' level can be downloaded from http://sqlitebot.googlecode.com/files/sample.db 
 
