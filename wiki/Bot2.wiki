@@ -1,5 +1,7 @@
 #summary bot experiment using navpoint visibility logging
 
+<wiki:toc max_depth="6">
+
 Hi all,
 
 Thanks for the earlier tips regarding better function to use regarding the bot visibility.  Wanted to report my progress as it might be of help or interest to others.
@@ -100,7 +102,7 @@ SELECT from_navpoint_id, COUNT(*)
 
 The sqlite database which includes the navpoint visibility mapping for the 'Crash' level can be downloaded from http://sqlitebot.googlecode.com/files/sample.db 
 
-#Next steps
+= Next steps = 
 
 Will still plan to use the above record information to tell a bot where it could 'hide' from the current players position(also adding programming to help it navigate *away* from an enemy towards a hiding spot) or running an initial sql query like above to create a visibility 'index' which could be initially run/pushed into a hash for later reference and use by the bot in knowing where a good 'hiding' spot or 'action' spot might be.
 
