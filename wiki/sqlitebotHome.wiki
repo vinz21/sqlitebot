@@ -1,5 +1,7 @@
 #summary sqliteBot homepage
 
+see also [DevelopmentIdeas]
+
 <wiki:toc max_depth="6">
 
 = Introduction =
