@@ -28,6 +28,7 @@
   # bot grab player dropped weapons(if needed)
   # pickup timing/memory
   # bot hearing, turn toward player action(not random noises)
+  # team/squad based communication/coordination/tactics/behaviors
 
 = questions = 
 
