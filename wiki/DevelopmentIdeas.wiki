@@ -9,7 +9,7 @@
 
 = next = 
 
-  # bot mirror state? adapt skill/accuracy ?  if i stop shooting/moving will bot?  will bot lose interest or toy with lower skill/interest?  people like playing people of similar skill level
+  # bot mirror state? adapt skill/accuracy ?  if I stop shooting/moving will bot?  will bot lose interest or toy with lower skill/interest?  people like playing people of similar skill level
   # bot handle multiple states ? pursue + health, combat + health, etc
   # shadow - hold attack if from behind until close sure-kill range
   # have bot randomly stop, circle stop, random fire, random high traffic point fire/lob
