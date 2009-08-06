@@ -4,7 +4,7 @@
 
 = currently working on =
 
-  #using AStar pathing successfully(provided Pogamut core code is buggy) and altering pathing to remove navpoints which are within enemy view/rotation(or predicted pathing view/rotation) for evasive or flanking behaviors
+  # using AStar pathing successfully(provided Pogamut core code is buggy) and altering pathing to remove navpoints which are within enemy view/rotation(or predicted pathing view/rotation) for evasive or flanking behaviors
     # disengage combat, hide - choose hidden point that is further from enemy location than current with path not intersecting enemy current visible point
 
 = next = 
