@@ -1,1 +1,36 @@
 #summary Development ideas for sqlitebot
+
+<wiki:toc max_depth="6">
+
+= currently working on =
+
+  #using AStar pathing successfully(provided Pogamut core code is buggy) and altering pathing to remove navpoints which are within enemy view/rotation(or predicted pathing view/rotation) for evasive or flanking behaviors
+    # disengage combat, hide - choose hidden point that is further from enemy location than current with path not intersecting enemy current visible point
+
+= next = 
+
+  # bot mirror state? adapt skill/accuracy ?  if i stop shooting/moving will bot?  will bot lose interest or toy with lower skill/interest?  people like playing people of similar skill level
+  # bot handle multiple states ? pursue + health, combat + health, etc
+  # shadow - hold attack if from behind until close sure-kill range
+  # have bot randomly stop, circle stop, random fire, random high traffic point fire/lob
+  # flee/lead enemy around corner into projectile fire tactic?
+  # lob projectiles over/around/off objects for kills
+  # bot shouldn't always constantly charge or be vulnerable from predictable tactics
+  # add human noise/imperfection to pathing and target locations, handle collision?
+    # create navpoint locations and offset tolerances for 'off' pathing
+    # serpentine pathing?
+  # navpoint visibility/rotation lookup table - type of navpoint for strategic planning, navpoint locations to determine density/visibility/optimal room location/rotation of navpoints as room/hall/circuit relations
+    # calculate current fov visibility from current rotation
+  # enemy threat level based on kill table?  switch target hard/easy based on proximity, facing and status of engagement?
+    # player kills per minute(kpm) weighting? player favorite locations,etc based on logging earlier gameplay
+    # keep enemy focus on closest player or players of most/least threat(depending on tactics)
+  # subfunctions to command bot to rotate to precise rotation, move forward,back,left,right some amount
+  # bot grab player dropped weapons(if needed)
+  # pickup timing/memory
+  # bot hearing, turn toward player action(not random noises)
+
+= questions = 
+
+  # is there a bot line of sight distance?
+  # game speed effects on logic, AI?
+  # set gamebot infinite time for AI testing on map?
