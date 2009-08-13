@@ -10,7 +10,7 @@ Many gaming AI's utilize behavioral decision trees, few incorporate locational/s
 
 This is an open source project which is trying to utilize a [http://sqlite.org sqlite] database to store gaming bot location and situational awareness to help better adapt gaming AI(Artificial Intelligence) and behaviors for games.
 
-The project is starting utilizing the [http://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php Pogamut] Java/NetBeans based project code.
+The project is starting utilizing the [http://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php Pogamut] Java/NetBeans based project code.  This bot was also selected as a finalist in the [http://www.botprize.org/teams.html 2009 botprize contest] with finals being held in September 2009.
 
 My(jeremy.cothran@gmail.com) development background is more with Perl so I'll be learning some Java and NetBeans as I go.  I've played with Unrealscript (similar to Java) in the past and familiar with some of the Unreal Tournament 2004 bot functions but will be learning more about that also as I go.
 
