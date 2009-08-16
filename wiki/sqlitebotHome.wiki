@@ -106,9 +106,9 @@ For notes on using [http://code.google.com/p/sqlitebot/source/browse/#svn/trunk 
 
 = Links = 
 
-http://delicious.com/giraclarc/pogamut
-
-http://delicious.com/giraclarc/bots
+http://delicious.com/giraclarc/pogamut <br/>
+http://delicious.com/giraclarc/bots <br/>
+http://aigamedev.com
 
 ----
 
@@ -174,7 +174,7 @@ When the bot is 'hit' (receives a BOT_DAMAGED message), the hit message stays in
 
 = additional links = 
 
-http://aigamedev.com
+
 
 
   
