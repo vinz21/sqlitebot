@@ -172,6 +172,9 @@ When the bot is 'hit' (receives a BOT_DAMAGED message), the hit message stays in
 
 [Bot2]
 
+= additional links = 
+
+http://aigamedev.com
 
 
   
