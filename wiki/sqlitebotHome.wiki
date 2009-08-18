@@ -110,7 +110,11 @@ For notes on using [http://code.google.com/p/sqlitebot/source/browse/#svn/trunk 
 
 http://delicious.com/giraclarc/pogamut <br/>
 http://delicious.com/giraclarc/bots <br/>
-http://aigamedev.com
+http://aigamedev.com <br/>
+
+Mario AI<br/>
+http://julian.togelius.com/mariocompetition2009/ <br/>
+http://ice-gic.ieee-cesoc.org/
 
 ----
 
@@ -174,7 +178,7 @@ When the bot is 'hit' (receives a BOT_DAMAGED message), the hit message stays in
 
 [Bot2]
 
-= additional links = 
+
 
 
 
