@@ -9,11 +9,11 @@ youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
 from http://www.botprize.org/
 
-_The 2009 BotPrize Contest has been decided!
+_The 2009 BotPrize Contest has been decided!_
 
-None of the bots was able to fool enough judges to take the major prize. But all the bots fooled at least one of the judges.
+_None of the bots was able to fool enough judges to take the major prize. But all the bots fooled at least one of the judges._
 
-The most human-like bot was sqlitebot by Jeremy Cothran. The joint runners up were anubot from Chris Pelling and ICE-2009 from the team from Ritsumeikan Univerisity, Japan. Jeremy and Chris are both new entrants, and the ICE team were also runners up in 2008._
+_The most human-like bot was sqlitebot by Jeremy Cothran. The joint runners up were anubot from Chris Pelling and ICE-2009 from the team from Ritsumeikan Univerisity, Japan. Jeremy and Chris are both new entrants, and the ICE team were also runners up in 2008._
 
 My thanks to all those organizing and participating in the botprize 2009 contest.  I really appreciate the infrastructure, work and ideas of those contributing.
 
