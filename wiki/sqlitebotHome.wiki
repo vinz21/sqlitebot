@@ -17,7 +17,7 @@ _The most human-like bot was sqlitebot by Jeremy Cothran. The joint runners up w
 
 My thanks to all those organizing and participating in the botprize 2009 contest.  I really appreciate the infrastructure, work and ideas of those contributing.
 
-So what's next?  I'm sure there are lots of ideas on how to better improve the bots, but how to do that more systematically in a more tools/framework environment?  What open source AI tools/frameworks(including or in addition to the Gamebot/Pogamut) could the community develop/utilize to better automatically generate/debug/tune code from behavior/planner schema and more easily mix and match bot intelligence/behavioral features?  How do AI projects more effectively build on existing base knowledge towards more novel behaviors,features and combinations?
+*So what's next?*  I'm sure there are lots of ideas on how to better improve the bots, but how to do that more systematically in a more *tools/framework* environment?  What *open source* AI tools/frameworks(including or in addition to the Gamebot/Pogamut) could the community develop/utilize to better automatically generate/debug/tune code from behavior/planner schema and more easily mix and match bot intelligence/behavioral features?  How do AI projects more effectively build on existing base knowledge towards more novel behaviors,features and combinations?
 
 An approach that comes to mind is working with UML diagrams as a general model abstraction which helps inform/populate underlying toolsets.  Not sure what the AI parallel approaches are in this regard.
 
