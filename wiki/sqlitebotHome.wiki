@@ -25,7 +25,7 @@ So more questions than answers here - if folks have links or ideas I can list th
 ----
 *Interested in some UT2004 bot AI cage match action?*  email me(jeremy.cothran@gmail.com) your Pogamut based bot AI .jar file (including launch file) with bot skill level set at level 4 and I can run a best out of 3 deathmatch on level 'Crash' or some other level to be discussed.  Video results and discussion posted to youtube.  see [http://code.google.com/p/botmatch/ botmatch ]
 ----
-=Table of Contents =
+*Table of Contents*
 <wiki:toc max_depth="6">
 
 = Introduction =
