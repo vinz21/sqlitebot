@@ -4,7 +4,25 @@ see also [DevelopmentIdeas]
 
 online presentation http://docs.google.com/present/view?id=dg2bz3n6_51dh2xbpcj <br/>
 youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
+----
+*Update September 9, 2009*
 
+from http://www.botprize.org/
+
+_The 2009 BotPrize Contest has been decided!
+
+None of the bots was able to fool enough judges to take the major prize. But all the bots fooled at least one of the judges.
+
+The most human-like bot was sqlitebot by Jeremy Cothran. The joint runners up were anubot from Chris Pelling and ICE-2009 from the team from Ritsumeikan Univerisity, Japan. Jeremy and Chris are both new entrants, and the ICE team were also runners up in 2008._
+
+My thanks to all those organizing and participating in the botprize 2009 contest.  I really appreciate the infrastructure, work and ideas of those contributing.
+
+So what's next?  I'm sure there are lots of ideas on how to better improve the bots, but how to do that more systematically in a more tools/framework environment?  What open source AI tools/frameworks(including or in addition to the Gamebot/Pogamut) could the community develop/utilize to better automatically generate/debug/tune code from behavior/planner schema and more easily mix and match bot intelligence/behavioral features?  How do AI projects more effectively build on existing base knowledge towards more novel behaviors,features and combinations?
+
+An approach that comes to mind is working with UML diagrams as a general model abstraction which helps inform/populate underlying toolsets.  Not sure what the AI parallel approaches are in this regard.
+
+So more questions than answers here - if folks have links or ideas I can list them on this wiki for consideration. 
+----
 *Interested in some UT2004 bot AI cage match action?*  email me(jeremy.cothran@gmail.com) your Pogamut based bot AI .jar file (including launch file) with bot skill level set at level 4 and I can run a best out of 3 deathmatch on level 'Crash' or some other level to be discussed.  Video results and discussion posted to youtube.  see [http://code.google.com/p/botmatch/ botmatch ]
 
 <wiki:toc max_depth="6">
