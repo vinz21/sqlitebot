@@ -131,10 +131,32 @@ For notes on using [http://code.google.com/p/sqlitebot/source/browse/#svn/trunk 
 http://delicious.com/giraclarc/pogamut <br/>
 http://delicious.com/giraclarc/bots <br/>
 http://aigamedev.com <br/>
+AI Sandbox http://aigamedev.com/open/tutorials/hard-earned-insights
 
 Mario AI<br/>
 http://julian.togelius.com/mariocompetition2009/ <br/>
 http://ice-gic.ieee-cesoc.org/
+
+http://en.wikipedia.org/wiki/Robocode
+
+http://www.introversion.co.uk/defcon/bots/
+http://www.galcon.com/
+
+RTS<br/>
+http://springrts.com/<br/>
+http://www.boswars.org/<br/>
+http://wargus.sourceforge.net/<br/>
+
+== Industry tools ==
+
+http://www.xaitment.com <br/>
+http://www.spirops.com <br/>
+http://www.pathengine.com <br/>
+http://www.ekione.com <br/>
+http://www.havok.com <br/>
+
+Game SDK's <br/>
+F.E.A.R.
 
 ----
 
