@@ -22,7 +22,7 @@ My thanks to all those organizing and participating in the botprize 2009 contest
 
 An approach that comes to mind is working with UML diagrams as a general model abstraction which helps inform/populate underlying toolsets.  Not sure what the AI parallel approaches are in this regard.
 
-So more questions than answers here - if folks have links or ideas I can list them on this wiki for consideration. 
+So more questions than answers here - if folks have links or ideas I can list them on this wiki for consideration.  I've started a partial list [http://code.google.com/p/sqlitebot/wiki/sqlitebotHome#Links here]
 ----
 *Interested in some UT2004 bot AI cage match action?*  email me(jeremy.cothran@gmail.com) your Pogamut based bot AI .jar file (including launch file) with bot skill level set at level 4 and I can run a best out of 3 deathmatch on level 'Crash' or some other level to be discussed.  Video results and discussion posted to youtube.  see [http://code.google.com/p/botmatch/ botmatch ]
 ----
