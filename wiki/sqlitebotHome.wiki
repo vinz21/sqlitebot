@@ -144,8 +144,9 @@ http://ice-gic.ieee-cesoc.org/
 
 http://en.wikipedia.org/wiki/Robocode
 
-http://www.introversion.co.uk/defcon/bots/
-python API http://www.galcon.com/
+http://www.introversion.co.uk/defcon/bots/ <br/>
+python API http://www.galcon.com/ <br/>
+http://omegatechsys.com/Products/Bots/
 
 RTS<br/>
 http://springrts.com/<br/>
