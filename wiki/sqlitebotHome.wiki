@@ -146,7 +146,7 @@ http://en.wikipedia.org/wiki/Robocode
 
 http://www.introversion.co.uk/defcon/bots/ <br/>
 python API http://www.galcon.com/ <br/>
-http://omegatechsys.com/Products/Bots/http://nerogame.org/
+http://omegatechsys.com/Products/Bots/ <br/>
 http://nerogame.org/
 
 RTS<br/>
