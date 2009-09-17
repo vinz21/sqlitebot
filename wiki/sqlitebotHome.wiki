@@ -22,6 +22,8 @@ My thanks to all those organizing and participating in the botprize 2009 contest
 
 An approach that comes to mind is working with UML diagrams as a general model abstraction which helps inform/populate underlying toolsets.  Not sure what the AI parallel approaches are in this regard.
 
+The approach which I'll probably start next is to refactor the existing code as a [http://aigamedev.com/open/articles/bt-overview/ behavioral tree(BT)] using the pogamut [http://www.cs.bath.ac.uk/~jjb/web/posh.html POSH] subproject to describe the behavior tree in a .lap file.  Will probably also take a look at the earlier [http://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=POSH+GUI POSH GUI project] for displaying the .lap content.  Using the .lap file should help better abstract the AI design from its implementation to serve as a better working example for reuse in a variety of other AI and implementation contexts.
+
 So more questions than answers here - if folks have links or ideas I can list them on this wiki for consideration.  I've started a partial list [http://code.google.com/p/sqlitebot/wiki/sqlitebotHome#Links here]
 
 If folks are interested in the very latest version of the sqlitebot code, contributing to this project or AI/gameplay consulting/contracting, send me an email(jeremy.cothran@gmail.com).
