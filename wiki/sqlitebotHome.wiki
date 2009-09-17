@@ -24,6 +24,8 @@ An approach that comes to mind is working with UML diagrams as a general model a
 
 The approach which I'll probably start next is to refactor the existing code as a [http://aigamedev.com/open/articles/bt-overview/ behavioral tree(BT)] using the pogamut [http://www.cs.bath.ac.uk/~jjb/web/posh.html POSH] subproject to describe the behavior tree in a .lap file.  Will probably also take a look at the earlier [http://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=POSH+GUI POSH GUI project] for displaying the .lap content.  Using the .lap file should help better abstract the AI design from its implementation to serve as a better working example for reuse in a variety of other AI and implementation contexts.
 
+Another development aspect would be to develop a navmesh directly from the map geometry via exporting and analyzing/reprocessing the .t3d file using the unreal editor (see [http://wiki.beyondunreal.com/Legacy:T3D_File link])  Map navmeshes developed automatically from the geometry in this way could also be coded for certain point or area attributes like cover,jumping,etc. 
+
 So more questions than answers here - if folks have links or ideas I can list them on this wiki for consideration.  I've started a partial list [http://code.google.com/p/sqlitebot/wiki/sqlitebotHome#Links here]
 
 If folks are interested in the very latest version of the sqlitebot code, contributing to this project or AI/gameplay consulting/contracting or just a friendly word/comment, send me an email(jeremy.cothran@gmail.com).  I have also setup a [http://groups.google.com/group/sqlitebot google group discussion list] and [http://twitter.com/sqlitebot twitter feed].
