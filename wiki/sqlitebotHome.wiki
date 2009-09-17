@@ -157,6 +157,10 @@ http://springrts.com/<br/>
 http://www.boswars.org/<br/>
 http://wargus.sourceforge.net/<br/>
 
+== AI Life ==
+
+http://nobleape.com
+
 == Industry tools ==
 
 http://www.xaitment.com <br/>
