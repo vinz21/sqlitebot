@@ -1,4 +1,4 @@
-#summary map generator for UT2004
+#summary Danger Room - map generator for UT2004
 
 http://sqlitebot.googlecode.com/files/Out3Big.jpg
 
@@ -7,17 +7,26 @@ http://sqlitebot.googlecode.com/files/Out3Big.jpg
 ----
 = Intro =
 
-In developing bot AI for Unreal Tournament 2004(UT2004), the need for the bots to better strategically/tactically understand is important.  Towards that goal, I've created an initial simple [perl script] which utilizes a [config.ini file] to generate a random room configuration of varying intersecting lights,walls and pickups.
+In developing bot AI for Unreal Tournament 2004(UT2004), the need for the bots to better strategically/tactically understand is important.  Towards that goal, I've created an initial simple [perl script] which utilizes a [config.ini file] to generate a random room configuration of varying intersecting lights,walls and pickups(aka a 'Danger Room' ala X-Men :).
 
 The above map image(DM-Out3Big.ut2) for instance of a large generated map(shown in [http://en.wikipedia.org/wiki/UnrealEd UnrealEd], the Unreal editing tool included with UT2004) is 8,000x24,000 UU(Unreal Units) in size.
 
+== Notes ==
+
+  *A Windows-based version of perl for running the script can be found at [http://www.activestate.com/activeperl/ ActivePerl]
+  * The script generates a .t3d ASCII readable text file, which will need to be imported into UnrealEd and saved as a .ut2 map for play
+  * The script is an initial version and uses a memory hash for preventing overlaps between the geometry,pickups,etc.  This results in memory being soaked up from your system for the hash, so if the script dies it is probably because it ran out of system memory.  I'll fix this in a later version to buffer objects using just a distance calculation between objects.
+  * The map as displayed in UnrealEd top-down view is 180 degrees opposite(positive y goes down the screen)
+
 = Sample maps =
 
+== DM-Out3Big.ut2 ==
 Download [http://sqlitebot.googlecode.com/files/DM-Out3Big.ut2 DM-Out3Big.ut2]
 
 This is the big map (8,000x24,000 UU size) shown in the page top image.  It does not have any pathnodes included for bot play.
 
 ----
+== DM-Out3.ut2 ==
 
 Download [http://sqlitebot.googlecode.com/files/DM-Out3.ut2 DM-Out3.ut2]
 
@@ -26,6 +35,7 @@ This is a smaller map (4,000x8,000 UU size) shown in the below image.  It does i
 http://sqlitebot.googlecode.com/files/Out3.jpg
 
 ----
+== DM-Out3Disconnect.ut2 ==
 
 Download [http://sqlitebot.googlecode.com/files/DM-Out3Disconnect.ut2 DM-Out3Disconnect.ut2]
 
