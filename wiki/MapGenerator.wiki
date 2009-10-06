@@ -1,5 +1,7 @@
 #summary map generator
 
+http://sqlitebot.googlecode.com/files/Out3Big.jpg
+
 <wiki:toc max_depth="6">
 
 = Intro =
