@@ -33,4 +33,66 @@ This is a smaller map (4,000x8,000 UU size) shown in the below image.  It includ
 
 http://sqlitebot.googlecode.com/files/Out3Disconnect.jpg
 
+= Sample config.ini file =
+
+{{{
+map_name=DM-Out1.t3d
+map_type=xDeathmatch
+
+#small room x=4000,y=8000,z=512
+#large map x=8000,y=24000,z=512
+map_size_x=8000
+map_size_y=24000
+map_size_z=512
+
+#default = 600000, lower for more, higher for less
+light_density=300000
+
+#################################
+#walls
+
+#default = 400000, lower for more, higher for less
+#800000 better number for insuring bot paths connect(more open area) with gridded pathnodes
+wall_density=400000
+
+#clear buffer area at bottom and top of map
+end_buffer=200
+
+wall_width=100
+wall_rand_length=300
+wall_min_length=300
+wall_rand_height=100
+wall_min_height=128
+
+#buffer area around each wall
+wall_buffer=30
+
+##################################
+#textures
+
+vault_texture=ArboreaTerrain.ground.flr02ar
+
+wall_texture_1=AbaddonArchitecture.Base.bas01go
+wall_texture_2=ArboreaTerrain.ground.moss02ar
+wall_texture_3=ArboreaTerrain.ground.Sand01ARb
+wall_texture_4=ArboreaTerrain.Miscellaneous.tree08ar
+
+##################################
+#pathing
+
+#path_option=true for gridded pathnodes(if bots will be using map), false for none
+path_option=false
+pathnode_grid_distance=600
+
+###
+
+#player_start_max will override player_start_density
+player_start_max=6
+#default = 9,000,000, lower for more, higher for less
+player_start_density=9000000
+
+#below array is type,count
+pickup_list=RocketLauncher 3 RocketAmmoPickup 4 FlakCannon 3 FlakAmmoPickup 4 LinkGun 3 LinkAmmoPickup 4 SniperRifle 3 SniperAmmoPickup 4 Minigun 3 MinigunAmmoPickup 4 NewHealthCharger 6 MiniHealthPack 10
+}}}
+
 = Further Development =
