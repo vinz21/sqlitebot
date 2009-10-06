@@ -13,14 +13,22 @@ The above image(DM-Out3Big.ut2) for instance of a large generated map(shown in [
 
 = Sample maps =
 
-Download DM-Out3Big.ut2
+Download [http://sqlitebot.googlecode.com/files/DM-Out3Big.ut2 DM-Out3Big.ut2]
 
 This is the big map (8,000x24,000 UU size) shown in the page top image.  It does not have any pathnodes included for bot play.
 
 ----
 
-DM-Out3.ut2
+Download [http://sqlitebot.googlecode.com/files/DM-Out3.ut2 DM-Out3.ut2]
 
 This is a smaller map (4,000x8,000 UU size) shown in the below image.  It does include a grid of bot pathnodes for bot play.
 
 http://sqlitebot.googlecode.com/files/Out3.jpg
+
+----
+
+Download [http://sqlitebot.googlecode.com/files/DM-Out3Disconnect.ut2 DM-Out3Disconnect.ut2]
+
+This is a smaller map (4,000x8,000 UU size) shown in the below image.  It include more walls which break the gridded pathnodes into disjoint areas.
+
+http://sqlitebot.googlecode.com/files/Out3Disconnect.jpg
