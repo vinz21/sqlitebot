@@ -1,6 +1,6 @@
 #summary Danger Room - map generator for UT2004
 
-see also sqlitebotHome
+see also [http://code.google.com/p/sqlitebot/wiki/sqlitebotHome sqlitebotHome]
 
 <wiki:video url="http://www.youtube.com/watch?v=yrIhBlWYqoU"/>
 
