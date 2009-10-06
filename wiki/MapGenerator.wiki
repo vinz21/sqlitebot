@@ -36,7 +36,7 @@ http://sqlitebot.googlecode.com/files/Out3Disconnect.jpg
 = Sample config.ini file =
 
 {{{
-map_name=DM-Out1.t3d
+map_name=DM-Out3Big.t3d
 map_type=xDeathmatch
 
 #small room x=4000,y=8000,z=512
