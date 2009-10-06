@@ -13,7 +13,7 @@ In developing bot AI for Unreal Tournament 2004(UT2004), the need for the bots t
 
 Having the ability to automatically generate these simpler/flat maps provides several things
 
-  * a measure of control for repeating AI experiments across a variety of similarly generated maps/scenarios(so the AI/design is testable in a variety of similarly-featured but not exactly the same maps)
+  * a measure of control for repeating AI experiments across a variety of similarly generated maps/scenarios(so the AI/design is testable and tuned in a variety of similarly-featured but not exactly the same maps - not overly optimized to one particular map/setting)
   * further opportunity to automatically create pathnode/waypoint attribute markups(visibility,cover,areas,etc) or other map feature analysis which benefits the AI
   * further opportunity for controlled gameplay/AI analysis, feature extraction and replication(auto-generation of game content with similar themes but controlled variation)
 
