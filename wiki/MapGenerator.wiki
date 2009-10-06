@@ -20,7 +20,7 @@ The above map image(DM-Out3Big.ut2) for instance of a large generated map(shown 
 
 = Sample maps =
 
-== DM-!Out3Big.ut2 ==
+== DM-Out3Big.ut2 ==
 Download [http://sqlitebot.googlecode.com/files/DM-Out3Big.ut2 DM-Out3Big.ut2]
 
 This is the big map (8,000x24,000 UU size) shown in the page top image.  It does not have any pathnodes included for bot play.
@@ -108,3 +108,9 @@ pickup_list=RocketLauncher 3 RocketAmmoPickup 4 FlakCannon 3 FlakAmmoPickup 4 Li
 }}}
 
 = Further Development =
+
+  * better pathnode analysis and placement.  Analyze map for areas which should be connected with the minimal or most useful number of pathnodes
+  * gameplay/AI movement/event logging via sqlite relational database(RDB) with results such as map hotspots,etc displayed as a secondary map or overlay image
+    * map feature extraction/rating for further auto-generation of maps with similar features
+  * additional map shapes,objects,textures - area grouping of textures,lighting
+  * integration of map pathnode generation with AI strategic/tactical attributes such as visibility,cover,area,etc - stored within RDB schema
