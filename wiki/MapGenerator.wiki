@@ -22,7 +22,7 @@ The config file allows for a simple gridded pathnode pass on the map for bots to
 
   *A Windows-based version of perl for running the script can be found at [http://www.activestate.com/activeperl/ ActivePerl]
   * The script generates a [http://wiki.beyondunreal.com/Legacy:T3D_File .t3d] ASCII readable text file, which will need to be imported into !UnrealEd and saved as a .ut2 map for play
-  * The script is an initial version and uses a memory hash for preventing overlaps between the geometry,pickups,etc.  This results in memory being soaked up from your system for the hash, so if the script dies it is probably because it ran out of system memory.  I'll fix this in a later version to buffer objects using just a distance calculation between objects.
+  * The script is an initial version and uses a memory hash for preventing overlaps between the geometry,pickups,etc.  This results in memory being soaked up from your system for the hash, so if the script dies for a larger map it is probably because it ran out of system memory.  I'll fix this in a later version to buffer objects using just a distance calculation between objects.
   * The map as displayed in !UnrealEd top-down view is 180 degrees opposite(positive y goes down the screen)
 
 = Sample maps =
