@@ -35,12 +35,14 @@ http://sqlitebot.googlecode.com/files/Out3Disconnect.jpg
 
 = Sample config.ini file =
 
+The config.ini file currently supports the following map parameters.  Note only the listed pickup types are currently supported, can include more as requested or see the code
+
 {{{
 map_name=DM-Out3Big.t3d
 map_type=xDeathmatch
 
-#small room x=4000,y=8000,z=512
-#large map x=8000,y=24000,z=512
+#small x=4000,y=8000,z=512
+#large x=8000,y=24000,z=512
 map_size_x=8000
 map_size_y=24000
 map_size_z=512
