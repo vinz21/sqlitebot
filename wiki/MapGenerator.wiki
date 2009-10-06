@@ -15,7 +15,7 @@ The above map image(DM-Out3Big.ut2) for instance of a large generated map(shown 
 
 == Notes ==
 
-  Download Source(zip) x
+  Download Source(zip) x <br/>
   Source http://code.google.com/p/sqlitebot/source/browse/trunk/mapgen
 
   *A Windows-based version of perl for running the script can be found at [http://www.activestate.com/activeperl/ ActivePerl]
