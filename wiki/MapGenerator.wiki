@@ -9,7 +9,7 @@ http://sqlitebot.googlecode.com/files/Out3Big.jpg
 ----
 = Intro =
 
-In developing bot AI for Unreal Tournament 2004(UT2004), the need for the bots to better strategically/tactically understand is important.  Towards that goal, I've created an initial simple [http://code.google.com/p/sqlitebot/source/browse/trunk/mapgen/ut_mapgen.pl perl script] which utilizes a [http://code.google.com/p/sqlitebot/source/browse/trunk/mapgen/config.ini config.ini file] to generate a random room configuration of varying intersecting lights,walls and pickups(aka a '*Danger Room*' ala X-Men :).
+In developing bot AI for Unreal Tournament 2004(UT2004), the need for the bots to better strategically/tactically understand the map and related pathnodes/waypoints is important.  Towards that goal, I've created an initial simple [http://code.google.com/p/sqlitebot/source/browse/trunk/mapgen/ut_mapgen.pl perl script] which utilizes a [http://code.google.com/p/sqlitebot/source/browse/trunk/mapgen/config.ini config.ini file] to generate a random room configuration of varying intersecting lights,walls and pickups(aka a '*Danger Room*' ala X-Men :).
 
 The above map image(DM-!Out3Big.ut2) for instance of a large generated map(shown in [http://en.wikipedia.org/wiki/UnrealEd UnrealEd], the Unreal editing tool included with UT2004) is 8,000x24,000 UU(Unreal Units) in size.
 
