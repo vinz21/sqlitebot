@@ -113,4 +113,4 @@ pickup_list=RocketLauncher 3 RocketAmmoPickup 4 FlakCannon 3 FlakAmmoPickup 4 Li
   * gameplay/AI movement/event logging via sqlite relational database(RDB) with results such as map hotspots,etc displayed as a secondary map or overlay image
     * map feature extraction/rating for further auto-generation of maps with similar features
   * additional map shapes,objects,textures - area grouping of textures,lighting
-  * integration of map pathnode generation with AI strategic/tactical attributes such as visibility,cover,area,etc - stored within RDB schema
+  * integration of map/pathnode generation with AI strategic/tactical attributes(visibility,cover,area,etc) generation - stored within RDB schema
