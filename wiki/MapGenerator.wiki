@@ -8,3 +8,9 @@ http://sqlitebot.googlecode.com/files/Out3Big.jpg
 = Intro =
 
 In developing bot AI for Unreal Tournament 2004(UT2004), the need for the bots to better strategically/tactically understand is important.  Towards that goal, I've created an initial simple [perl script] which utilizes a [config.ini file] to generate a random room configuration of varying intersecting lights,walls and pickups.
+
+The above image(DM-Out3Big.ut2) for instance of a large generated map(shown in UnrealEd, the Unreal editing tool) is 8,000x24,000 UU(Unreal Units) in size.
+
+= Sample maps =
+
+DM-Out3Big.ut2
