@@ -20,7 +20,7 @@ The above map image(DM-Out3Big.ut2) for instance of a large generated map(shown 
 
 = Sample maps =
 
-== DM-Out3Big.ut2 ==
+== DM-!Out3Big.ut2 ==
 Download [http://sqlitebot.googlecode.com/files/DM-Out3Big.ut2 DM-Out3Big.ut2]
 
 This is the big map (8,000x24,000 UU size) shown in the page top image.  It does not have any pathnodes included for bot play.
