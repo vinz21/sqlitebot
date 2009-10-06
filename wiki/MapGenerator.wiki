@@ -1,1 +1,7 @@
 #summary map generator
+
+<wiki:toc max_depth="6">
+
+= Intro =
+
+In developing bot AI for Unreal Tournament 2004(UT2004), the need for the bots to better strategically/tactically understand is important.  Towards that goal, I've created an initial simple [perl script] which utilizes a [config.ini file] to generate a random room configuration of varying intersecting lights,walls and pickups.
