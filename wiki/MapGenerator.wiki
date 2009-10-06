@@ -32,3 +32,5 @@ Download [http://sqlitebot.googlecode.com/files/DM-Out3Disconnect.ut2 DM-Out3Dis
 This is a smaller map (4,000x8,000 UU size) shown in the below image.  It include more walls which break the gridded pathnodes into disjoint areas.  A more interesting map for human players with the additional walls, but difficult for bots to currently path/navigate.
 
 http://sqlitebot.googlecode.com/files/Out3Disconnect.jpg
+
+= Further Development =
