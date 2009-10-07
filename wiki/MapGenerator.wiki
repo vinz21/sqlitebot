@@ -125,6 +125,7 @@ pickup_list=RocketLauncher 3 RocketAmmoPickup 4 FlakCannon 3 FlakAmmoPickup 4 Li
 = Further Development =
 
   * better pathnode analysis and placement.  Analyze map for areas which should be connected with the minimal or most useful number of pathnodes
+    * would like to utilize [http://code.google.com/p/recastnavigation/ recast/detour] tool for this but struggling with documentation/examples on incorporating the tool into a command-line workflow
   * integration of map/pathnode generation with AI strategic/tactical attributes(visibility,cover,area,etc) generation - stored within RDB schema
   * gameplay/AI movement/event logging via sqlite relational database(RDB) with results such as map hotspots,etc displayed as a secondary map or overlay image
     * map feature extraction/rating for further auto-generation of maps with similar features
