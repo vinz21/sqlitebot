@@ -21,7 +21,7 @@ Having the ability to automatically generate these simpler/flat maps provides se
 
 The above map image(DM-!Out3Big.ut2) for instance of a large generated map(shown in [http://en.wikipedia.org/wiki/UnrealEd UnrealEd], the Unreal editing tool included with UT2004) is 8,000x24,000 UU(Unreal Units) in size.
 
-The config file allows for a simple gridded pathnode pass on the map for bots to utilize for pathing/navigation.  Better pathnode generation for bot AI utilization will be the focus of ongoing efforts.
+The config file allows for a simple gridded pathnode pass(set path_option=true in config.ini) on the map for bots to utilize for pathing/navigation.  Better pathnode generation for bot AI utilization will be the focus of ongoing efforts.
 
 == Notes ==
 
