@@ -58,9 +58,6 @@ With those changes I could get AStar to work, but still not sure why the above f
 
 The simple test map I created is downloadable at http://sqlitebot.googlecode.com/files/DM-Test1.ut2
 
-Thanks,
-Jeremy
-
 ----
 
 *Follow-up* Did some more experimenting later where I only allowed the AStar pathing algorithm to evaluate once instead of multiple times and this seemed to prevent the bot from getting off-tracking or confusing/losing its closest/goal node and allowing the AStar chosen path to complete successfully.  Not sure of the trade-off in keeping the bot from constantly re-evaluating its goal path, but the closest fix I could get.
