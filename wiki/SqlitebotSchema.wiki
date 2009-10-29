@@ -1,7 +1,5 @@
 #summary database schema
 
-
-
 = Diagram =
 
 http://sqlitebot.googlecode.com/files/sqlitebot_schema.jpg
@@ -26,3 +24,32 @@ Some table may also include a *gametime* which is the internal game/tick time an
   * status - bot status code (attacking,defending,etc)
 
 ----
+== unit_to_squad ==
+
+----
+== squad ==
+
+----
+== command ==
+
+
+----
+== system_settings ==
+  * manual_spawn - 0=bots respawn automatically, 1=bots are manually spawned by outside process
+  * behavior(this column will probably be renamed 'gametype') - what gametype are we playing
+
+----
+== last_seen ==
+  * location - last sighted location(x,y,z) of target 
+  * unit_name - name of target
+  * bot - 0=target is not a bot, 1=target is a bot
+  * report_by_unit - name of reporting unit
+  * report_by_squad - name of reporting unit associated squad
+
+----
+== kill_score ==
+  * killed_name - name of bot/player killed
+  * killed_location - location(x,y,z) of bot/player killed
+  * damage_type(not shown) - type of damage involved with kill
+  * killer_name - name of killing bot/player (if available)
+  * killer_location - location(x,y,z) of bot/player (if available)
