@@ -6,6 +6,9 @@
 
 http://sqlitebot.googlecode.com/files/sqlitebot_schema.jpg
 
+*Table of Contents*
+<wiki:toc max_depth="6">
+
 = Schema description =
 
 All tables use a simple autocount *row_id* as the primary key reference.  Each row also has a *row_entry_date* which is the system/real-world time.
