@@ -1,5 +1,9 @@
 #summary database schema
 
+
+
+= Diagram =
+
 http://sqlitebot.googlecode.com/files/sqlitebot_schema.jpg
 
 = Schema description =
@@ -9,13 +13,13 @@ All tables use a simple autocount *row_id* as the primary key reference.  Each r
 Some table may also include a *gametime* which is the internal game/tick time and *map_level* which is the identifier for the current map being played.
 
 ----
-bot
+== bot ==
   * name - name of the bot
   * skill - skill level of the bot (1-7)
   * skin - character skin for the bot
   * team - team number for bot (0-255)
   * available - is bot available for play? 0=no(in play), 1=yes
-  * location - current bot location(x,y,z) on map (updated every 3 seconds)
+  * location - current bot location(x,y,z) on map (updated every 3 seconds by refreshInfo function)
   * status - bot status code (attacking,defending,etc)
 
 ----
