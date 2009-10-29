@@ -1,1 +1,3 @@
 #summary database schema
+
+http://sqlitebot.googlecode.com/files/sqlitebot_schema.jpg
