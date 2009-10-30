@@ -14,7 +14,7 @@ All latest materials/code can be downloaded with this [zip file]
   * db schema (high/squad goals, low/unit_type behaviors)
 
 = Low-level game interface/implementation =
-  * UT2004&lt;-&gt;Gamebot API&lt;-&gt;Pogamut java message objects/scripts
+  * {{{UT2004<->Gamebot API<->Pogamut java message objects/scripts}}}
   * Source files (Main.java, etc)
 
 = High-level analysis/action/visualization = 
