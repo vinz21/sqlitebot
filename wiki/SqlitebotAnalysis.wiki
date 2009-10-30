@@ -12,4 +12,7 @@ The left map is the starting map showing walls and the legend where
 The right map shows the locations where the player was 'last seen' during gameplay, the influence of the health pickups can be seen
 
 http://sqlitebot.googlecode.com/files/map.png http://sqlitebot.googlecode.com/files/last_seen.png
+
+The end goal would be to use these time-accumulated statistics to influence the bot pathing goals or detect and address possible event or frequency related strategies associated with these observed patterns.
+
 ----
