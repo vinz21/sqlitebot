@@ -16,8 +16,9 @@ All latest materials/code can be downloaded with this [zip file]
 = Low-level game interface/implementation =
   * {{{UT2004<->Gamebot API<->Pogamut java message objects/scripts}}}
   * Source files (Main.java, etc)
+    * database functions dB..., refreshInfo
 
 = High-level analysis/action/visualization = 
   * planner(to be developed based on gametype)
-  * perl,etc/AI script for generating unit/squads,commands,behaviors
-  * offline gameplay/AI viz/analysis
+  * perl,etc/AI scripting for generating unit/squads,commands,behaviors
+  * offline gameplay/AI visualization/analysis
