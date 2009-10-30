@@ -25,13 +25,30 @@ Some table may also include a *gametime* which is the internal game/tick time an
 
 ----
 == unit_to_squad ==
+  * unit_name - name of unit(bot/player)
+  * bot - 0=unit is not a bot, 1=unit is a bot
+  * squad_name - name of squad bot belongs to 
 
 ----
 == squad ==
+  * squad_name - name of squad
+  * type - strategic/tactical type of squad(like infantry,armor,etc)
+  * skin - character skin associated with this squad
+  * player_assoc - player this squad is associatiod with
 
 ----
 == command ==
-
+  * gametime_given - gametime the command was issued
+  * gametime_expire - gametime after which the command is no longer in action
+  * status - 0=active, 1=inactive
+  * given_by - name handle for whom the command was given by
+  * level - level of command, currently level 2=higher/strategic level(hunt/follow), level 1=reactive level(no_engage)
+  * priority - priority order of command where lower real number equals higher priority
+  * squad_name - name of squad command applies to
+  * command - various high and low level commands (hunt,follow,no_engage,etc)
+  * target - target name the command references (bot/player name)
+  * location - (x,y,z) location the command references
+  * radius - UU(unreal unit) radius for successfully reaching target/location point
 
 ----
 == system_settings ==
