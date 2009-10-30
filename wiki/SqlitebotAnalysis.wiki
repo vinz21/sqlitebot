@@ -3,7 +3,7 @@
 Currently the MapGenerator script provides the map content(walls,pickups,etc) via text files to the gnuplot graphing tool which is combined with observed data from the [SqlitebotSchema database schema] output as text files and also given as input to gnuplot.
 
 ----
-Sample gnuplot generated analysis maps
+= Map analysis =
 
 The below map shows the original map('sourwood') in the Unreal Editor with the following spotlight legend
   * green=player start
@@ -13,7 +13,7 @@ The below map shows the original map('sourwood') in the Unreal Editor with the f
 
 http://sqlitebot.googlecode.com/files/sourwood.jpg
 
-For analysis:
+Sample gnuplot generated analysis maps
 
 The left map is the starting map showing walls and the legend where
   * green plus=player start
