@@ -4,6 +4,9 @@ Feedback loop based on gameplay stats,etc - thinking at systems level, sharing s
 
 All latest materials/code can be downloaded with this [zip file]
 
+*Table of Contents*
+<wiki:toc max_depth="6">
+
 = Content/behavior generation/support/management = 
   * MapGenerator - simple perl script to generate simple random map layouts for testing AI
     * also supports capture of map info to database or visualization tools as map is generated
