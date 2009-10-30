@@ -2,7 +2,7 @@
 
 Sample gnuplot generated analysis maps
 
-The left map is empty showing walls and the legend where
+The left map is the starting map showing walls and the legend where
   * green plus=player start
   * blue cross=health
   * purple square=weapon
