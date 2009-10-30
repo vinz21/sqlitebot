@@ -1,3 +1,9 @@
 #summary planner or analysis scripts
 
+Sample gnuplot generated analysis maps
+
+The left map is empty showing walls and the legend where green plus=player start,blue cross=health,purple square=weapon,red cross=ammo
+
+The right map shows the locations where the player was 'last seen' during gameplay, the influence of the health pickups can be seen
+
 http://sqlitebot.googlecode.com/files/map.png http://sqlitebot.googlecode.com/files/last_seen.png
