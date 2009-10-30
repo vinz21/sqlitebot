@@ -13,6 +13,6 @@ The right map shows the locations where the player was 'last seen' during gamepl
 
 http://sqlitebot.googlecode.com/files/map.png http://sqlitebot.googlecode.com/files/last_seen.png
 
-The end goal would be to use these time-accumulated statistics to influence the bot pathing goals or detect and address possible event or frequency related strategies associated with these observed patterns.
+The end goal would be to use these time-accumulated statistics to influence the bot pathing goals(for example, weighting highly trafficed pathnodes more heavily for selection) or detect and address possible event or frequency related strategies associated with these observed patterns.
 
 ----
