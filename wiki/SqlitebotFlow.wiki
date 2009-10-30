@@ -1,6 +1,6 @@
 #summary general / iterative development flow
 
-see also SqlitebotHome
+see also SqliteBotHome
 
 Feedback loop based on gameplay stats,etc - thinking at systems level, sharing schema/behavior design
 
