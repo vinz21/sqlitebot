@@ -98,3 +98,5 @@ halt
 hunt(player/last_seen), target
 follow(bot), target
 }}}
+
+= Further tables =
