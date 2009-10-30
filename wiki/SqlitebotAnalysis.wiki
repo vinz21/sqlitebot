@@ -1,2 +1,5 @@
 #summary planner or analysis scripts
 
+http://sqlitebot.googlecode.com/files/map.png
+
+http://sqlitebot.googlecode.com/files/last_seen.png
