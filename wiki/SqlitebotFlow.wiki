@@ -24,6 +24,7 @@ All latest materials/code can be downloaded with this [zip file]
     * database functions dB..., refreshInfo
 
 = High-level analysis/action/visualization = 
+  * SqlitebotAnalysis - online and offline analysis and visualization of collected game data
   * planner(to be developed based on gametype)
   * perl,etc/AI scripting for generating unit/squads,commands,behaviors
   * offline gameplay/AI visualization/analysis
