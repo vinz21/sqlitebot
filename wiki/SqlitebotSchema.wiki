@@ -70,3 +70,31 @@ Some table may also include a *gametime* which is the internal game/tick time an
   * damage_type(not shown) - type of damage involved with kill
   * killer_name - name of killing bot/player (if available)
   * killer_location - location(x,y,z) of bot/player (if available)
+----
+= Sample table rows = 
+
+{{{
+insert into command(status,level,priority,squad_name,command,target) values (0,2,1.0,'gonzo.roam','hunt','jerr');
+insert into command(status,level,priority,squad_name,command) values (0,1,1.0,'gonzo','engage');
+insert into command(status,level,priority,squad_name,command) values (0,1,1.0,'gonzo','pursue');
+
+update command set status=0 where row_id=5;
+
+sqlite> select * from command;
+2||||0|||2|1.0|gonzo|hunt|jerr||
+4||||0|||1|1.0|gonzo.roam|no_engage|||
+5||||0|||2|1.0|gonzo.roam|hunt|jerr||
+6||||0|||1|1.0|gonzo|no_engage|||
+7||||0|||2|0.5|gonzo|follow|ralph||
+}}}
+
+{{{
+==level 1
+engage, no_engage
+pursue, no_pursue
+
+==level 2
+halt
+hunt(player/last_seen), target
+follow(bot), target
+}}}
