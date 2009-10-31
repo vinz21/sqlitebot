@@ -8,6 +8,8 @@ youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
 = Easy install (jar file) =
 
+Last Update: October 31, 2009
+
 Just download/unzip this [http://sqlitebot.googlecode.com/files/sqlitebot.zip zip file] to  'c:\sqlitebot' folder(includes necessary .jar and \lib) and run the following command. *The sqlite dbpath uses an absolute path of c:\sqlitebot\sample.db' so the sample.db file must live there for the script to work.* Bot shows up using bot launcher as 'Player_Jeremy' for now.
 
 {{{java.exe -jar c:\sqlitebot\sqlitebot.jar}}}
