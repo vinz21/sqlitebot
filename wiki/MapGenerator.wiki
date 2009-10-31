@@ -140,6 +140,7 @@ Updated the generator script with the following changes
   * background lighting levels set to 'white' from random color
   * player starts and pickups are spotlight color-coded as shown in the map below for a better visual guide when observing AI behavior
   * default ceiling height raised to 3000 UU to allow panning while spectating without losing sound,etc from leaving the world area
+  * script supplies wall line segment and pickup points in separate output text files(ut_wall.txt,ut_health.txt,etc) for reuse in gnuplot graphing/analysis,etc later
 
 The below map shows the original map('sourwood') in the Unreal Editor with the following spotlight legend
   * green=player start
