@@ -137,7 +137,7 @@ pickup_list=RocketLauncher 3 RocketAmmoPickup 4 FlakCannon 3 FlakAmmoPickup 4 Li
 
 Updated the generator script with the following changes
   * pathnodes are 'split' when attempting to drop on a wall object to help increase chance of successful pathing
-  * background lighting levels set to 'white' from multi-color
+  * background lighting levels set to 'white' from random color
   * player starts and pickups are spotlight color-coded as shown in the map below for a better visual guide when observing AI behavior
   * default ceiling height raised to 3000 UU to allow panning while spectating without losing sound,etc from leaving the world area
 
