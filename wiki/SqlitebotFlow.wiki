@@ -20,7 +20,7 @@ Feedback loop based on gameplay stats,etc - thinking at systems level, sharing s
 = Low-level game interface/implementation =
   * {{{UT2004<->Gamebot API<->Pogamut java message objects/scripts}}}
   * Source files (Main.java, etc)
-    * database functions dB..., refreshInfo
+    * database functions db..., refreshInfo
 
 = High-level analysis/action/visualization = 
   * SqlitebotAnalysis - online and offline analysis and visualization of collected game data
