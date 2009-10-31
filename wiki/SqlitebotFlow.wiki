@@ -4,7 +4,6 @@ see also [sqlitebotHome]
 
 Feedback loop based on gameplay stats,etc - thinking at systems level, sharing schema/behavior design
 
-All latest materials/code can be downloaded with this [zip file]
 
 *Table of Contents*
 <wiki:toc max_depth="6">
