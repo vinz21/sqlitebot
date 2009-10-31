@@ -50,6 +50,10 @@ Some table may also include a *gametime* which is the internal game/tick time an
   * location - (x,y,z) location the command references
   * radius - UU(unreal unit) radius for successfully reaching target/location point
 
+The command table and supporting script should support a hierarchy of goals via the 'level' of command with several commands at the same level possibly having an order or 'priority' of consideration or execution.
+
+{{{game->strategy/analysis->command->squad->unit}}}
+
 ----
 == system_settings ==
   * manual_spawn - 0=bots respawn automatically, 1=bots are manually spawned by outside process
