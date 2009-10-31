@@ -132,6 +132,7 @@ pickup_list=RocketLauncher 3 RocketAmmoPickup 4 FlakCannon 3 FlakAmmoPickup 4 Li
   * additional map shapes,objects,textures - area grouping of textures,lighting
   * additional map variation beyond simple/flat vault room in regards to terrain deformations or x/y curving map sections
 
+----
 = Update October 31, 2009 =
 
 Updated the generator script with the following changes
