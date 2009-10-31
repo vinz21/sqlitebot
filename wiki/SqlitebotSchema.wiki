@@ -100,3 +100,26 @@ follow(bot), target
 }}}
 
 = Further tables =
+
+squad_type table
+  * number/type unit list/lead unit(pass pathing info)
+  * ai director queries/assigns units into squads
+
+formation_table (formations as percentage scale vs absolute number)
+  * attack,travel,defend
+  * maintain squad formation/cohesion,spread(distance between units)
+
+----
+= Maintenance = 
+
+The following tables can have their row information removed after gameplay/analysis as needed
+  * last_seen
+  * kill_score
+
+Remove all rows from a table like the following sql command
+
+{{{delete from kill_score;}}
+
+The 'vacuum' command can also be run periodically to compact the database size
+
+{{{vacuum;}}}
