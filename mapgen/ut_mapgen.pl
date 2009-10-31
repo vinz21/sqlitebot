@@ -270,9 +270,11 @@ my $light_z = 250+$random_z;
 my $random_y = int(rand($y-200)+200); 
 my $random_x = int(rand($x-200)+200);
 
-my $light_saturation = int(rand(255));
+#my $light_saturation = int(rand(255));
+my $light_saturation = 255;
 my $light_brightness = int(rand(64));
-my $light_hue = int(rand(255));
+#my $light_hue = int(rand(255));
+my $light_hue = 0;
 my $light_radius = int(rand(64));
 
 
@@ -300,6 +302,9 @@ END_OF_LIST
 
 my $wall_declare;
 my $wall_max = int($x*$y/$wall_density);
+
+#create wall file for reference by gnuplot,etc
+open(FILE_WALL,">ut_walls.txt");
 
 for(my $i = 2; $i < $wall_max; $i++) {
 
@@ -338,7 +343,7 @@ for (my $x_mark=$x_loc-$buffer; $x_mark<$x_loc+$x_wall+$buffer; $x_mark++) {
 }
 
 my $texture_type = '';
-my $texture_choice = int(rand(4));
+my $texture_choice = int(rand(4)+1);
 if ($texture_choice == 1) { $texture_type = $wall_texture_1;}
 if ($texture_choice == 2) { $texture_type = $wall_texture_2;}
 if ($texture_choice == 3) { $texture_type = $wall_texture_3;}
@@ -423,7 +428,20 @@ Begin Actor Class=Brush Name=Brush$i
 End Actor
 END_OF_LIST
 
+######
+#this describes the 4 line segments of the wall
+my $x_loc_2 = $x_loc+$x_wall;
+my $y_loc_2 = $y_loc+$y_wall;
+
+#reverse x so plots like unrealed version of map display
+$x_loc = $x-$x_loc;
+$x_loc_2 = $x-$x_loc_2;
+
+print FILE_WALL "$x_loc $y_loc\n$x_loc $y_loc_2\n\n$x_loc $y_loc_2\n$x_loc_2 $y_loc_2\n\n$x_loc_2 $y_loc_2\n$x_loc_2 $y_loc\n\n$x_loc_2 $y_loc\n$x_loc $y_loc\n\n";
+
 } 
+
+close(FILE_WALL);
 
 ###############################################################
 # Paths
@@ -448,22 +466,33 @@ my $node_distance=$pathnode_grid_distance;
 for (my $x_mark=200; $x_mark<$x-200; $x_mark+=$node_distance) {
   for (my $y_mark=200; $y_mark<$y-200; $y_mark+=$node_distance) {
 
-if ($HoH{$x_mark}{$y_mark} == 1) { next; }
-else { $i++; }
+if ($HoH{$x_mark}{$y_mark} == 1) {
 
-$path_declare .= <<"END_OF_LIST";
-Begin Actor Class=PathNode Name=PathNode$i
-      Base=LevelInfo'myLevel.LevelInfo0'
-      Level=LevelInfo'myLevel.LevelInfo0'
-      Region=(Zone=LevelInfo'myLevel.LevelInfo0',ZoneNumber=1)
-      Tag="PathNode"
-      PhysicsVolume=DefaultPhysicsVolume'myLevel.DefaultPhysicsVolume0'
-      Location=(X=$x_mark,Y=$y_mark,Z=50.000000)
-End Actor
-END_OF_LIST
-
+  #saturate grid square with 4 sub-pathnodes
+  if ($HoH{$x_mark+$node_distance/4}{$y_mark+$node_distance/4} != 1) {
+    $i++;
+    $path_declare .= drop_pathnode($i,$x_mark+$node_distance/4,$y_mark+$node_distance/4);
   }
+  if ($HoH{$x_mark-$node_distance/4}{$y_mark+$node_distance/4} != 1) {
+    $i++;
+    $path_declare .= drop_pathnode($i,$x_mark-$node_distance/4,$y_mark+$node_distance/4);
+  }
+  if ($HoH{$x_mark+$node_distance/4}{$y_mark-$node_distance/4} != 1) {
+    $i++;
+    $path_declare .= drop_pathnode($i,$x_mark+$node_distance/4,$y_mark-$node_distance/4);
+  }
+  if ($HoH{$x_mark-$node_distance/4}{$y_mark-$node_distance/4} != 1) {
+    $i++;
+    $path_declare .= drop_pathnode($i,$x_mark-$node_distance/4,$y_mark-$node_distance/4);
+  }
+
 }
+else {
+  $i++;
+  $path_declare .= drop_pathnode($i,$x_mark,$y_mark);
+} #else
+} #for y
+} #for x
 } #if ($path_option eq 'true')
 
 ###############################################################
@@ -491,6 +520,7 @@ Begin Actor Class=PlayerStart Name=PlayerStart1
     PhysicsVolume=DefaultPhysicsVolume'myLevel.DefaultPhysicsVolume0'
     Location=(X=$x_start_1,Y=$y_start_1,Z=50.000000)
 End Actor
+
 END_OF_LIST
 =cut
 
@@ -509,6 +539,12 @@ push(@array_pickups,$player_start_max);
 #push(@array_pickups,$player_start_buffer);
 
 #print "pickup_list:".@array_pickups."\n";
+
+#create wall file for reference by gnuplot,etc
+open(FILE_START,">ut_player_start.txt");
+open(FILE_HEALTH,">ut_health.txt");
+open(FILE_WEAPON,">ut_weapon.txt");
+open(FILE_AMMO,">ut_ammo.txt");
 
 while (@array_pickups) {
 
@@ -542,12 +578,15 @@ for (my $x_mark=$random_x-$pickup_buffer; $x_mark<$random_x+$pickup_buffer; $x_m
   }
 }
 
+#reverse x for unreal edit display
+my $reverse_random_x = $x-$random_x;
 
 my $class = '';
 my $type = '';
 my $base = '';
 my $z_pickup = 0;
 my $static_mesh = '';
+my $light_hue = '';
 
 if ($pickup_type eq 'RocketLauncher' || $pickup_type eq 'FlakCannon' || $pickup_type eq 'LinkGun' || $pickup_type eq 'SniperRifle' || $pickup_type eq 'Minigun') {
   $class = 'NewWeaponBase';
@@ -555,13 +594,15 @@ if ($pickup_type eq 'RocketLauncher' || $pickup_type eq 'FlakCannon' || $pickup_
   $base = 'myPickupBase';
   $z_pickup = 4;
   $static_mesh = "StaticMeshInstance=StaticMeshInstance'myLevel.StaticMeshInstance$i";
+  $light_hue = 29;  
 }
 
-if ($pickup_type eq 'RocketAmmoPickup' || $pickup_type eq 'FlakAmmoPickup' || $pickup_type eq 'LinkAmmoPickup' || $pickup_type eq 'SniperAmmoPickup' || $pickup_type eq 'MinigunAmmoPickup') {
+if ($pickup_type eq 'AssaultAmmoPickup' || $pickup_type eq 'RocketAmmoPickup' || $pickup_type eq 'FlakAmmoPickup' || $pickup_type eq 'LinkAmmoPickup' || $pickup_type eq 'SniperAmmoPickup' || $pickup_type eq 'MinigunAmmoPickup') {
   $class = $pickup_type;
   $type = "";
   $base = 'myMarker';
   $z_pickup = 20;
+  $light_hue = 244;
 }
 
 if ($pickup_type eq 'NewHealthCharger') {
@@ -570,6 +611,7 @@ if ($pickup_type eq 'NewHealthCharger') {
   $base = 'myPickupBase';
   $z_pickup = 4;
   $static_mesh = "StaticMeshInstance=StaticMeshInstance'myLevel.StaticMeshInstance$i";  
+  $light_hue = 148;  
 }
 
 if ($pickup_type eq 'MiniHealthPack') {
@@ -577,11 +619,13 @@ if ($pickup_type eq 'MiniHealthPack') {
   $type = "";
   $base = 'myMarker';
   $z_pickup = 20;
+  $light_hue = 148;  
 }
 
 if ($pickup_type eq 'PlayerStart') {
   $class = $pickup_type;
   $z_pickup = 50;
+  $light_hue = 90;
 }
 
 #####
@@ -596,7 +640,22 @@ Begin Actor Class=$class Name=$class$pickup_count
     PhysicsVolume=DefaultPhysicsVolume'myLevel.DefaultPhysicsVolume0'
     Location=(X=$random_x,Y=$random_y,Z=$z_pickup)
 End Actor
+Begin Actor Class=Spotlight Name=Spotlight$pickup_count
+    LightHue=$light_hue
+    LightSaturation=16
+    LightBrightness=255.000000
+    LightCone=16
+    LightRadius=32.000000    
+    Level=LevelInfo'myLevel.LevelInfo0'
+    Region=(Zone=LevelInfo'myLevel.LevelInfo0',ZoneNumber=1)
+    Tag="Spotlight"
+    PhysicsVolume=DefaultPhysicsVolume'myLevel.DefaultPhysicsVolume0'
+    Location=(X=$random_x,Y=$random_y,Z=422)
+    Rotation=(Pitch=-16160,Yaw=16564)
+End Actor
 END_OF_LIST
+
+print FILE_START "$reverse_random_x $random_y\n";
 
 }
 else {
@@ -621,13 +680,34 @@ Begin Actor Class=InventorySpot Name=InventorySpot$i
     PhysicsVolume=DefaultPhysicsVolume'myLevel.DefaultPhysicsVolume0'
     Location=(X=$random_x,Y=$random_y,Z=50)
 End Actor
+Begin Actor Class=Spotlight Name=Spotlight$pickup_count
+    LightHue=$light_hue
+    LightSaturation=16
+    LightBrightness=255.000000
+    LightCone=16
+    LightRadius=32.000000
+    Level=LevelInfo'myLevel.LevelInfo0'
+    Region=(Zone=LevelInfo'myLevel.LevelInfo0',ZoneNumber=1)
+    Tag="Spotlight"
+    PhysicsVolume=DefaultPhysicsVolume'myLevel.DefaultPhysicsVolume0'
+    Location=(X=$random_x,Y=$random_y,Z=422)
+    Rotation=(Pitch=-16160,Yaw=16564)
+End Actor
 END_OF_LIST
+
+if ($pickup_type =~ /Health/) { print FILE_HEALTH "$reverse_random_x $random_y\n"; }
+if ($class eq 'NewWeaponBase') { print FILE_WEAPON "$reverse_random_x $random_y\n"; }
+if ($pickup_type =~ /Ammo/) { print FILE_AMMO "$reverse_random_x $random_y\n"; }
 
 }
 
 } #while ($pickup_count > 0)
 } #while (@array_pickups)
 
+close(FILE_START);
+close(FILE_HEALTH);
+close(FILE_WEAPON);
+close(FILE_AMMO);
 
 ###############################################################
 # Finish
@@ -655,3 +735,23 @@ close FILE_OUT;
 exit 0;
 
 
+###############################################################
+#Subroutines
+
+sub drop_pathnode {
+
+my ($i,$x,$y) = @_;
+
+my $ret_string = <<"END_OF_LIST";
+Begin Actor Class=PathNode Name=PathNode$i
+      Base=LevelInfo'myLevel.LevelInfo0'
+      Level=LevelInfo'myLevel.LevelInfo0'
+      Region=(Zone=LevelInfo'myLevel.LevelInfo0',ZoneNumber=1)
+      Tag="PathNode"
+      PhysicsVolume=DefaultPhysicsVolume'myLevel.DefaultPhysicsVolume0'
+      Location=(X=$x,Y=$y,Z=50.000000)
+End Actor
+END_OF_LIST
+
+return $ret_string;
+}
