@@ -1,0 +1,25 @@
+
+set terminal png
+set output "/home/buoy/temp/bot_kills.png"
+#640x480 default
+#set size 0.9375,0.625
+set size 0.5,1
+set title "all"
+#set autoscale x
+#set autoscale y
+set xrange[0:8000]
+set yrange[0:16000]
+set data style points
+#set grid
+set nokey
+
+plot 'bot_kills.txt' using 1:2 t 'walls' with points lt 1, \
+'ut_walls.txt' using 1:2 t 'walls' with lines lt 1, \
+'ut_player_start.txt' using 1:2 t 'player_start' with points lt 2, \
+'ut_health.txt' using 1:2 t 'health' with points lt 3, \
+'ut_weapon.txt' using 1:2 t 'weapon' with points lt 4, \
+'ut_ammo.txt' using 1:2 t 'ammo' with points lt 6
+
+#show grid
+reset
+quit
