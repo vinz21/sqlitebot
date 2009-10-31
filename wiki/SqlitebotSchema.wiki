@@ -122,6 +122,10 @@ formation_table (formations as percentage scale vs absolute number)
   * attack,travel,defend
   * maintain squad formation/cohesion,spread(distance between units)
 
+= Miscellaneous =
+
+Note the older initial tables obs and navpoint are not currently utilized.  obs functionality has been replaced by last_seen and navpoint will be redone with additional functionality in the future.
+
 ----
 = Maintenance = 
 
