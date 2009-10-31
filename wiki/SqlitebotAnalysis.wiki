@@ -1,5 +1,8 @@
 #summary planner or analysis scripts
 
+*Table of Contents*
+<wiki:toc max_depth="6">
+
 Currently the MapGenerator script provides the map content(walls,pickups,etc) via text files to the [http://www.gnuplot.info gnuplot] graphing tool([http://gnuplot.sourceforge.net/demo_4.5 demo gallery],[http://www.tatsuromatsuoka.com/gnuplot/Eng/winbin/ windows download]) which is combined with observed data from the [SqlitebotSchema database schema] output as text files and also given as input to gnuplot.
 
 [http://code.google.com/p/sqlitebot/source/browse/trunk/mapgen/ut_mapgen.pl MapGenerator script] [http://code.google.com/p/sqlitebot/source/browse/trunk/scripts/bot_graph.pl Database query script] [http://code.google.com/p/sqlitebot/source/browse/trunk/scripts/gnuplot.script Gnuplot graph script]
