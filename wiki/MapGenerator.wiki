@@ -131,4 +131,20 @@ pickup_list=RocketLauncher 3 RocketAmmoPickup 4 FlakCannon 3 FlakAmmoPickup 4 Li
     * map feature extraction/rating for further auto-generation of maps with similar features
   * additional map shapes,objects,textures - area grouping of textures,lighting
   * additional map variation beyond simple/flat vault room in regards to terrain deformations or x/y curving map sections
+
+= Update October 31, 2009 =
+
+Updated the generator script with the following changes
+  * pathnodes are 'split' when attempting to drop on a wall object to help increase chance of successful pathing
+  * background lighting levels set to 'white' from multi-color
+  * player starts and pickups are spotlight color-coded as shown in the map below for a better visual guide when observing AI behavior
+  * default ceiling height raised to 3000 UU to allow panning while spectating without losing sound,etc from leaving the world area
+
+The below map shows the original map('sourwood') in the Unreal Editor with the following spotlight legend
+  * green=player start
+  * blue=health
+  * orange=weapon
+  * red=ammo
+
+http://sqlitebot.googlecode.com/files/sourwood.jpg
   
