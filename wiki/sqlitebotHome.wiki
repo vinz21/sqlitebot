@@ -6,6 +6,12 @@ document http://docs.google.com/Doc?docid=0AUGdvmaCDgbOZGcyYnozbjZfNTdma2g3cWNnZ
 powerpoint http://docs.google.com/present/view?id=dg2bz3n6_51dh2xbpcj <br/>
 youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
+= Easy install (jar file) =
+
+Just download/unzip this [http://sqlitebot.googlecode.com/files/sqlitebot.zip zip file] to  'c:\sqlitebot' folder(includes necessary .jar and \lib) and run the following command. *The sqlite dbpath uses an absolute path of c:\sqlitebot\sample.db' so the sample.db file must live there for the script to work.* Bot shows up using bot launcher as 'Player_Jeremy' for now.
+
+{{{java.exe -jar c:\sqlitebot\sqlitebot.jar}}}
+
 ----
 *Update September 9, 2009*
 
@@ -73,12 +79,6 @@ CREATE TABLE obs_type (
 with *location* reflecting the bots map(*map_id*) location when a specified *status* (made a kill, was killed,etc) at a specified time(*row_entry_date*).
 
 Tracking those things initially should allow a bot to begin selecting better and worse map locations for optimal scoring or begin time-based tactics or behaviors relating to location and predicted location of opponents.
-
-= Easy install (jar file) =
-
-Just download/unzip this [http://sqlitebot.googlecode.com/files/sqlitebot.zip zip file] to  'c:\sqlitebot' folder(includes necessary .jar and \lib) and run the following command. *The sqlite dbpath uses an absolute path of c:\sqlitebot\sample.db' so the sample.db file must live there for the script to work.* Bot shows up using bot launcher as 'Player_Jeremy' for now.
-
-{{{java.exe -jar c:\sqlitebot\sqlitebot.jar}}}
 
 = Installing sqlite driver = 
 
