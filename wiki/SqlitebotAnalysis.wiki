@@ -35,3 +35,8 @@ http://sqlitebot.googlecode.com/files/map.png http://sqlitebot.googlecode.com/fi
 The end goal would be to use these time-accumulated statistics to influence the bot pathing goals(for example, weighting highly trafficed pathnodes more heavily for selection) or detect and address possible event or frequency related strategies associated with these observed patterns.
 
 ----
+= Bot spawn script =
+
+Created the following [http://code.google.com/p/sqlitebot/source/browse/trunk/scripts/spawn.pl perl script] which will run continuously in a command window, trying to spawn bots as available (select count(*) from bot where available=1)
+
+This has the advantage of having greater control of being able to control over where and what types of bots respawn depending on the gametype/gameplay factors.
