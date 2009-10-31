@@ -83,6 +83,7 @@ sqlite> select * from unit_to_squad;
 5||julius|1|gonzo
 6||barry|1|gonzo
 7||john|0|evil
+8||jerry|0|evil
 }}}
 
 {{{
