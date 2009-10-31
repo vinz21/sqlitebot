@@ -185,12 +185,25 @@ http://www.havok.com <br/>
 Things that took me a while to figure out:
 
   * In netbeans, to set the 'main project' to compile/debug/run, right click on the project of interest and choose the 'Set as main project' option
-  * Set your java (and netbeans?) thread priorities in Windows to 'realtime' (and UT2004 to 'low') via the Task Manager - otherwise the bot seems to lag/hang in its environment waiting for the Java to execute.
+  * Set your java, javaw (and netbeans?) thread priorities in Windows to 'realtime' (and UT2004 to 'low') via the Task Manager - otherwise the bot seems to lag/hang in its environment waiting for the Java to execute.
   * When monitoring the bots via Unreal Tournament, press alt-enter for windowed version of game(instead of full screen) and ctrl-esc to move control back to the desktop
   * The format for setting the 'attributes' of the various 'ControlServer commands' listed at [https://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php?page=Gamebots+API+list Gamebot API] is use of the curly brackets, e.g. like below for setting added bots skill level
 {{{addbot {skill 1}{name harry}}}}
   * set the game speed - 'set speed of game' in the UT Server Control' project window to about 1/2 of the default value to better follow along the action and the bot log/thoughts as they happen.
   * netbeans jar tutorial http://www.fsl.cs.sunysb.edu/~dquigley/cse219/index.php?it=netbeans&tt=jar&pf=y
+----
+If you want to modify the Pogamut class code, use the following steps
+  * copy the existing class code to a new class under your project using the same .java filename
+  * make any changes and successfully compile the code
+  * save/exit Pogamut IDE, temporarily rename C:\Program Files\NetBeans 6.5.1\nb6.5\modules\ext\PogamutCore.jar to PogamutCore.jar.zip
+  * in the project folder, copy the newly compiled .class files to a 'zip' folder with the same pathing as the file to be replaced in PogamutCore.jar.zip
+  * in PogamutCore.jar.zip add/replace the existing .class files from the matching folder path to the new .class files.  You may want to backup the earlier .jar file and/or .class files in case there are problems.
+  * rename PogamutCore.jar.zip back to PogamutCore.jar and you should be able to see the new class files in effect
+----
+Running the java thread in the NetBeans IDE consumes much greater CPU resources than running it as a separate .jar thread.  Running the game speed in the IDE at half-speed or lower can bring down the CPU consumption to something more manageable during testing.
+----
+
+
 = botv1 =
 
 For the first version bot (botv1) all I've done is hack the basic pogamut bot [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/Main.java script] to write out its location to a [http://code.google.com/p/sqlitebot/source/browse/trunk/bot1/sample.db sqlite table] when the navpoint path is broken.
