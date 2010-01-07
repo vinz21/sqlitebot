@@ -10,6 +10,18 @@ youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
 *Update* - January 7, 2009 - the starcraft AI scripting doesn't allow individual unit or map location info that I can tell which makes me less interested in that AI competition - seems to be resource build script management oriented.  Questions or suggestions regarding this project or AI competitions in general feel free to post to the google group at http://groups.google.com/group/sqlitebot  If there's a common AI or group AI problem that multiple developers are looking for a solution for in their mod work, then that might help form an interest/focus, but most game AI for now just seems like retreads of the same old solutions(and same poor, memory starved behaviors).  More like a puppet show on a rail/gallery shooter than a truer form of learning AI or AI which makes better use of possible gameplay information over time :)
 
+Developing a general bot API/database for the Unity 3D framework http://forum.unity3d.com/viewtopic.php?t=35592&highlight=sqlitebot might be an interest also for indie/browser-based games.
+
+Have also posted on the following forums to see if any developer interest 
+
+ModDB http://www.moddb.com/forum/thread/sqlitebotsquadsschema-for-ut2004
+
+Epic http://forums.epicgames.com/showthread.php?t=705438&highlight=sqlitebot
+
+Valve TF2 http://forums.steampowered.com/forums/showthread.php?t=1102152
+
+Pogamut https://artemis.ms.mff.cuni.cz/pogamut/tiki-view_forum_thread.php?forumId=6&comments_parentId=789
+
 = Pre-install steps =
 
 You'll need the Gamebot API which is a UT2004 mod which supports game state communication with a separately command-line run Gamebot API process thread.
