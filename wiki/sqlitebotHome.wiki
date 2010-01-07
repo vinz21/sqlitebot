@@ -8,6 +8,12 @@ youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
 *Update* - December 14, 2009 - I've grown *bored* working on this project by myself without much *feedback* - if there are others who are interested in seeing this project continue, find it useful or contributing in some way, let me know by email(jeremy.cothran@gmail.com) or post on the google group http://groups.google.com/group/sqlitebot otherwise I just feel a bit that I'm working in a vacuum and don't feel very motivated to continue the interest or work.  I'll probably take a shot at the StarCraft AI competition next September http://eis.ucsc.edu/StarCraftAICompetition using a sqlite relational database for the AI as well and will probably post some documentation regarding that.
 
+= Pre-install steps =
+
+You'll need the Gamebot API which is a UT2004 mod which supports game state communication with a separately command-line run Gamebot API process thread.
+
+See installation instructions at http://artemis.ms.mff.cuni.cz/pogamut/tiki-index.php , probably the easiest is to run the self-installer listed on that page at http://artemis.ms.mff.cuni.cz/pogamut_files/Pogamut_v2.4.1.exe
+
 = Easy install (jar file) =
 
 Last Update: October 31, 2009
