@@ -8,6 +8,8 @@ youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
 *Update* - December 14, 2009 - I've grown *bored* working on this project by myself without much *feedback* - if there are others who are interested in seeing this project continue, find it useful or contributing in some way, let me know by email(jeremy.cothran@gmail.com) or post on the google group http://groups.google.com/group/sqlitebot otherwise I just feel a bit that I'm working in a vacuum and don't feel very motivated to continue the interest or work.  I'll probably take a shot at the StarCraft AI competition next September http://eis.ucsc.edu/StarCraftAICompetition using a sqlite relational database for the AI as well and will probably post some documentation regarding that.
 
+*Update* - January 7, 2009 - the starcraft AI scripting doesn't allow individual unit or map location info that I can tell which makes me less interested in that AI competition - seems to be resource build script management oriented.  Questions or suggestions regarding this project or AI competitions in general feel free to post to the google group at http://groups.google.com/group/sqlitebot  If there's a common AI or group AI problem that multiple developers are looking for a solution for in their mod work, then that might help form an interest/focus, but most game AI for now just seems like retreads of the same old solutions(and same poor, memory starved behaviors).  More like a puppet show on a rail/gallery shooter than a truer form of learning AI or AI which makes better use of possible gameplay information over time :)
+
 = Pre-install steps =
 
 You'll need the Gamebot API which is a UT2004 mod which supports game state communication with a separately command-line run Gamebot API process thread.
