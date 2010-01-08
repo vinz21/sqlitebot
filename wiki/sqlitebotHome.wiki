@@ -20,7 +20,7 @@ ModDB http://www.moddb.com/forum/thread/sqlitebotsquadsschema-for-ut2004
 
 Epic http://forums.epicgames.com/showthread.php?t=705438&highlight=sqlitebot
 
-Valve TF2 http://forums.steampowered.com/forums/showthread.php?t=1102152
+Valve TF2 http://forums.steampowered.com/forums/showthread.php?t=1102152 http://forums.steampowered.com/forums/showthread.php?t=1102908
 
 Pogamut https://artemis.ms.mff.cuni.cz/pogamut/tiki-view_forum_thread.php?forumId=6&comments_parentId=789
 
