@@ -14,6 +14,8 @@ Developing a general bot API/database for the Unity 3D framework http://forum.un
 
 Have also posted on the following forums to see if any developer interest 
 
+http://forums.aigamedev.com/showthread.php?t=3386 http://forums.aigamedev.com/showthread.php?t=3593
+
 ModDB http://www.moddb.com/forum/thread/sqlitebotsquadsschema-for-ut2004
 
 Epic http://forums.epicgames.com/showthread.php?t=705438&highlight=sqlitebot
