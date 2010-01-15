@@ -193,7 +193,8 @@ http://wargus.sourceforge.net/<br/>
 
 == AI Life ==
 
-http://nobleape.com
+http://nobleape.com <br/>
+http://critterding.sourceforge.net/
 
 == Industry tools ==
 
@@ -205,18 +206,15 @@ http://www.havok.com <br/>
 
 == Games industry, quality of life(or lack thereof) ==
 
-http://www.lostgarden.com/2006/04/joyful-life-of-lapsed-game-developer.html
-
-http://www.gamasutra.com/view/feature/3656/quality_of_life_does_anyone_still_.php
-
-http://makeitbigingames.com/2006/02/five-foundational-steps-to-surviving-as-a-game-developer/
-
-http://makeitbigingames.com/2008/06/working-for-big-publishers/
+http://www.lostgarden.com/2006/04/joyful-life-of-lapsed-game-developer.html <br/>
+http://www.gamasutra.com/view/feature/3656/quality_of_life_does_anyone_still_.php <br/>
+http://makeitbigingames.com/2006/02/five-foundational-steps-to-surviving-as-a-game-developer/ <br/>
+http://makeitbigingames.com/2008/06/working-for-big-publishers/ <br/>
 
 == Miscellaneous ==
 
-http://www.thinkartificial.org/artificial-intelligence/ai-apparent-intelligences/
-
+http://www.thinkartificial.org/artificial-intelligence/ai-apparent-intelligences/ <br/>
+http://www.ai-blog.net/archives/000173.html
 http://www.trianglegameconference.com
 
 ----
