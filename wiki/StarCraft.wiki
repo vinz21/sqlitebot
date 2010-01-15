@@ -1,6 +1,6 @@
 #summary StarCraft AI competition
 
-This is a placeholder wiki page for details regarding bot/strategy development for the StarCraft AI competition detailed at http://eis.ucsc.edu/StarCraftAICompetition
+This is a placeholder wiki page for details regarding bot/strategy development for the [[StarCraft]] AI competition detailed at http://eis.ucsc.edu/StarCraftAICompetition
 
 I got the BWAPI tools and terrain analysis (BWTA) installed without too much issue.  My basic plan at this point is to use a sqlite database as a data 'foundation' to monitor,control and analyze the production and micro-management of units and groups towards game-winning strategies.  More details as I experiment and open to others who want to collaborate or share development,testing or documentation in some way.
 
