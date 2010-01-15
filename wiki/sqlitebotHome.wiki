@@ -203,6 +203,22 @@ http://www.pathengine.com <br/>
 http://www.ekione.com <br/>
 http://www.havok.com <br/>
 
+== Games industry, quality of life(or lack thereof) ==
+
+http://www.lostgarden.com/2006/04/joyful-life-of-lapsed-game-developer.html
+
+http://www.gamasutra.com/view/feature/3656/quality_of_life_does_anyone_still_.php
+
+http://makeitbigingames.com/2006/02/five-foundational-steps-to-surviving-as-a-game-developer/
+
+http://makeitbigingames.com/2008/06/working-for-big-publishers/
+
+== Miscellaneous ==
+
+http://www.thinkartificial.org/artificial-intelligence/ai-apparent-intelligences/
+
+http://www.trianglegameconference.com
+
 ----
 
 = Gotchas, Tips =
