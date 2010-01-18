@@ -171,6 +171,7 @@ http://delicious.com/giraclarc/pogamut <br/>
 http://delicious.com/giraclarc/bots <br/>
 
 http://aigamedev.com <br/>
+http://christophermpark.blogspot.com <br/>
 AI Sandbox http://aigamedev.com/open/tutorials/hard-earned-insights <br/>
 Game SDK's http://aigamedev.com/search/?no_cache=1&tx_ttnews[swords]=sdk <br/>
 http://www.crymod.com/thread.php?threadid=9531
