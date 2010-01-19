@@ -167,11 +167,14 @@ For notes on using [http://code.google.com/p/sqlitebot/source/browse/#svn/trunk 
 
 = Links = 
 
+== delicious ==
 http://delicious.com/giraclarc/pogamut <br/>
 http://delicious.com/giraclarc/bots <br/>
 http://delicious.com/giraclarc/aigamesdev <br/>
 http://delicious.com/giraclarc/ai <br/>
 http://delicious.com/giraclarc/gamesdev <br/>
+
+----
 
 http://aigamedev.com <br/>
 http://christophermpark.blogspot.com <br/>
