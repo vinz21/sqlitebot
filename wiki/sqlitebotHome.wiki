@@ -221,7 +221,7 @@ http://www.thinkartificial.org/artificial-intelligence/ai-apparent-intelligences
 http://www.ai-blog.net/archives/000173.html <br/>
 http://www.trianglegameconference.com
 
-Tim Sweeney(Epic Games, Unreal)
+=== Tim Sweeney(Epic Games, Unreal) ===
 
 Interview
 http://www.gamasutra.com/view/feature/4035/from_the_past_to_the_future_tim_.php
