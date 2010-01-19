@@ -223,14 +223,9 @@ http://www.trianglegameconference.com
 
 === Tim Sweeney(Epic Games, Unreal) ===
 
-Interview
-http://www.gamasutra.com/view/feature/4035/from_the_past_to_the_future_tim_.php
-
-GPU Roadmap
-http://graphics.cs.williams.edu/archive/SweeneyHPG2009/TimHPG2009.pdf
-
-Languages Roadmap
-http://www.st.cs.uni-sb.de/edu/seminare/2005/advanced-fp/docs/sweeny.pdf
+  * Interview http://www.gamasutra.com/view/feature/4035/from_the_past_to_the_future_tim_.php
+  * GPU Roadmap http://graphics.cs.williams.edu/archive/SweeneyHPG2009/TimHPG2009.pdf
+  * Languages Roadmap http://www.st.cs.uni-sb.de/edu/seminare/2005/advanced-fp/docs/sweeny.pdf
 
 ----
 
