@@ -17,3 +17,5 @@ Have posted sqlitebot starcraft version 1.0 at http://sqlitebot.googlecode.com/f
 With the BWAPI toolset/set (unzip files to /bwapi-data/AI folder), feel free to play against this bot(or email me to schedule a few matches) and please post any outcomes,patterns,suggestions,replays,videos at http://groups.google.com/group/sqlitebot .
 
 It's only designed for terran and is a basic marine/medic buildup tactic with the mob following the latest enemy onShow event - I need to work on the scouting more so it will seek an enemy and finish the enemy destruction at hand rather than get distracted by something shiny or go fishing :)
+
+Compiled this under BWSAL_0.9.7, Chaoslauncher BWAPI injector revision 1914 option checked.  I had some crash problems when I had Chaoslauncher earlier 1830 revision checked.
