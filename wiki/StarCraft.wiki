@@ -24,4 +24,5 @@ Compiled this under BWSAL_0.9.7, Chaoslauncher BWAPI injector revision 1914 opti
 
 Update: January 26, 2010
 
+Documentation on my first bot effort at 
 http://code.google.com/p/sqlitebot/wiki/Starcraft1
