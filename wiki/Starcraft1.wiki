@@ -4,6 +4,8 @@ This is a discussion of some [http://code.google.com/p/sqlitebot/source/browse/t
 
 My apologies up front for my poor C++ coding style/indentation - I learned Unix/C(or failed to learn depending on your perspective ;) a long time ago(in a galaxy far,far away) back in university classes and the past several years been more programming with Linux/perl/php(wanting to pick up more python) - so I'm having to grow a familiarity with Microsoft's Visual C++ Express environment and standard(std) libraries as I go.  If anyone wants to suggest a pretty-print utility(or function within the editor I'm unaware of) for the code I can give that a whirl as long as it doesn't muck up the code too much.
 
+If you find these code examples useful, feel free to reuse them, but also please give me some acknowledgement by email or documented within the code.  Also I would be glad to learn, share and incorporate others work into a more robust AI, so email if you have something to contribute in the way of development,testing,documentation,etc.
+
 The easiest way to follow-along with the below discussion is to look at the side-by-side comparison in the code in the diff page below - I'll be referencing line numbers on the right-hand side that differ from the initial example.
 
 Code diff page
