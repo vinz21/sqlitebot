@@ -1,0 +1,3 @@
+#summary discussion of initial starcraft bot effort
+
+http://code.google.com/p/sqlitebot/source/diff?spec=svn250&r=250&format=side&path=/trunk/starcraft/v1.0/BasicAIModule.cpp
