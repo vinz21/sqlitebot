@@ -10,7 +10,7 @@ Code diff page
 http://code.google.com/p/sqlitebot/source/diff?spec=svn250&r=250&format=side&path=/trunk/starcraft/v1.0/BasicAIModule.cpp
 
 <wiki:toc max_depth="6">
-
+----
 = Outline = 
 
 The basics of an initial approach can be broken into the following 4 sections.
@@ -30,7 +30,8 @@ My very first approach started with the default terran vulture(vehicle) build, b
 == onDestroy == 
 
 == checkIdle == 
-
+----
 = Issues =
 
+----
 = Next steps = 
