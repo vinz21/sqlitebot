@@ -101,6 +101,11 @@ line #643-671 this started as a minimal base defense measure - the onUnitShow ba
 
   # Resources management is still flaky - tried using the default BWSAL workerManagement for minerals and gas, but the workers were idle after the mineral field was exhausted.  Workers will also sometimes all go to a depleted gas refinery instead of seeking new resources.  Workers also idle unexpectedly, I think this is related to some timing issues in the build process/planner.
   # Need to work on a scout - currently the AI doesn't actively scout for the enemy and will remain at home base unless slowly drawn by a series of attacks back to the enemy base - so for testing now I'll manually grab a troop and send him to an enemy base to trigger an attack.
+  # Support troops - did a lot of experimenting with medics and science vessels to try and get support troops to move with the group but not get ahead of the line of fire and in the cross-fire or over into enemy lines.  Sometimes the isIdle function did not seem to be working and had problems essentially with either support troops with either lagging or leading the front line of attack
+  # AI pathing - mentioned my requests regarding pathing info to the BWAPI team at http://code.google.com/p/bwapi/issues/detail?id=190  While it should be possible to do an A* or other pathing algorithm on client-side from the map analysis data, it may be easier to reuse the game pathing or someone else's work on this.
+
+
+
 
 
 
