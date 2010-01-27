@@ -123,7 +123,7 @@ The mob has a problem in that it is a singular entity and isn't able to coordina
   # Support troops - did a lot of experimenting with medics and science vessels to try and get support troops to move with the group but not get ahead of the line of fire and in the cross-fire or over into enemy lines.  Sometimes the isIdle function did not seem to be working and had problems essentially with either support troops with either lagging or leading the front line of attack
   # AI pathing - mentioned my requests regarding pathing info to the BWAPI team at http://code.google.com/p/bwapi/issues/detail?id=190  While it should be possible to do an A`*` or other pathing algorithm on client-side from the map analysis data, it may be easier to reuse the game pathing or someone else's work on this.
   # attacking/attacked status - this has been mentioned at the BWAPI thread http://code.google.com/p/bwapi/issues/detail?id=184 , basically would be good to know who is shooting what(coordinating fire) or getting shot by what(coordinating counter-fire or avoidance)
-  #exception cases - in one game, somehow an enemy vulture mine got placed in an impossible to reach area - resulting in the mob massing a target they couldn't get to - so have to handle these strange events as they appear.
+  # exception cases - in one game, somehow an enemy vulture mine got placed in an impossible to reach area - resulting in the mob massing a target they couldn't get to - so have to handle these strange events as they appear.
 
 ----
 = Next steps = 
