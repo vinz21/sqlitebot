@@ -112,6 +112,30 @@ line #643-671 this started as a minimal base defense measure - the onUnitShow ba
 ----
 = Next steps = 
 
+== Group assignment, management ==
+
+What I really need to do next is refactor the existing code with groups in mind - basically to begin with the easy to identify groups are 
+  * worker groups
+  * scout groups(maybe just composed of one individual)
+  * attack/raiding/harrassment groups
+  * defense of bases/resources groups
+
+Each group would have further group attributes like its 
+  * unit composition - an attack group might have a certain ratio of marines/medics/science_vessel/SCV for example
+  * movement/attack/tactic formation
+  * specific functions or behaviors(e.g. hunters vs gatherer routines)
+
+Group routines should be applicable to other groups of the same type - so two raiding parties should use the same code, just in reference to the units in their group locality.  Groups should also have a way of signaling other groups that they need help(such as home base defense) or when a combined group tactic or strength might be more effective(teaming up).
+
+== Database ==
+
+At this point using a sqlite database is more down the road - so the sqlitebot is a bit of a misnomer for this starcraft project at the time being until some of the more basic movement and tactic behaviors are worked out.
+
+In the long run a database could be used during or post-game to help permanently log and share the game events so that map/event/timing locality and outcome analysis can be used for producing a better-informed AI or set of cooperative AI's.
+
+
+ 
+
 ----
 = Links = 
 
