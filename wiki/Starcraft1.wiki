@@ -34,8 +34,8 @@ If I don't reference line numbers below, its because it was something experiment
 The basics of an initial approach can be broken into the following 4 sections.
 
   * Build
-  * onShow
-  * onDestroy
+  * onUnitDestroy
+  * onUnitShow
   * checkIdle
 
 My very first approach started with the default terran vulture(vehicle) build, but vultures don't have any air attack, so I switched to marines - lots and lots of marines.
