@@ -8,6 +8,7 @@ If you find these code examples useful, feel free to reuse them, but also please
 
 I'd like to see what more open-source,open-data,crowd-sourcing,datamining,collaborative approaches such as the [http://en.wikipedia.org/wiki/Netflix_Prize Netflix prize] as applied to game AI can provide both businesses and customers of AI-based products.
 
+----
 The easiest way to follow-along with the below discussion is to look at the side-by-side comparison in the code in the diff page below - I'll be referencing line numbers on the right-hand side that differ from the initial example.
 
 Code diff page
