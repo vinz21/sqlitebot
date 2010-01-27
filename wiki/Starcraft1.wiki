@@ -11,7 +11,7 @@ I'd like to see what more open-source,open-data,crowd-sourcing,datamining,collab
 ----
 To run this code go through the BWAPI install instructions and then the BWSAL additional instructions.  The follow-up issues that I remember running into were
   * when compiling the BWSAL project, there seemed to be missing references to some of the included libraries, add these libraries in the project references to get a successful compile
-  * chaoslauncher BWAPI installer should use version 1914(not 1830)
+  * chaoslauncher BWAPI installer checkbox should use version 1914(not 1830)
   * BWSAL does a default map terrain analysis, so if loading a new map and the game appears to freeze, give it a minute or two to finish map analysis
 
 Remember to change the bwapi.ini file to reference the BasicAIModule.dll and once you've got the included BWSAL example .cpp case working(base/troops get built and that's about it), then you can swap-in and compile my .cpp file and move the BWSAL_0.9.7/BasicAIModule/Release .dll,.lib,.exp files to the bwapi-data/AI folder
