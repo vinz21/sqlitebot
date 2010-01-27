@@ -143,6 +143,8 @@ Each group would have further group attributes like its
 
 Group routines should be applicable to other groups of the same type - so two raiding parties should use the same code, just in reference to the units in their group locality.  Groups should also have a way of signaling other groups that they need help(such as home base defense) or when a combined group tactic or strength might be more effective(teaming up).
 
+The technical implementation for groups will probably be a series of nested arrays or objects where the routines could be referenced and iterated on for members within each group array or object.  Group selection and function calls will probably be triggered by event locality and group or groups within a target distance.
+
 == Database ==
 
 At this point using a sqlite database is more down the road - so the sqlitebot is a bit of a misnomer for this starcraft project at the time being until some of the more basic movement and tactic behaviors are worked out.
