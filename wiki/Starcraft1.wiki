@@ -147,7 +147,7 @@ The technical implementation for groups will probably be a series of nested arra
 
 == Database ==
 
-At this point using a sqlite database is more down the road - so the sqlitebot is a bit of a misnomer for this starcraft project at the time being until some of the more basic movement and tactic behaviors are worked out.
+At this point using a sqlite database is more down the road - so the sqlitebot is a bit of a misnomer for this starcraft project at the time being until some of the more basic group formation, movement and tactic behaviors are worked out.
 
 In the long run a database could be used during or post-game to help permanently log and share the game events so that map/event/timing locality and outcome analysis can be used for producing a better-informed AI or set of cooperative AI's.  Here's a link to my earlier [http://aigamedev.com/open/articles/sqlite-bot/ article] on using a sqlite database with UT2004 bots and a basic [http://code.google.com/p/sqlitebot/wiki/SqlitebotFlow database analysis workflow].
 
