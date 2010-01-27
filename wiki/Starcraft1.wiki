@@ -106,7 +106,7 @@ line #608-642 assign workers to repairs closest to where they are - keeps an arr
 line #643-671 this started as a minimal base defense measure - the onUnitShow basically handles most cases, but sometimes an enemy unit might be already be within a home base area attacking and new units produced would not have received the earlier attack order, so this is just a catch-all forcing all units to attack any visible enemy units.  If the enemy is within the baseRadius, troops have to focus on the enemy threat, if the enemy is located far away, then they attack if idle(not already engaged in a firefight).  This also helps keep troops busy firing and from idling during an enemy base attack. 
 
 ----
-= Issues =
+= Performance & Issues =
 
 The bot generally does well overwhelming the default game AI as long as a mob of about 40-60 troop size is maintained - mainly it gets whittled down at chokepoints like base ramps or picked off one-by-one before a larger group line is established.  Having a science vessel to reveal cloaked units is also critical in some battles.  The initial build is quick enough to survive an initial AI marine rush in most cases.
 
