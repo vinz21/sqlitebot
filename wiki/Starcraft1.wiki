@@ -11,6 +11,8 @@ The easiest way to follow-along with the below discussion is to look at the side
 Code diff page
 http://code.google.com/p/sqlitebot/source/diff?spec=svn250&r=250&format=side&path=/trunk/starcraft/v1.0/BasicAIModule.cpp
 
+If I don't reference line numbers below, its because it was something experimental that didn't work out for now.
+
 <wiki:toc max_depth="6">
 ----
 = Outline = 
@@ -24,8 +26,27 @@ The basics of an initial approach can be broken into the following 4 sections.
 
 My very first approach started with the default terran vulture(vehicle) build, but vultures don't have any air attack, so I switched to marines - lots and lots of marines.
 
+Also I'm testing for now exclusively with terran vs terran matches - later on will consider zerg and protoss strategies, but trying to minimize the complexity of issues to work through for now.
+
+Line 36-43 are global vars, that I reference later.
+
+line #36 enableStart is set to true if you're running the AI from the very beginning of the game and set to false if you're testing the game after the initial build orders are complete.  Otherwise if you restart the game from a saved game midway, the AI will try to rebuild everything again.  There may also be some bugs/side-effects from running/testing this way in regards to how the Arbitrator or other BWSAL code(planning arrays that are populated at game begin) runs with regards to the assumption the game is always run from a clean start.
+
+line #38 countTroop - how many troops do we have?
+
+line #39 attackStrength - some minimum troop level before engaging an attack
+
+line #40 scoutStrength - some minimum troop level before engaging scout(s)
+
+line #42 myBase - pointer to our home command center unit
+
+line #43 baseRadius - a distance radius from the base to help the AI differentiate between attacks on our home base(less than) and attacks in the field(greater than)
 
 == Build == 
+
+The initial build order is critical in quickly setting up the kind of production units needed for the strategies/tactics the AI expects to run.  This build order is for a marine/medic mob/attack/defense tactic.  You can experiment with the build order to see how quickly certain units can be produced with what capabilities - against the default game AI, some basic initial defense is needed to prevent from being overtaken by a possible aggressive initial rush.  The BWSAL building routines do a good job of placing building in a well-spaced spiraling outward fashion, but will unfortunately place some building units on the other side of walls and missile turrets without any tactical defense reference(near chokepoints or towards enemy approaches).
+
+#line 117-118, 144-208
 
 == onShow ==
 
