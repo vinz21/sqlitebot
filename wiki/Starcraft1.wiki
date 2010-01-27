@@ -6,7 +6,7 @@ My apologies up front for my poor C++ coding style/indentation - I learned Unix/
 
 If you find these code examples useful, feel free to reuse them, but also please give me some acknowledgement by email that I might keep a public list of.  Also I would be glad to learn, share and incorporate others work into a more robust AI, so email if you have something to mention in the way of development,testing,documentation,etc.
 
-I'd like to see what more open-source,open-data,crowd-sourcing,datamining,collaborative approaches such as the [http://en.wikipedia.org/wiki/Netflix_Prize Netflix prize] as applied to game AI can provide both businesses and customers of AI-based products.
+I'd like to see what more open-interfaces,open-source,open-data,crowd-sourcing,datamining,collaborative approaches such as the [http://en.wikipedia.org/wiki/Netflix_Prize Netflix prize] as applied to game AI can provide both businesses and customers of AI-based products.
 
 ----
 To run this code go through the BWAPI install instructions and then the BWSAL additional instructions.  The follow-up issues that I remember running into were
