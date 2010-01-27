@@ -28,7 +28,7 @@ My very first approach started with the default terran vulture(vehicle) build, b
 
 Also I'm testing for now exclusively with terran vs terran matches - later on will consider zerg and protoss strategies, but trying to minimize the complexity of issues to work through for now.
 
-Line 36-43 are global vars, that I reference later.
+Line #36-43 are global vars, that I reference later.
 
 line #36 enableStart is set to true if you're running the AI from the very beginning of the game and set to false if you're testing the game after the initial build orders are complete.  Otherwise if you restart the game from a saved game midway, the AI will try to rebuild everything again.  There may also be some bugs/side-effects from running/testing this way in regards to how the Arbitrator or other BWSAL code(planning arrays that are populated at game begin) runs with regards to the assumption the game is always run from a clean start.
 
@@ -44,17 +44,53 @@ line #43 baseRadius - a distance radius from the base to help the AI differentia
 
 == Build == 
 
+line #117-118, 144-208
+
 The initial build order is critical in quickly setting up the kind of production units needed for the strategies/tactics the AI expects to run.  This build order is for a marine/medic mob/attack/defense tactic.  You can experiment with the build order to see how quickly certain units can be produced with what capabilities - against the default game AI, some basic initial defense is needed to prevent from being overtaken by a possible aggressive initial rush.  The BWSAL building routines do a good job of placing building in a well-spaced spiraling outward fashion, but will unfortunately place some building units on the other side of walls and missile turrets without any tactical defense reference(near chokepoints or towards enemy approaches).
 
-#line 117-118, 144-208
+== onFrame ==
 
-== onShow ==
+Not much happening here except for a hook to periodically call checkIdle function
 
-== onDestroy == 
+line #227 commented this out as it seemed the update functions might not be getting called in some cases
+
+line #242-246 commented out the scout function call, set a trigger on this behavior later - the default scout when I tested pulled one of my SCV's and after the scout was killed or finished a circuit of the map bases - the scout routine was finished and no further scouting went on.  Still need a good scout function - particularly for subgroups/areas.
+
+line #278 calls checkIdle function about once a second
+
+== onUnitDestroy == 
+
+#line 291-325 very simple functions to simply rebuild whatever mentioned units or buildings are destroyed
+
+== onUnitShow ==
+
+This is the first event that registers the sight of another unit from the fog of war, so if filtering for enemy units, can start a reaction here.
+
+line #332-356 these are some basic preconditions before attacking, such as
+  * keeping track of the last attack time so that units don't spaz out switching between possible new targets
+  * not attacking distant targets till some minimum troop attackStrength is met
+  * making sure targets are enemies and not self,neutrals,etc
+
+line #360-386 this basically reassigns the unit position=target variable(probably not necessary) and sends ground attack troops directly to the target.  I also tried experimenting with keeping track of the troop unit closest to the target(closestTarget) with the idea that support troops(medics,flyers) should stay behind the front-line of attack, this kind of worked but also failed because the distance function I need is really a ground travel distance and not a bee-line/air distance - so in cases where troops round a corner to an attack the support units would sometimes go backwards away from the front.
+
+line #388-411 special case handling for support troop medics and science vessel
+
+Also on a side-note, when playing the default game AI I had to include the science vessel to counteract the AI's use of cloaked ghosts/wraiths and medic 'restoration' tech to combat enemy medic use of ocular flare to 'blind' my science vessel(which makes the science vessel useless as a cloak detector).
 
 == checkIdle == 
+
+line #467-549
+
+
+
+
 ----
 = Issues =
+
+  # Resources management is still flaky - tried using the default BWSAL workerManagement for minerals and gas, but the workers were idle after the mineral field was exhausted.  Workers will also sometimes all go to a depleted gas refinery instead of seeking new resources.  Workers also idle unexpectedly, I think this is related to some timing issues in the build process/planner.
+  # Need to work on a scout - currently the AI doesn't actively scout for the enemy and will remain at home base unless slowly drawn by a series of attacks back to the enemy base - so for testing now I'll manually grab a troop and send him to an enemy base to trigger an attack.
+
+
 
 ----
 = Next steps = 
