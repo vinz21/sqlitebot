@@ -9,7 +9,12 @@ If you find these code examples useful, feel free to reuse them, but also please
 I'd like to see what more open-source,open-data,crowd-sourcing,datamining,collaborative approaches such as the [http://en.wikipedia.org/wiki/Netflix_Prize Netflix prize] as applied to game AI can provide both businesses and customers of AI-based products.
 
 ----
-The easiest way to follow-along with the below discussion is to look at the side-by-side comparison in the code in the diff page below - I'll be referencing line numbers on the right-hand side that differ from the initial example.
+To run this code go through the BWAPI install instructions and then the BWSAL additional instructions.  The follow-up issues that I remember running into were
+  * when compiling the BWSAL project, there seemed to be missing references to some of the included libraries, add these libraries in the project references to get a successful compile
+  * chaoslauncher BWAPI installer should use version 1914(not 1830)
+  * BWSAL does a default map terrain analysis, so if loading a new map and the game appears to freeze, give it a minute or two to finish map analysis
+
+The easiest way to follow-along with the below documentation is to look at the side-by-side comparison in the code in the diff page below - I'll be referencing line numbers on the right-hand side that differ from the initial example.
 
 Code diff page
 http://code.google.com/p/sqlitebot/source/diff?spec=svn250&r=250&format=side&path=/trunk/starcraft/v1.0/BasicAIModule.cpp
