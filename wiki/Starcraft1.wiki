@@ -31,7 +31,7 @@ If I don't reference line numbers below, its because it was something experiment
 ----
 = Outline = 
 
-The basics of an initial approach can be broken into the following 4 sections.
+The basics of an initial approach utilize the following 4 functions.
 
   * Build
   * onUnitDestroy
