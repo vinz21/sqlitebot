@@ -108,7 +108,11 @@ line #643-671 this started as a minimal base defense measure - the onUnitShow ba
 ----
 = Performance & Issues =
 
-The bot generally does well overwhelming the default game AI as long as a mob of about 40-60 troop size is maintained and the units have leveled up to level 1 weapons with U238 shells and medics with healing.  The mob mainly gets whittled down at chokepoints like base ramps or picked off one-by-one marching single file before a larger group line is established(movement in column/formations would be better).  Having a science vessel to reveal cloaked units is also critical in some battles.  The initial build is quick enough to survive an initial AI marine rush in most cases.
+The bot generally does well overwhelming the default game AI as long as a mob of about 40-60 troop size is maintained and the units have leveled up to level 1 weapons with U238 shells and medics with healing.
+
+The mob mainly gets whittled down at chokepoints/bottlenecks like base ramps or picked off one-by-one marching single file before a larger group line is established(movement in column/formations would be better).  This also works against the default AI as well though as it sends its forces in single file into large mob firing squads.
+
+Having a science vessel to reveal cloaked units is also critical in some battles.  The initial marine/medic buildup is quick enough to survive an initial AI marine rush in most cases.
 
 The mob has a problem in that it is a singular entity and isn't able to coordinate attacks from two fronts and essentially leaves the home base defenseless in a 3-4 player match where the base might be enemy overrun while the mob is far away.  The best way to address this is to start providing group management(listed in the next steps section below) to provide multiple defense and attack groups.
 
