@@ -1,5 +1,7 @@
 #summary discussion of initial starcraft bot effort
 
+StarCraft
+
 This is a discussion of some [http://code.google.com/p/sqlitebot/source/browse/trunk/starcraft/v1.0/BasicAIModule.cpp sample C++ code] extended from the [http://code.google.com/p/bwsal BWSAL] AI example.  Many thanks to the [http://code.google.com/p/bwapi BWAPI], [http://code.google.com/p/bwsal BWSAL] and [http://code.google.com/p/bwapi BWTA] teams/individuals/projects for providing these useful game interfaces and examples to program on top of, and [http://www.youtube.com/watch?v=PbjsL5E1Idw Ben Weber] for organizing the [http://eis.ucsc.edu/StarCraftAICompetition Starcraft AI competition] whose competitors will be leveraging these tools.
 
 My apologies up front for my poor C++ coding style/indentation - I learned Unix/C(or failed to learn depending on your perspective ;) a long time ago(in a galaxy far,far away) back in university classes and the past several years been more programming with Linux/perl/php(wanting to pick up more python) - so I'm having to grow a familiarity with Microsoft's Visual C++ Express environment and standard(std) libraries as I go.  If anyone wants to suggest a pretty-print utility(or function within the editor I'm unaware of) for the code I can give that a whirl as long as it doesn't muck up the code too much.
