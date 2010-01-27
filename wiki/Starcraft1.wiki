@@ -82,10 +82,19 @@ Also on a side-note, when playing the default game AI I had to include the scien
 
 == checkIdle == 
 
-line #467-549
+line #467-549 this establishes variable counts for the following debug line in-game 
 
+Broodwar->sendText("g:%d:m:%d:t:%d:i:%d:im:%d",gasWorkers,mineralWorkers,countTroop,totalIdle,idleMob);
 
+which are used by other parts of the code to assign workers or establish attack strength/readiness.
 
+Also the unit loop looks for 'hurt' units and sends support troops(medic,science vessel) to the hurt unit.
+
+line #550-602 assign workers to minerals or gas
+
+line #608-642 assign workers to repairs closest to where they are - keeps an array of assigned repair workers so not all workers go to the same repair
+
+line #643-671 this started as a minimal base defense measure - the onUnitShow basically handles most cases, but sometimes an enemy unit might be already be within a home base area attacking and new units produced would not have received the earlier attack order, so this is just a catch-all forcing all units to attack any visible enemy units.  If the enemy is within the baseRadius, troops have to focus on the enemy threat, if the enemy is located far away, then they attack if idle(not already engaged in a firefight).  This also helps keep troops busy firing and from idling during an enemy base attack. 
 
 ----
 = Issues =
