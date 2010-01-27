@@ -141,7 +141,7 @@ Each group would have further group attributes like its
   * movement/attack/tactic formation
   * group specific functions or behaviors(e.g. hunters vs gatherer routines)
 
-Group routines should be applicable to other groups of the same type - so two raiding parties should use the same code, just in reference to the units in their group locality.  Groups should also have a way of signaling other groups that they need help(such as home base defense) or when a combined group tactic or strength might be more effective(teaming up).
+Group routines should be applicable to other groups of the same type - so two raiding parties should use the same code, just in reference to the units in their group locality.  Groups should also have a way of signaling other groups that they need help(such as home base defense or losing battle) or when a combined group tactic or strength might be more effective(teaming up).
 
 The technical implementation for groups will probably be a series of nested arrays or objects where the routines could be referenced and iterated on for members within each group array or object.  Group selection and function calls will probably be triggered by event locality and group or groups within a target distance.
 
