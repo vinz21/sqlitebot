@@ -60,7 +60,7 @@ line #278 calls checkIdle function about once a second
 
 == onUnitDestroy == 
 
-#line 291-325 very simple functions to simply rebuild whatever mentioned units or buildings are destroyed
+#line 291-325 very simple functions to simply rebuild whatever matched units or buildings are destroyed
 
 == onUnitShow ==
 
