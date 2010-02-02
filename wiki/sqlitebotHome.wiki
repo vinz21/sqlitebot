@@ -28,7 +28,7 @@ Valve TF2 http://forums.steampowered.com/forums/showthread.php?t=1102152 http://
 Pogamut https://artemis.ms.mff.cuni.cz/pogamut/tiki-view_forum_thread.php?forumId=6&comments_parentId=789
 
 *Update* - January 26, 2010 <br/>
-Documentation/code for Starcraft AI competition effort posted at Starcraft1
+Documentation/code for Starcraft AI competition effort posted at [[Starcraft1]]
 
 = Pre-install steps =
 
