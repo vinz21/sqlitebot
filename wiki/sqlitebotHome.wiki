@@ -7,9 +7,11 @@ article http://aigamedev.com/open/articles/sqlite-bot <br/>
 powerpoint http://docs.google.com/present/view?id=dg2bz3n6_51dh2xbpcj <br/>
 youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
-*Update* - December 14, 2009 - I've grown *bored* working on this project by myself without much *feedback* - if there are others who are interested in seeing this project continue, find it useful or contributing in some way, let me know by email(jeremy.cothran@gmail.com) or post on the google group http://groups.google.com/group/sqlitebot otherwise I just feel a bit that I'm working in a vacuum and don't feel very motivated to continue the interest or work.  I'll probably take a shot at the StarCraft AI competition next September http://eis.ucsc.edu/StarCraftAICompetition using a sqlite relational database for the AI as well and will probably post some documentation regarding that.
+*Update* - December 14, 2009 <br/>
+I've grown *bored* working on this project by myself without much *feedback* - if there are others who are interested in seeing this project continue, find it useful or contributing in some way, let me know by email(jeremy.cothran@gmail.com) or post on the google group http://groups.google.com/group/sqlitebot otherwise I just feel a bit that I'm working in a vacuum and don't feel very motivated to continue the interest or work.  I'll probably take a shot at the StarCraft AI competition next September http://eis.ucsc.edu/StarCraftAICompetition using a sqlite relational database for the AI as well and will probably post some documentation regarding that.
 
-*Update* - January 7, 2010 - Questions or suggestions regarding this project or AI competitions in general feel free to post to the google group at http://groups.google.com/group/sqlitebot  If there's a common AI or group AI problem that multiple developers are looking for a solution for in their mod work, then that might help form an interest/focus, but most game AI for now just seems like retreads of the same old solutions(and same poor, memory starved behaviors).  More like a puppet show on a rail/gallery shooter than a truer form of learning AI or AI which makes better use of possible gameplay information over time :)
+*Update* - January 7, 2010 <br/>
+Questions or suggestions regarding this project or AI competitions in general feel free to post to the google group at http://groups.google.com/group/sqlitebot  If there's a common AI or group AI problem that multiple developers are looking for a solution for in their mod work, then that might help form an interest/focus, but most game AI for now just seems like retreads of the same old solutions(and same poor, memory starved behaviors).  More like a puppet show on a rail/gallery shooter than a truer form of learning AI or AI which makes better use of possible gameplay information over time :)
 
 Developing a general bot API/database for the Unity 3D framework http://forum.unity3d.com/viewtopic.php?t=35592&highlight=sqlitebot might be an interest also for indie/browser-based games.
 
@@ -26,7 +28,7 @@ Valve TF2 http://forums.steampowered.com/forums/showthread.php?t=1102152 http://
 Pogamut https://artemis.ms.mff.cuni.cz/pogamut/tiki-view_forum_thread.php?forumId=6&comments_parentId=789
 
 *Update* - January 26, 2010 <br/>
-Documentation/code for Starcraft AI competition effort posted at StarCraft1
+Documentation/code for Starcraft AI competition effort posted at Starcraft1
 
 = Pre-install steps =
 
