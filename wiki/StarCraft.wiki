@@ -26,3 +26,8 @@ Update: January 26, 2010
 
 Documentation on my first bot effort at 
 http://code.google.com/p/sqlitebot/wiki/Starcraft1
+
+----
+Update: February 3, 2010
+
+Have posted sqlitebot starcraft version 1.1 at http://sqlitebot.googlecode.com/files/BasicAIModule.dll
