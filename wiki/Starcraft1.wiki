@@ -17,7 +17,7 @@ If you find these code examples useful, feel free to reuse them, but also please
 I'd like to see what more open-interfaces/data/source,crowd-sourcing,datamining,collaborative approaches such as the [http://en.wikipedia.org/wiki/Netflix_Prize Netflix prize] as applied to game AI can provide both businesses and customers of AI-based products.
 
 ----
-To run this code go through the BWAPI install instructions and then the BWSAL additional instructions.  The follow-up issues that I remember running into were
+To run this code go through the BWAPI(version 2.6.1) install instructions and then the BWSAL(version 0.9.7) additional instructions.  The follow-up issues that I remember running into were
   * when compiling the BWSAL project, there seemed to be missing references to some of the included libraries, add these libraries in the project references to get a successful compile
   * chaoslauncher BWAPI installer checkbox should use version 1914(not 1830)
   * BWSAL does a default map terrain analysis, so if loading a new map and the game appears to freeze, give it a minute or two to finish map analysis
