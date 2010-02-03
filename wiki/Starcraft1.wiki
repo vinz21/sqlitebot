@@ -6,6 +6,9 @@ StarCraft project homepage
 Update: February 3, 2010
 
 Have posted sqlitebot starcraft version 1.1 at http://sqlitebot.googlecode.com/files/BasicAIModule.dll
+
+For those interested in setting up a match via ICCUP servers, as its a bot/code modificaton I play on the 'Abyss' server, I'm on US Eastern time, and usually available for a match between 6:00 to 11:00 PM EDT.  Just let me know a day/time you want to schedule a match and I'll try to be online as user 'sqlitebot' then.  PM me on my ICCUP account(sqlitebot) or my email (jeremy.cothran at gmail.com)
+
 ----
 
 This is a discussion of some [http://code.google.com/p/sqlitebot/source/browse/trunk/starcraft/v1.0/BasicAIModule.cpp sample C++ code] extended from the [http://code.google.com/p/bwsal BWSAL] AI example.  Many thanks to the [http://code.google.com/p/bwapi BWAPI], [http://code.google.com/p/bwsal BWSAL] and [http://code.google.com/p/bwapi BWTA] teams/individuals/projects for providing these useful game interfaces and examples to program on top of, and [http://www.youtube.com/watch?v=PbjsL5E1Idw Ben Weber] for organizing the [http://eis.ucsc.edu/StarCraftAICompetition Starcraft AI competition] whose competitors will be leveraging these tools.
