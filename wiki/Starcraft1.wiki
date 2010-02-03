@@ -165,4 +165,5 @@ In the long run a database could be used during or post-game to help permanently
 = Links = 
 
 http://medialogics.com/ma/strategies/starcraft_strategy_guide_6.html <br/>
-http://classic.battle.net/scc/GS/
+http://classic.battle.net/scc/GS/ <br/>
+http://bwchart.com
