@@ -23,7 +23,7 @@ http://sqlitebot.googlecode.com/files/sqlite4.jpg
 ----
 = Sample project and code =
 
-Start a new project which includes in the project folder sqlite.h and sqlite.lib.  In the 'Header Files' include sqlite.h and reference the sqlite.lib file as shown below
+Start a new project (the below was done as a Win32 console application) which includes in the project folder sqlite.h and sqlite.lib.  In the 'Header Files' include sqlite.h and reference the sqlite.lib file as shown below
 
 http://sqlitebot.googlecode.com/files/sqlite1.jpg 
 
