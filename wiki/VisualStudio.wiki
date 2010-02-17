@@ -146,6 +146,6 @@ CREATE UNIQUE INDEX some_table_idx ON some_table(a,b,c)
 
 == Time/Tick Gating Database Read/Write ==
 
-In the past, to prevent the database from being constantly read or written to by a number of active AI's, I've used latest time and location variables to help gate unnecessary repeated access to the database.
+In the past, to prevent the database from being constantly read or written to by a number of active AI's, I've used latest time and location variables to help time-gate unnecessary repeated access to the database.  Essentially the idea is to object/variable cache recent information so the database is only periodically read or written to and not constantly accessed and updated possibly dragging down performance.
 
 So for instance, if a target enemy was seen at x time and y location saved to a global variable cache, don't write a new database record enemy time/location record until the enemy variable cache has change by x+delta time or y+delta location.  The delta time which I've been using in games has been around 2 seconds.  Similarly for reads, don't request a new database read of table lookup information if less than some minimum delta time has passed since the last read.
