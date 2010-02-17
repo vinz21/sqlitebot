@@ -26,3 +26,66 @@ http://sqlitebot.googlecode.com/files/sqlite4.jpg
 Start a new project which includes in the project folder sqlite.h and sqlite.lib.  In the 'Header Files' include sqlite.h and reference the sqlite.lib file as shown below
 
 http://sqlitebot.googlecode.com/files/sqlite1.jpg 
+
+The sample sqlite database referenced in the example code can be downloaded at http://sqlitebot.googlecode.com/files/sample.db and assumes the filepath {{{C:\sqlitebot\sample.db}}} The schema for this database is shown at http://code.google.com/p/sqlitebot/wiki/SqlitebotSchema
+
+The following [http://www.linuxjournal.com/content/accessing-sqlite-c article] provided the initial examples used in the below code
+
+Include files
+{{{
+#include <stdio.h>
+#include "sqlite3.h"
+}}}
+
+== Establishing database connection ==
+{{{
+int _tmain(int argc, _TCHAR* argv[])
+{
+sqlite3 *db;
+
+sqlite3_stmt    *res;
+int             rec_count = 0;
+const char      *errMSG;
+const char      *tail;
+
+  int error = sqlite3_open("C:\\sqlitebot\\sample.db", &db);
+  if( error ){
+    fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+  }
+}}}
+
+== Preparing the read/query and processing the resultset ==
+The following sample code reads all table 'bot' records for the first 4 columns from the database.
+{{{
+error = sqlite3_prepare_v2(db,
+        "select * from bot",
+        1000, &res, &tail);
+
+if (error != SQLITE_OK) {
+        puts("We did not get any data!");
+	return 0;
+}
+
+puts("==========================");
+
+while (sqlite3_step(res) == SQLITE_ROW) {
+        printf("%d|", sqlite3_column_text(res, 0));
+        printf("%s|", sqlite3_column_text(res, 1));
+        printf("%s|", sqlite3_column_text(res, 2));
+        printf("%d\n", sqlite3_column_int(res, 3));
+
+        rec_count++;
+}
+
+puts("==========================");
+printf("We received %d records.\n", rec_count);
+}}}
+
+== Closing the statement handler and database connection ==
+{{{
+sqlite3_finalize(res);
+sqlite3_close (db); 
+
+return 0;
+}
+}}}
