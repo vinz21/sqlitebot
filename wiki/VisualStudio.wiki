@@ -91,11 +91,11 @@ error = sqlite3_exec(db,
     0, 0, 0);
 
 error = sqlite3_exec(db,
-    "update command set status=0 where row_id=5",
+    "update command set status=0, priority=1.0 where row_id=5",
     0, 0, 0);
 
 error = sqlite3_exec(db,
-    "delete from command where target = \'jerr\'",
+    "delete from command where target = \'jerr\' and priority > 1.0",
     0, 0, 0);
 }}}
 
