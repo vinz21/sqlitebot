@@ -61,7 +61,7 @@ if (error)
 The following sample code reads all table 'bot' records and displays the first 4 record columns from the database resultset.
 {{{
 error = sqlite3_prepare_v2(db,
-        "select * from bot",
+        "SELECT * FROM bot",
         1000, &res, &tail);
 
 if (error != SQLITE_OK)
@@ -89,15 +89,15 @@ printf("We received %d records.\n", rec_count);
 == INSERT, UPDATE, DELETE == 
 {{{
 error = sqlite3_exec(db,
-    "insert into command(status,level,priority,squad_name,command,target) values (0,2,1.0,\'gonzo.roam\',\'hunt\',\'jerr\')",
+    "INSERT INTO command(status,level,priority,squad_name,command,target) VALUES (0,2,1.0,\'gonzo.roam\',\'hunt\',\'jerr\')",
     0, 0, 0);
 
 error = sqlite3_exec(db,
-    "update command set status=0, priority=1.0 where row_id=5",
+    "UPDATE command SET status=0, priority=1.0 WHERE row_id=5",
     0, 0, 0);
 
 error = sqlite3_exec(db,
-    "delete from command where target = \'jerr\' and priority > 1.0",
+    "DELETE FROM command WHERE target = \'jerr\' AND priority > 1.0",
     0, 0, 0);
 }}}
 
@@ -109,3 +109,15 @@ sqlite3_close (db);
 return 0;
 }
 }}}
+
+Note that sqlite database supports [http://www.sqlite.org/lang_transaction.html *transactions*] which is a much faster way to batch process multiple SQL INSERT or UPDATE statements.  The outline of the SQL commands for this is:
+
+{{{
+BEGIN TRANSACTION or BEGIN
+
+some set of SQL statements or statement in a loop
+
+END TRANSACTION or COMMIT
+}}}
+
+If any error occurs with the transaction, the set/batch of statements will *not* be committed to the database - the statements will be rolled back(ROLLBACK) to the previous BEGIN TRANSACTION or COMMIT statement.
