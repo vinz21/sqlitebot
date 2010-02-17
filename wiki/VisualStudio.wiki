@@ -162,5 +162,5 @@ Visualizing Competitive Behaviors http://www.cs.virginia.edu/~gfx/pubs/lithium/ 
 TF2 death heat maps http://www.steampowered.com/status/tf2/tf2_stats.php <br/>
 
 A file-portable database could also be utilized over a history of games as a cross-game-reference for
-  * one or several AI agents, groups/squads
-  * player-modeling 
+  * one or several adaptive AI agents, groups/squads
+  * adaptive player-modeling 
