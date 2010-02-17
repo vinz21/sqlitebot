@@ -12,4 +12,6 @@ http://sqlitebot.googlecode.com/files/sqlite2.jpg
 
 http://sqlitebot.googlecode.com/files/sqlite3.jpg
 
- 
+Add the .c source file to the 'Source Files' of the project and the .h files to the 'Header Files' of the project and compile the sqlite.lib file
+
+http://sqlitebot.googlecode.com/files/sqlite4.jpg 
