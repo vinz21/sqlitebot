@@ -84,7 +84,7 @@ puts("==========================");
 printf("We received %d records.\n", rec_count);
 }}}
 
-= INSERT, UPDATE, DELETE = 
+== INSERT, UPDATE, DELETE == 
 {{{
 error = sqlite3_exec(db,
     "insert into command(status,level,priority,squad_name,command,target) values (0,2,1.0,\'gonzo.roam\',\'hunt\',\'jerr\')",
