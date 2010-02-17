@@ -27,7 +27,7 @@ Start a new project (the below was done as a Win32 console application) which in
 
 http://sqlitebot.googlecode.com/files/sqlite1.jpg 
 
-The sample sqlite database referenced in the example code can be downloaded at http://sqlitebot.googlecode.com/files/sample.db and assumes the filepath {{{C:\sqlitebot\sample.db}}} The schema for this database is shown at http://code.google.com/p/sqlitebot/wiki/SqlitebotSchema and that webpage also contains further examples of SQL usage(insert,update,delete,select statements) with this schema
+The sample sqlite database referenced in the example code can be downloaded at http://sqlitebot.googlecode.com/files/sample.db and assumes the filepath {{{C:\sqlitebot\sample.db}}} The schema for this database is shown at http://code.google.com/p/sqlitebot/wiki/SqlitebotSchema and that webpage also contains further examples of SQL usage(SELECT,INSERT,UPDATE,DELETE sql statements) with this schema
 
 The following [http://www.linuxjournal.com/content/accessing-sqlite-c article] provided the initial examples used in the below code
 
