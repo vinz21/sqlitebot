@@ -110,6 +110,8 @@ return 0;
 }
 }}}
 
+== Transactions ==
+
 Note that sqlite database supports [http://www.sqlite.org/lang_transaction.html *transactions*] which is a much faster way to batch process multiple SQL INSERT or UPDATE statements.  The outline of the SQL commands for this is:
 
 {{{
