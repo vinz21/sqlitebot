@@ -2,4 +2,4 @@
 
 This is a summary of steps that I went through to compile the sqlite3.lib static library and some sample C++ code which utilizes that library to connect, write and query from a sample sqlite database.
 
-First download the latest C source code zip [ http://www.sqlite.org/sqlite-amalgamation-3_6_22.zip sqlite-amalgamation-3_6_22.zip] from http://www.sqlite.org/download.html 
+First download the latest C source code zip [http://www.sqlite.org/sqlite-amalgamation-3_6_22.zip sqlite-amalgamation-3_6_22.zip] from http://www.sqlite.org/download.html 
