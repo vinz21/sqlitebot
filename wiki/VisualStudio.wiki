@@ -109,7 +109,7 @@ sqlite3_close (db);
 return 0;
 }
 }}}
-
+----
 == Transactions ==
 
 Note that sqlite database supports *[http://www.sqlite.org/lang_transaction.html transactions]* which is a much faster way to batch process multiple SQL INSERT or UPDATE statements.  If you have one statement every few seconds, then you probably don't need to use a transaction, but if you have several hundred statements within a second, then transactions would probably help save time.
