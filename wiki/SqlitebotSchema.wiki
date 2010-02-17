@@ -144,3 +144,14 @@ Remove all rows from a table like the following sql command
 The 'vacuum' command can also be run periodically to compact the database size
 
 {{{vacuum;}}}
+
+= SQL and sqlite tips = 
+
+{{{.schema}}} or {{{.schema tablename}}} from the sqlite command prompt will list the table structure
+
+http://code.google.com/p/xenia/wiki/SqliteTutorial
+
+Look for keyword 'insert' and 'update' sql statements - java program context but SQL syntax the same
+http://code.google.com/p/sqlitebot/source/browse/trunk/bot3/Main.java
+
+
