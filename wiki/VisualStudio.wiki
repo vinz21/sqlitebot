@@ -160,3 +160,7 @@ Spatial pattern analysis with R http://www.csiro.au/resources/Spatia...erns-in-R
 Unreal Visualization Toolkit http://digitalfootprints.co.uk/?page_id=9 <br/> 
 Visualizing Competitive Behaviors http://www.cs.virginia.edu/~gfx/pubs/lithium/ <br/>
 TF2 death heat maps http://www.steampowered.com/status/tf2/tf2_stats.php <br/>
+
+A file-portable database could also be utilized over a history of games as a cross-game-reference for
+  * one or several AI agents, groups/squads
+  * player-modeling 
