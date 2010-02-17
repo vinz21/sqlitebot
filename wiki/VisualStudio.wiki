@@ -6,6 +6,10 @@ This was done using the free Visual C++ 2008 Express edition IDE from Microsoft.
 
 First download the latest C source code zip [http://www.sqlite.org/sqlite-amalgamation-3_6_22.zip sqlite-amalgamation-3_6_22.zip] from http://www.sqlite.org/download.html
 
+<wiki:toc max_depth="6">
+----
+= Create static library sqlite.lib =
+
 Start a new project where the application type will be a static library and uncheck the precompiled headers option.
 
 http://sqlitebot.googlecode.com/files/sqlite2.jpg
@@ -15,3 +19,10 @@ http://sqlitebot.googlecode.com/files/sqlite3.jpg
 Add the .c source file to the 'Source Files' of the project and the .h files to the 'Header Files' of the project and compile a 'Release' version of the sqlite.lib file
 
 http://sqlitebot.googlecode.com/files/sqlite4.jpg 
+
+----
+= Sample code =
+
+Start a new project which includes in the project folder sqlite.h and sqlite.lib.  In the 'Header Files' include sqlite.h and reference the sqlite.lib file as shown below
+
+http://sqlitebot.googlecode.com/files/sqlite1.jpg 
