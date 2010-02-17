@@ -128,7 +128,7 @@ If any error occurs with the transaction, the set/batch of statements will *not*
 
 == Indexing and Optimizations ==
 
-There are a variety of ways to get better database performance by schema design and statement structure detailed at http://www.sqlite.org/optoverview.html and on the [http://code.google.com/p/xenia/wiki/XeniaPackageSqlite#Optimization web].
+There are a variety of ways to get better database performance by schema design and statement structure detailed at http://www.sqlite.org/optoverview.html http://www.sqlite.org/cvstrac/wiki?p=PerformanceTuning and on the [http://code.google.com/p/xenia/wiki/XeniaPackageSqlite#Optimization web].
 
 The main way to speed up SELECT statements against tables which might hold several million records is to create a table index which is utilized by the SELECT statement when the conditions of the WHERE clause match or partially match(the column reference order should be the same as the index-described order) the columns referenced by the index.
 
