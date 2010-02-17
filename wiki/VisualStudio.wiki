@@ -8,6 +8,8 @@ First download the latest C source code zip [http://www.sqlite.org/sqlite-amalga
 
 Start a new project where the application type will be a static library and uncheck the precompiled headers option.
 
+http://sqlitebot.googlecode.com/files/sqlite2.jpg
 
+http://sqlitebot.googlecode.com/files/sqlite3.jpg
 
  
