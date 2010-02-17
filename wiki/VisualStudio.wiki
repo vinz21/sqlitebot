@@ -21,7 +21,7 @@ Add the .c source file to the 'Source Files' of the project and the .h files to 
 http://sqlitebot.googlecode.com/files/sqlite4.jpg 
 
 ----
-= Sample code =
+= Sample project and code =
 
 Start a new project which includes in the project folder sqlite.h and sqlite.lib.  In the 'Header Files' include sqlite.h and reference the sqlite.lib file as shown below
 
