@@ -157,3 +157,6 @@ Down the road there are some possible geospatial analysis/statistic methods that
 SqlitebotAnalysis <br/>
 http://www.quakeworld.nu/forum/viewtopic.php?pid=50185 <br/>
 http://www.csiro.au/resources/Spatia...erns-in-R.html <br/>
+Unreal Visualization Toolkit http://digitalfootprints.co.uk/?page_id=9 <br/> 
+Visualizing Competitive Behaviors http://www.cs.virginia.edu/~gfx/pubs/lithium/ <br/>
+TF2 death heat maps http://www.steampowered.com/status/tf2/tf2_stats.php <br/>
