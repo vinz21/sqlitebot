@@ -56,7 +56,7 @@ if (error)
 }}}
 
 == SELECT - preparing the read/query and processing the resultset ==
-The following sample code reads all table 'bot' records for the first 4 columns from the database.
+The following sample code reads all table 'bot' records and displays the first 4 record columns from the database resultset.
 {{{
 error = sqlite3_prepare_v2(db,
         "select * from bot",
