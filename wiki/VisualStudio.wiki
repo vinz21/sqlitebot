@@ -155,8 +155,8 @@ So for instance, if a target enemy was seen at x time and y location saved to a 
 Down the road there are some possible geospatial analysis/statistic methods that might be interesting or strategically useful to apply to the gameplay logged events/locations 
 
 SqlitebotAnalysis <br/>
-http://www.quakeworld.nu/forum/viewtopic.php?pid=50185 <br/>
-http://www.csiro.au/resources/Spatia...erns-in-R.html <br/>
+Quake death heat map http://www.quakeworld.nu/forum/viewtopic.php?pid=50185 <br/>
+Spatial pattern analysis with R http://www.csiro.au/resources/Spatia...erns-in-R.html <br/>
 Unreal Visualization Toolkit http://digitalfootprints.co.uk/?page_id=9 <br/> 
 Visualizing Competitive Behaviors http://www.cs.virginia.edu/~gfx/pubs/lithium/ <br/>
 TF2 death heat maps http://www.steampowered.com/status/tf2/tf2_stats.php <br/>
