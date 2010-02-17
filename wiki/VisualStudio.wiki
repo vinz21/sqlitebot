@@ -133,7 +133,13 @@ There are a variety of ways to get better database performance by schema design 
 The main way to speed up SELECT statements against tables which might hold several million records is to create a table index which is utilized by the SELECT statement when the conditions of the WHERE clause match or partially match(the column reference order should be the same as the index-described order) the columns referenced by the index.
 
 {{{
-CREATE some_table_idx ON some_table(a,b,c)
+CREATE INDEX some_table_idx ON some_table(a,b,c)
 
 SELECT * FROM some_table WHERE a = 1 AND b > 2 AND c < 3
+}}}
+
+A UNIQUE index will insure that no duplicate records are allowed sharing the same referenced columns.
+
+{{{
+CREATE UNIQUE INDEX some_table_idx ON some_table(a,b,c)
 }}}
