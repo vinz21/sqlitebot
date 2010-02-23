@@ -170,3 +170,9 @@ http://bwchart.com
 
 Thanks to Morpher_King (ICCUP username) for playtesting and following AI guide/strategy suggestions
 http://sqlitebot.googlecode.com/files/AI%20Guide.doc
+
+= Tips = 
+
+  * Do *not* use getGroundDistance function, it kills performance and will make the game stuttery - I switched back to just getDistance function, although I'd still like a getGroundDistance function without the performance hit
+  * use setLocalSpeed function (-1 to 16) for speeding up the game in the onStart function, I'm setting it to about 8 now for testing
+  * chaoslauncher has a W-mode checkbox for running starcraft in a windowed mode, very useful for chatting/testing outside of the starcraft/battlenet game supported chat
