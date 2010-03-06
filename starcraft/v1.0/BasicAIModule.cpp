@@ -6,6 +6,9 @@
 //#include <BWTA/BaseLocation.h>
 //#include <BWTA/RectangleArray.h>
 
+#include <stdarg.h>
+//#include <string>
+
 #include "BasicAIModule.h"
 using namespace BWAPI;
 
@@ -39,13 +42,14 @@ WorkerManager::WorkerManager(Arbitrator::Arbitrator<Unit*,double>* arbitrator)
 //int sc_group[2][2]={{1,2},{3,4}};
 
 bool enableStart = true;
+bool enableManual = false;
 
 //int countTroop = 0;
 //int attackStrength = 5;
 int scoutStrength = 60;
 
 Unit* myBase=NULL;
-int baseRadius = 2000; //default air dist 1200 - ground distance = 2000
+int baseRadius = 1300; //default air dist 1200 - ground distance = 2000
 
 //Unit* currentTarget; //unit disappears/unavailable onHide
 Position currentTargetPosition[2];
@@ -58,7 +62,13 @@ int groupCountIdle[2];
 int groupCountMarine[2];
 int groupCountMedic[2];
 int groupCountSV[2];
-
+int groupCountTank[2];
+//string groupStatus0 = NULL;
+//string groupStatus1 = NULL;
+std::string groupStatus[2];
+std::string workerStatus;
+//= {NULL,NULL};
+//groupStatus[1]..
 //int homeTroops = 0;
 Unit* hurt[2];
 
@@ -76,8 +86,37 @@ Unit* scoutWorker=NULL;
 
 //BWAPI::Position mob;
 
+std::string format_arg_list(const char *fmt, va_list args)
+{
+    if (!fmt) return "";
+    int   result = -1, length = 256;
+    char *buffer = 0;
+    while (result == -1)
+    {
+        if (buffer) delete [] buffer;
+        buffer = new char [length + 1];
+        memset(buffer, 0, length + 1);
+        result = _vsnprintf_s(buffer, length+1, length, fmt, args);
+        length *= 2;
+    }
+    std::string s(buffer);
+    delete [] buffer;
+    return s;
+}
+
+std::string format(const char *fmt, ...)
+{
+    va_list args;
+    va_start(args, fmt);
+    std::string s = format_arg_list(fmt, args);
+    va_end(args);
+    return s;
+}
+
 void BasicAIModule::onStart()
 {
+
+  Broodwar->setLocalSpeed(9);
 
   this->showManagerAssignments=false;
   if (Broodwar->isReplay()) return;
@@ -109,6 +148,13 @@ void BasicAIModule::onStart()
   this->baseManager->setBuildOrderManager(this->buildOrderManager);
 
   //scoutManager->setScoutCount(1); //JTC
+
+  std::set<BWTA::Chokepoint*> chokepoints = BWTA::getStartLocation(BWAPI::Broodwar->self())->getRegion()->getChokepoints();
+  if (chokepoints.size() == 1)
+  {
+    currentTargetPosition[0] = (*chokepoints.begin())->getCenter();
+	currentTargetPosition[1] = (*chokepoints.begin())->getCenter();
+  }
 
   BWAPI::Race race = Broodwar->self()->getRace();
   BWAPI::Race enemyRace = Broodwar->enemy()->getRace();
@@ -145,8 +191,8 @@ void BasicAIModule::onStart()
   }
   else if (race == Races::Terran)
   {
-    this->buildOrderManager->build(22,workerType,200); //was 120 priority - online fix?
-	this->buildOrderManager->build(5,workerType,74);
+    this->buildOrderManager->build(30,workerType,200); //was 120 priority - online fix?
+	this->buildOrderManager->build(10,workerType,74);
 	/*
     if (enemyRace == Races::Zerg)
     {
@@ -180,6 +226,7 @@ void BasicAIModule::onStart()
       //this->buildOrderManager->buildAdditional(2,UnitTypes::Terran_Medic,100);
       this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Medic,119);
 	  this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,118);
+	  this->buildOrderManager->buildAdditional(6,UnitTypes::Terran_Siege_Tank_Tank_Mode,120);  //was 124,85
 
       /*this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Medic,117);
 	  this->buildOrderManager->buildAdditional(15,UnitTypes::Terran_Marine,116);
@@ -190,38 +237,76 @@ void BasicAIModule::onStart()
 	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Medic,111);
 	  this->buildOrderManager->buildAdditional(15,UnitTypes::Terran_Marine,111);
 	  */
-	  this->buildOrderManager->buildAdditional(6,UnitTypes::Terran_Medic,73);
-      this->buildOrderManager->buildAdditional(22,UnitTypes::Terran_Marine,72);
-	  this->buildOrderManager->buildAdditional(6,UnitTypes::Terran_Medic,71);
-      this->buildOrderManager->buildAdditional(23,UnitTypes::Terran_Marine,70);
+	  //was 73-68
+
+	  //home brigade
+	  this->buildOrderManager->buildAdditional(4,UnitTypes::Terran_Medic,71);
+      this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,70);
+  	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Siege_Tank_Tank_Mode,71);  //was 124,85
+	  //krasi
+	  //this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Siege_Tank_Tank_Mode,71);  //was 124,85
+
+	  //3rd
+	  this->buildOrderManager->buildAdditional(4,UnitTypes::Terran_Medic,69);
+      this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,68);
+	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Siege_Tank_Tank_Mode,69);  //was 124,85
+
+	  /*
+	  //4th
+	  this->buildOrderManager->buildAdditional(4,UnitTypes::Terran_Medic,67);
+      this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,66);
+	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Siege_Tank_Tank_Mode,67);  //was 124,85
+
+	  //5th
+	  this->buildOrderManager->buildAdditional(4,UnitTypes::Terran_Medic,65);
+      this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,64);
+	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Siege_Tank_Tank_Mode,65);  //was 124,85
+	  */
+
+	  //this->buildOrderManager->buildAdditional(5,UnitTypes::Terran_Medic,87);
+      //this->buildOrderManager->buildAdditional(25,UnitTypes::Terran_Marine,86);
+	  /*this->buildOrderManager->buildAdditional(5,UnitTypes::Terran_Medic,71);
+      this->buildOrderManager->buildAdditional(25,UnitTypes::Terran_Marine,70);
+	  this->buildOrderManager->buildAdditional(5,UnitTypes::Terran_Medic,69);
+	  this->buildOrderManager->buildAdditional(25,UnitTypes::Terran_Marine,68);
+      */
 
       //this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Barracks,86);
       this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Barracks,109);
-	  this->buildOrderManager->buildAdditional(2,UnitTypes::Terran_Barracks,75);
+	  //this->buildOrderManager->buildAdditional(2,UnitTypes::Terran_Barracks,75);
+	  this->buildOrderManager->buildAdditional(2,UnitTypes::Terran_Barracks,109); //was 104
 
       //this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Barracks,109);
-      this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Academy,109);
+	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Engineering_Bay,108); //was 109
+	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Academy,119); //was 110
 
-	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Science_Facility,85);
+	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Science_Facility,105); //was 85
 
-	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Control_Tower,74);
-	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Armory,74);
-	  this->buildOrderManager->upgrade(3,UpgradeTypes::Terran_Ship_Plating,102);      
-
+	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Control_Tower,72); //was 74,64
+	  this->buildOrderManager->buildAdditional(1,UnitTypes::Terran_Armory,72); //was 64
+	  this->buildOrderManager->upgrade(3,UpgradeTypes::Terran_Ship_Plating,72); //was 64     
 	  //this->buildOrderManager->buildAdditional(4,UnitTypes::Terran_Missile_Turret,79);  
-	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Science_Vessel,74); 
+	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Science_Vessel,72); //was 64
 
-      this->buildOrderManager->upgrade(1,UpgradeTypes::Terran_Infantry_Weapons,106);      
-	  this->buildOrderManager->upgrade(3,UpgradeTypes::Terran_Infantry_Weapons,104);
+	  //was 104
+	  this->buildOrderManager->upgrade(1,UpgradeTypes::U_238_Shells,110); //was 106
+
+	  this->buildOrderManager->upgrade(1,UpgradeTypes::Terran_Infantry_Weapons,109); //was 106      
 	  this->buildOrderManager->upgrade(1,UpgradeTypes::Terran_Infantry_Armor,105);
+	  this->buildOrderManager->upgrade(3,UpgradeTypes::Terran_Infantry_Weapons,104);
 	  this->buildOrderManager->upgrade(3,UpgradeTypes::Terran_Infantry_Armor,103);
 
-	  this->buildOrderManager->upgrade(1,UpgradeTypes::U_238_Shells,104);
-
-	  this->buildOrderManager->research(TechTypes::Healing,104);
-	  this->buildOrderManager->upgrade(1,UpgradeTypes::Caduceus_Reactor,103);
-	  this->buildOrderManager->research(TechTypes::Restoration,102);
+	  //was 104
+	  this->buildOrderManager->research(TechTypes::Healing,109); //was 106
+	  this->buildOrderManager->upgrade(1,UpgradeTypes::Caduceus_Reactor,105);  //was 103
+	  this->buildOrderManager->research(TechTypes::Restoration,105); //was 102
 	  //this->buildOrderManager->research(TechTypes::Stim_Packs,101);
+
+	  this->buildOrderManager->research(TechTypes::Tank_Siege_Mode,111); //was 103,109
+	  this->buildOrderManager->upgrade(1,UpgradeTypes::Terran_Vehicle_Weapons,102);
+	  this->buildOrderManager->upgrade(1,UpgradeTypes::Terran_Vehicle_Plating,101);
+	  this->buildOrderManager->upgrade(3,UpgradeTypes::Terran_Vehicle_Weapons,100);
+	  this->buildOrderManager->upgrade(3,UpgradeTypes::Terran_Vehicle_Plating,99);
 
 	  //science vessel - 2 units, research, upgrades
 	  //attacks?
@@ -267,7 +352,7 @@ void BasicAIModule::onFrame()
 {
   if (Broodwar->isReplay()) return;
   //JTC if (!this->analyzed) return;
-  //Broodwar->sendText("Update");
+  //Broodwar->printf("Update");
   this->buildManager->update();
   this->buildOrderManager->update();
   this->baseManager->update();
@@ -284,9 +369,37 @@ void BasicAIModule::onFrame()
   //JTCif (Broodwar->getFrameCount()>24*50)
     //scoutManager->setScoutCount(1);
 
+  //Broodwar->drawText(CoordinateType::Screen,10,10,"gooberbar!",'\x07');
+
+  if (!(workerStatus == "")) {
+    Broodwar->drawText(CoordinateType::Screen,10,0,"%s",workerStatus.c_str());
+  }
+  for (int groupID = 0; groupID <=1; groupID++) {
+    int y = groupID*10+10;
+	if (!(groupStatus[groupID] == "")) {
+      Broodwar->drawText(CoordinateType::Screen,10,y,"%s",groupStatus[groupID].c_str());
+	}
+  }
+
+if (currentTargetPosition[0].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[0].x(),currentTargetPosition[0].y(),10,Colors::Red); }
+if (currentTargetPosition[1].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[1].x(),currentTargetPosition[1].y(),20,Colors::Red); }
+
+if (hurt[0]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[0]->getPosition().x(),hurt[0]->getPosition().y(),5,Colors::Yellow); }
+if (hurt[1]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[1]->getPosition().x(),hurt[1]->getPosition().y(),5,Colors::Yellow); }
+
+
+
+//int y = groupID * 10;
+//if (groupID == 0) {
+//sprintf_s(groupStatus[groupID],"g%dMove(%d)%d(%d/%d/%d)%d:%d:%d",groupID,mainGroup.size(),groupCount[groupID],groupCountMarine[groupID],groupCountMedic[groupID],groupCountSV[groupID],stagedTroops[groupID],battleTroops[groupID],groupCountIdle[groupID]);
+
+//Broodwar->drawText(CoordinateType::Screen,10,y,"g%dMove(%d)%d(%d/%d/%d)%d:%d:%d",'\x07',groupID,mainGroup.size(),groupCount[groupID],groupCountMarine[groupID],groupCountMedic[groupID],groupCountSV[groupID],stagedTroops[groupID],battleTroops[groupID],groupCountIdle[groupID]);
+
+
+
   if (enableScout) 
   {
-	//Broodwar->sendText("enableScout");
+	//Broodwar->printf("enableScout");
 	//if (scoutWorker==NULL) { this->buildOrderManager->build(1,BWAPI::UnitTypes::Terran_SCV,120); scoutManager->setScoutCount(0); }
 	//else { this->scoutManager->update(); scoutManager->setScoutCount(1); }
   }
@@ -349,7 +462,7 @@ void BasicAIModule::onUnitDestroy(BWAPI::Unit* unit)
   //this->defenseManager->onRemoveUnit(unit);
   this->informationManager->onUnitDestroy(unit);
 
-  Broodwar->sendText("UnitDestroy:%s",unit->getType().getName().c_str());
+  Broodwar->printf("UnitDestroy:%s",unit->getType().getName().c_str());
   //replace our destroyed units
   if (unit->getPlayer()->getID() == Broodwar->self()->getID()) {
 
@@ -363,25 +476,33 @@ void BasicAIModule::onUnitDestroy(BWAPI::Unit* unit)
     } 
   if (!strcmp(unit->getType().getName().c_str(),"Terran Medic")) 
     {
-    this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Medic,101);
+    this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Medic,100);
     } 
   if (!strcmp(unit->getType().getName().c_str(),"Terran SCV")) 
     {
 	//JTC FIX scoutManager->setScoutCount(0);
-    this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_SCV,102);
+    this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_SCV,100);
     }
   if (!strcmp(unit->getType().getName().c_str(),"Terran Science Vessel")) 
     {
-		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Science_Vessel,102);
+		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Science_Vessel,101);
+    }
+  if (!strcmp(unit->getType().getName().c_str(),"Terran Siege Tank Tank Mode")) 
+    {
+		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Siege_Tank_Tank_Mode,100);
+    }
+  if (!strcmp(unit->getType().getName().c_str(),"Terran Siege Tank Siege Mode")) 
+    {
+		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Siege_Tank_Tank_Mode,100);
     }
 
   if (!strcmp(unit->getType().getName().c_str(),"Terran Barracks")) 
     {
-		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Barracks,102);
+		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Barracks,100);
     } 
   if (!strcmp(unit->getType().getName().c_str(),"Terran Command Center")) 
     {
-		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Command_Center,102);
+		this->buildOrderManager->buildAdditional(1,BWAPI::UnitTypes::Terran_Command_Center,100);
     } 
 
 	for(std::list<GroupData*>::const_iterator i=mainGroup.begin();i!=mainGroup.end();i++)
@@ -421,6 +542,7 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
   if (!strcmp(unit->getType().getName().c_str(),"Terran Marine")
 	  || !strcmp(unit->getType().getName().c_str(),"Terran Medic")
 	  || !strcmp(unit->getType().getName().c_str(),"Terran Science Vessel")
+	  || !strcmp(unit->getType().getName().c_str(),"Terran Siege Tank Tank Mode")
 	  ) 
     {
     groupAdd(unit);
@@ -438,18 +560,18 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
 //------------------------  
 
   int thisTime = Broodwar->getFrameCount();
-  Broodwar->sendText("%s[%x]spotted(%d,%d):time:%d",unit->getType().getName().c_str(),unit,unit->getPosition().x(),unit->getPosition().y(),thisTime);
+  Broodwar->printf("%s[%x]spotted(%d,%d):time:%d",unit->getType().getName().c_str(),unit,unit->getPosition().x(),unit->getPosition().y(),thisTime);
 
   static int attackTime;
 
   if (thisTime < attackTime+24*5) { return; }
   
   //attackTime = thisTime;
-  //Broodwar->sendText("Attack!");
+  //Broodwar->printf("Attack!");
 
   //if (!((*i)->getPlayer()->getID()==Broodwar->self()->getID()))
   
-  //Broodwar->sendText("attackTime:%d:Neutral:%d",attackTime,unit->getType().isNeutral());
+  //Broodwar->printf("attackTime:%d:Neutral:%d",attackTime,unit->getType().isNeutral());
 
   //don't attack if low strength and seen enemy far away
   if (myBase==NULL) { return; }
@@ -461,7 +583,7 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
 	  //&& strcmp(unit->getType().getName().c_str(),"Special Power Generator")
 	  ) 
     {
-    Broodwar->sendText("Attack!");
+    Broodwar->printf("Attack!");
     attackTime = thisTime;
 
 	BWAPI::Position target;
@@ -470,7 +592,8 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
 
 	if (!strcmp(unit->getType().getName().c_str(),"Unknown")) { return; }
 	//double distBase = BWTA::getGroundDistance(unit->getTilePosition(),myBase->getTilePosition());
-	double distBase = BWTA::getGroundDistance(unit->getPosition(),myBase->getPosition());
+	//double distBase = BWTA::getGroundDistance(unit->getPosition(),myBase->getPosition());
+	double distBase = unit->getDistance(myBase);
 
 	//double dist = unit->getDistance(myBase);
 	if (distBase < baseRadius && distBase != -1) {
@@ -478,8 +601,15 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
 		return; }
 	else { currentTargetPosition[1] = target; }
 
+	//FIX refine this later to just the attacking group, not everyone
+	for(std::list<GroupData*>::const_iterator i=mainGroup.begin();i!=mainGroup.end();i++)
+	{ 
+		(*i)->move = true;
+	}
+
 	//Unit* closestTarget=NULL;
 
+/* JTC
 	std::set<Unit*> units=Broodwar->self()->getUnits();
 
 	for(std::set<Unit*>::iterator i=units.begin();i!=units.end();i++)
@@ -503,7 +633,7 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
 
 	}
 
-	for(std::set<Unit*>::iterator i=units.begin();i!=units.end();i++)
+   for(std::set<Unit*>::iterator i=units.begin();i!=units.end();i++)
 	  {
 	  //ignore others units
 	 if ((*i)->getPlayer()->getID() != Broodwar->self()->getID()) { continue; }
@@ -526,6 +656,7 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
 		//(*i)->rightClick(closestTroopTarget->getPosition());
 	  }
 	}
+*/
 
   }
 }
@@ -586,8 +717,8 @@ bool BasicAIModule::onSendText(std::string text)
 
 void BasicAIModule::checkIdle()
 {
-//Broodwar->sendText("ciS");
-	Broodwar->sendText("Frame:%d",Broodwar->getFrameCount());
+//Broodwar->printf("ciS");
+	//Broodwar->printf("Frame:%d",Broodwar->getFrameCount());
 
 	int workerCount = 0;
 	int idleWorkers = 0;
@@ -678,7 +809,8 @@ void BasicAIModule::checkIdle()
 
 	//if (totalIdle == countTroop) { idleMob = true; }
 
-	Broodwar->sendText("w(%d)%d/%d:%d",workerCount,mineralWorkers,gasWorkers,idleWorkers);
+	//Broodwar->printf("w(%d)%d/%d:%d",workerCount,mineralWorkers,gasWorkers,idleWorkers);
+	workerStatus = format("w(%d)%d/%d:%d",workerCount,mineralWorkers,gasWorkers,idleWorkers);
 
     //send each worker to the mineral field that is closest to it
     for(std::set<Unit*>::const_iterator i=Broodwar->self()->getUnits().begin();i!=Broodwar->self()->getUnits().end();i++)
@@ -690,7 +822,7 @@ void BasicAIModule::checkIdle()
 		//double mineralRate = this->workerManager->getMineralRate();
 		//double gasRate = this->workerManager->getGasRate();
 
-		 // Broodwar->sendText("idle:gasWorkers:%d:mineral:%d",gasWorkers,mineralWorkers);
+		 // Broodwar->printf("idle:gasWorkers:%d:mineral:%d",gasWorkers,mineralWorkers);
 		//gas
 		if (gasWorkers < 3
 			&& closestGeyser!=NULL //null check
@@ -698,7 +830,7 @@ void BasicAIModule::checkIdle()
 			&& closestGeyser->isCompleted()
 			)
 		{
-  		  //Broodwar->sendText("debug0");
+  		  //Broodwar->printf("debug0");
 		  (*i)->rightClick(closestGeyser); 
 		}
 		//minerals
@@ -754,16 +886,16 @@ void BasicAIModule::checkIdle()
 
 			  //for(std::set<Unit*>::iterator m=Broodwar->getAllUnits().begin();m!=Broodwar->getAllUnits().end();m++)
 		
-			  //Broodwar->sendText("rtype:%s:%d:%d",(*m)->getType().getName().c_str(),(*m)->getHitPoints(),(*m)->getInitialHitPoints());
-			  //Broodwar->sendText("m:%d",(*m)->getType().isRefinery());
+			  //Broodwar->printf("rtype:%s:%d:%d",(*m)->getType().getName().c_str(),(*m)->getHitPoints(),(*m)->getInitialHitPoints());
+			  //Broodwar->printf("m:%d",(*m)->getType().isRefinery());
 			  //repair buildings,detectors(sv,missilesilo),workers
-			  if (((*m)->getType().isBuilding() || (*m)->getType().isDetector() || (*m)->getType().isWorker())
+			  if (((*m)->getType().isBuilding() || (*m)->getType().isDetector() || (*m)->getType().isWorker() || (*m)->getType().isMechanical())
 				  //(*m)->getPlayer()==Broodwar->self() &&
 				  //((*m)->getHitPoints() < (*m)->getInitialHitPoints())
 				  && ((*m)->getHitPoints() < (*m)->getType().maxHitPoints())
 				  ) {
 
-			//Broodwar->sendText("repair:%s",(*m)->getType().getName().c_str());
+			//Broodwar->printf("repair:%s",(*m)->getType().getName().c_str());
             if (closestRepair==NULL || (*i)->getDistance(*m)<(*i)->getDistance(closestRepair))
 			{ closestRepair=*m; }
 		  }
@@ -781,7 +913,7 @@ void BasicAIModule::checkIdle()
 	int enemyCount = 0;
     for(std::set<Unit*>::iterator m=Broodwar->getAllUnits().begin();m!=Broodwar->getAllUnits().end();m++)
 	{
-		//Broodwar->sendText("BA:%.2f:%s",(*m)->getDistance(myBase),(*m)->getType().getName().c_str());
+		//Broodwar->printf("BA:%.2f:%s",(*m)->getDistance(myBase),(*m)->getType().getName().c_str());
 
 		//if !worker,!self,!neutral,!power and enemy and close to base
 		if (
@@ -799,19 +931,24 @@ void BasicAIModule::checkIdle()
 			)
 		{
 			enemyCount++;
-			//Broodwar->sendText("BAC:%s",(*m)->getType().getName().c_str());
+			//Broodwar->printf("BAC:%s",(*m)->getType().getName().c_str());
 
 			//if within baseRadius, always attack - otherwise only attack if idle(not already attacking)
-			//double distBase = (*m)->getDistance(myBase);
 			//double distBase = BWTA::getGroundDistance((*m)->getTilePosition(),myBase->getTilePosition());
-			double distBase = BWTA::getGroundDistance((*m)->getPosition(),myBase->getPosition());
+			//double distBase = BWTA::getGroundDistance((*m)->getPosition(),myBase->getPosition());
+			double distBase = (*m)->getDistance(myBase);
 
 			//if ((*m)->getDistance(myBase) < baseRadius)
 			if (distBase < baseRadius && distBase != -1)
 			  {
-			  Broodwar->sendText("BAC:%.2f:%s",distBase,(*m)->getType().getName().c_str());
+			  Broodwar->printf("BAC:%.2f:%s",distBase,(*m)->getType().getName().c_str());
 			  //(*i)->attackMove((*m)->getPosition());
 			  currentTargetPosition[0] = (*m)->getPosition();
+			  //currentTargetPosition[1] = (*m)->getPosition();
+			  //FIX
+			  if (currentTargetPosition[1].x()==NULL //if just sitting at base, etc
+				  || groupCount[0] < 10 //if home group is weak, send away troops back
+				  ) { currentTargetPosition[1] = (*m)->getPosition(); }
 			  break; //just focus on first unit that is listed
 			  }
 			//else if ((*i)->isIdle()) { (*i)->attackMove((*m)->getPosition()); }
@@ -819,24 +956,26 @@ void BasicAIModule::checkIdle()
 		} //if enemy
 	} //all units
 
-	Broodwar->sendText("e:%d",enemyCount);
+	if (enemyCount > 0) {
+	  Broodwar->printf("e:%d",enemyCount);
+	}
 
 	if (enemyCount == 0  && mainGroup.size() > 55) { enableScout = true; }
 	else { enableScout = false; }
 
 
-//Broodwar->sendText("ciE");
+//Broodwar->printf("ciE");
 }
 
 void BasicAIModule::groupAdd(BWAPI::Unit* unit)
 {
-//Broodwar->sendText("gaS");
-	//Broodwar->sendText("trygroupAdd:%d",unit->getType().getID());
+//Broodwar->printf("gaS");
+	//Broodwar->printf("trygroupAdd:%d",unit->getType().getID());
 
 //don't duplicate insert existing unit to group
 	for(std::list<GroupData*>::const_iterator i=mainGroup.begin();i!=mainGroup.end();i++)
 {
-	//Broodwar->sendText("add:%d:%d",(*i)->getType().getID(),unit->getType().getID());
+	//Broodwar->printf("add:%d:%d",(*i)->getType().getID(),unit->getType().getID());
 	if ((*i)->unitPointer == unit) { return; } 
 }
 
@@ -847,47 +986,52 @@ int groupID;
 
 if (!strcmp(unit->getType().getName().c_str(),"Terran Medic"))
 {
-	if (groupCountMedic[0] < 4) { groupID = 0; }
-	else { groupID = 1; }
+	if (groupCountMedic[1] <= 4 || groupCountMedic[0] >= 4) { groupID = 1; }
+	else { groupID = 0; }
 	groupCountMedic[groupID]++;
 }
 
 if (!strcmp(unit->getType().getName().c_str(),"Terran Marine"))
 {
-	if (groupCountMarine[0] < 20) { groupID = 0; }
-	else { groupID = 1; }
+	if (groupCountMarine[1] <= 20 || groupCountMarine[0] >= 20) { groupID = 1; }
+	else { groupID = 0; }
 	groupCountMarine[groupID]++;
 }
 
 if (!strcmp(unit->getType().getName().c_str(),"Terran Science Vessel"))
 {
-	if (groupCountSV[0] < 1) { groupID = 0; }
-	else { groupID = 1; }
+	if (groupCountSV[1] <= 1 || groupCountSV[0] >= 1) { groupID = 1; }
+	else { groupID = 0; }
 	groupCountSV[groupID]++;
+}
+
+if (!strcmp(unit->getType().getName().c_str(),"Terran Siege Tank Tank Mode"))
+{
+	groupID = 1;
 }
 
 groupCount[groupID]++;
 //-----------------
 
-//Broodwar->sendText("groupAdd:%d",unit->getType().getID());
+//Broodwar->printf("groupAdd:%d",unit->getType().getID());
 
 GroupData* thisGroupData = new GroupData();
-//(*thisGroupData).move = true;
+(*thisGroupData).move = true;
 (*thisGroupData).unitID = unit->getType().getID();
 (*thisGroupData).unitPointer = unit;
 (*thisGroupData).groupID = groupID;
 mainGroup.push_back(thisGroupData);
 
-//Broodwar->sendText("gaE");
+//Broodwar->printf("gaE");
 }
 
 //---------------------------------------------//
 void BasicAIModule::groupMove()
 {
-//Broodwar->sendText("gmS");
+//Broodwar->printf("gmS");
 
-if (currentTargetPosition[0].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[0].x(),currentTargetPosition[0].y(),10,Colors::Red); }
-if (currentTargetPosition[1].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[1].x(),currentTargetPosition[1].y(),20,Colors::Red); }
+//if (currentTargetPosition[0].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[0].x(),currentTargetPosition[0].y(),10,Colors::Red); }
+//if (currentTargetPosition[1].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[1].x(),currentTargetPosition[1].y(),20,Colors::Red); }
 
 
 int stagedDistance[2];
@@ -899,34 +1043,38 @@ int battleTroops[2];
 int targetDistance[2];
 int targetTroops[2];
 
+int tankDistance = 100; //was 200
+
 //----
 stagedTroops[0] = 0;
 stagedDistance[0] = 0;
 numStagedAttack[0] = 0;
 battleDistance[0] = 0;  //1200-900 = 300 area gap for waves
 numBattleAttack[0] = 0;
-targetDistance[0] = 10;
+targetDistance[0] = 40; //was 10,20
 
 groupCount[0] = 0;
 groupCountMarine[0] = 0;
 groupCountMedic[0] = 0;
 groupCountSV[0] = 0;
+groupCountTank[0] = 0;
 groupCountIdle[0] = 0;
 battleTroops[0] = 0;
 targetTroops[0] = 0;
 
 //----
 stagedTroops[1] = 0;
-stagedDistance[1] = 1200;
-numStagedAttack[1] = 28;
-battleDistance[1] = 900;  
-numBattleAttack[1] = 5;
-targetDistance[1] = 10;
+stagedDistance[1] = 500; //was 1200, 1100, 600 - 380 magic number range for siege
+numStagedAttack[1] = 288; //was 28
+battleDistance[1] = 900;  //was 900
+numBattleAttack[1] = 288; //was 5
+targetDistance[1] = 40; //was 10
 
 groupCount[1] = 0;
 groupCountMarine[1] = 0;
 groupCountMedic[1] = 0;
 groupCountSV[1] = 0;
+groupCountTank[1] = 0;
 groupCountIdle[1] = 0;
 battleTroops[1] = 0;
 targetTroops[1] = 0;
@@ -945,8 +1093,24 @@ for(std::list<GroupData*>::const_iterator i=mainGroup.begin();i!=mainGroup.end()
   Unit* u;
   u = (*i)->unitPointer;
 
-  double dist = BWTA::getGroundDistance(u->getPosition(),currentTargetPosition[groupID]);
+  //double dist = BWTA::getGroundDistance(u->getPosition(),currentTargetPosition[groupID]);
+  //double dist = u->getDistance(currentTargetPosition[groupID]);
+  //(*i)->currentTargetDistance = dist;
+
+  double dist;
+  if ((*i)->move) {
+	  if (groupID == 0) {
+		  dist = u->getDistance(currentTargetPosition[groupID]);
+	  }
+	  else { //groupID == 1
+		  dist = BWTA::getGroundDistance(u->getPosition(),currentTargetPosition[groupID]);
+	  }
+  }
+  else {
+	dist = (*i)->currentTargetDistance;
+  }
   (*i)->currentTargetDistance = dist;
+
   if (dist != -1 && dist < stagedDistance[groupID]) { stagedTroops[groupID]++; }
   if (dist != -1 && dist < battleDistance[groupID]) { battleTroops[groupID]++; }
   if (dist != -1 && dist < targetDistance[groupID]) { targetTroops[groupID]++; }
@@ -957,16 +1121,17 @@ for(std::list<GroupData*>::const_iterator i=mainGroup.begin();i!=mainGroup.end()
 	|| u->isBlind()				
 	) 
   { hurt[groupID] = u; }
-  //{ hurt[groupID] = u; if (u->isBlind()) {Broodwar->sendText("blind");} }
+  //{ hurt[groupID] = u; if (u->isBlind()) {Broodwar->printf("blind");} }
 
   if (u->isIdle()) { groupCountIdle[groupID]++; }
 
   if (!strcmp(u->getType().getName().c_str(),"Terran Marine")) { groupCountMarine[groupID]++; }
   if (!strcmp(u->getType().getName().c_str(),"Terran Medic")) { groupCountMedic[groupID]++; }
   if (!strcmp(u->getType().getName().c_str(),"Terran Science Vessel")) { groupCountSV[groupID]++; }
+  if (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Tank Mode") || !strcmp(u->getType().getName().c_str(),"Terran Siege Tank Siege Mode")) { groupCountTank[groupID]++; }
 }
 
-Broodwar->sendText("g%dMove(%d)%d(%d/%d/%d)%d:%d:%d",groupID,mainGroup.size(),groupCount[groupID],groupCountMarine[groupID],groupCountMedic[groupID],groupCountSV[groupID],stagedTroops[groupID],battleTroops[groupID],groupCountIdle[groupID]);
+groupStatus[groupID] = format("g%dMove(%d)%d(%d/%d/%d/%d)%d:%d:%d",groupID,mainGroup.size(),groupCount[groupID],groupCountMarine[groupID],groupCountMedic[groupID],groupCountSV[groupID],groupCountTank[groupID],stagedTroops[groupID],battleTroops[groupID],groupCountIdle[groupID]);
 
 //if we've gotten to or destroyed our target, then forget it - FIX/remove targetTroops?
 //FIX bug - self-defeating loop -
@@ -982,10 +1147,10 @@ double closestDistance = 30000; //init
 	
 for(std::list<GroupData*>::const_iterator i=mainGroup.begin();i!=mainGroup.end();i++)
 {
-	//Broodwar->sendText("groupType:%s",(*i)->unitPointer->getType().getName().c_str());
+	//Broodwar->printf("groupType:%s",(*i)->unitPointer->getType().getName().c_str());
 	//if (!(*i)->move) { continue; }
 	if ((*i)->groupID != groupID) { continue; }
-	//Broodwar->sendText("move:%d:%.1f:%d:%d",(*i)->getType().getID(),(*i)->getDistance(currentTargetPosition),currentTargetPosition.x(),currentTargetPosition.y());
+	//Broodwar->printf("move:%d:%.1f:%d:%d",(*i)->getType().getID(),(*i)->getDistance(currentTargetPosition),currentTargetPosition.x(),currentTargetPosition.y());
 
 	    Unit* u;
 		u = (*i)->unitPointer;
@@ -1008,29 +1173,53 @@ if ( closestTroopTarget==NULL || (dist < closestDistance && dist != -1) )
   { closestTroopTarget=u; closestDistance = dist; }
 
 if ( currentTargetPosition[groupID].x()!=NULL
-	&&dist > groupTargetDistance //how close to target need be? density of mob
+	&& dist > groupTargetDistance //how close to target need be? density of mob
 	//&& dist != -1 JTC FIX?
 	&& (!strcmp(u->getType().getName().c_str(),"Terran Marine")
 	   || (!strcmp(u->getType().getName().c_str(),"Terran Medic") && u->isIdle()) //get medics out of way
 	   || (!strcmp(u->getType().getName().c_str(),"Terran Science Vessel") && u->isIdle())  //SV gets shot at by direct air, needs to travel safer troop ground path
+   	   || (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Tank Mode"))  //SV gets shot at by direct air, needs to travel safer troop ground path
 	   )
 	) 
-	{ u->attackMove(currentTargetPosition[groupID]); }
+	{ u->attackMove(currentTargetPosition[groupID]);
+}
 
 //stop if medic, but continue if someone hurt
 
-if (battleTroops[groupID] < numBattleAttack[groupID]
+if ((!strcmp(u->getType().getName().c_str(),"Terran Marine")
+	|| !strcmp(u->getType().getName().c_str(),"Terran Medic")
+	|| !strcmp(u->getType().getName().c_str(),"Terran Science Vessel")
+	)
+	&& battleTroops[groupID] < numBattleAttack[groupID]
 	&& dist < stagedDistance[groupID]
 	&& stagedTroops[groupID] < numStagedAttack[groupID]
 	&& dist != -1
 	)
-  { u->stop(); }
+	{ u->stop(); (*i)->move = false;
+	}
+
+if (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Tank Mode")	
+	&& battleTroops[groupID] < numBattleAttack[groupID]
+	&& dist < stagedDistance[groupID] - tankDistance
+	&& stagedTroops[groupID] < numStagedAttack[groupID]
+	&& dist != -1
+	)
+  { u->stop();  u->siege(); (*i)->move = false;
+	}
+
+if (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Siege Mode")	
+	&& dist > stagedDistance[groupID] - tankDistance //|| dist == -1)
+	//&& dist != -1
+	)
+  { u->unsiege();
+}
 
 //SV heal priority over marines
 if (!strcmp(u->getType().getName().c_str(),"Terran Medic") && hurt[groupID] != NULL) {
-	//if ((hurt[groupID])->isBlind()) { u->rightClick(hurt[groupID]); u->useTech(BWAPI::TechTypes::Restoration,hurt[groupID]); Broodwar->sendText("BlindHeal"); }
-	if ((hurt[groupID])->isBlind()) { u->useTech(BWAPI::TechTypes::Restoration,hurt[groupID]); Broodwar->sendText("BlindHeal"); }
-	else { if (!u->getType().isFlyer()) { u->rightClick(hurt[groupID]);} }
+	//if ((hurt[groupID])->isBlind()) { u->rightClick(hurt[groupID]); u->useTech(BWAPI::TechTypes::Restoration,hurt[groupID]); Broodwar->printf("BlindHeal"); }
+	if ((hurt[groupID])->isBlind()) { u->useTech(BWAPI::TechTypes::Restoration,hurt[groupID]); Broodwar->printf("BlindHeal"); }
+	//else { if (!u->getType().isFlyer()) { u->rightClick(hurt[groupID]);} }
+	else { if (!(u->getType().isFlyer() || u->getType().isMechanical()) || u->getType().isWorker()) { u->rightClick(hurt[groupID]);} }
 }
 if (!strcmp(u->getType().getName().c_str(),"Terran Science Vessel")
 	&& hurt[groupID] != NULL
@@ -1044,32 +1233,35 @@ if (!strcmp(u->getType().getName().c_str(),"Terran Science Vessel")
 
 if (closestTroopTarget!= NULL) { (closestTroopTarget)->stop(); }
 
-if (hurt[0]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[0]->getPosition().x(),hurt[0]->getPosition().y(),5,Colors::Yellow); }
-if (hurt[1]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[1]->getPosition().x(),hurt[1]->getPosition().y(),5,Colors::Yellow); }
+//if (hurt[0]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[0]->getPosition().x(),hurt[0]->getPosition().y(),5,Colors::Yellow); }
+//if (hurt[1]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[1]->getPosition().x(),hurt[1]->getPosition().y(),5,Colors::Yellow); }
 
 } //for groupID
 
-//Broodwar->sendText("gmE");
+//Broodwar->printf("gmE");
 }
 
 //---------------------------------------------//
 void BasicAIModule::checkResources()
 {
+	//return;
 	if (myBase==NULL) { return; }
 
-		  Broodwar->sendText("checkResources");
+		  //Broodwar->printf("checkResources");
 		  //return;
 		  double closestGeyserDistance = 30000;
           for(std::set<Unit*>::iterator m=Broodwar->getAllUnits().begin();m!=Broodwar->getAllUnits().end();m++)
 		  {
-		  //Broodwar->sendText("m:%d",(*m)->getType().isRefinery());
+		  //Broodwar->printf("m:%d",(*m)->getType().isRefinery());
 		  if ((*m)->getType().isRefinery()
 			  && (*m)->getPlayer()==Broodwar->self()
 			  && (*m)->isCompleted()
 			  ) {
  
-			double dist = BWTA::getGroundDistance(myBase->getPosition(),(*m)->getPosition());
-            if (closestGeyser==NULL || (dist < closestGeyserDistance && dist != -1) )
+			//double dist = BWTA::getGroundDistance(myBase->getPosition(),(*m)->getPosition());
+			double dist = (*m)->getDistance(myBase);
+            
+			if (closestGeyser==NULL || (dist < closestGeyserDistance && dist != -1) )
 			  { closestGeyser=*m; closestGeyserDistance=dist; }
 		  }
 		  }
@@ -1077,10 +1269,12 @@ void BasicAIModule::checkResources()
 		  double closestMineralDistance = 30000;
           for(std::set<Unit*>::iterator m=Broodwar->getMinerals().begin();m!=Broodwar->getMinerals().end();m++)
           {
-			double dist = BWTA::getGroundDistance(myBase->getPosition(),(*m)->getPosition());
+			//double dist = BWTA::getGroundDistance(myBase->getPosition(),(*m)->getPosition());
+			double dist = (*m)->getDistance(myBase);
             if (closestMineral==NULL || (dist < closestMineralDistance && dist != -1) )
 			{ closestMineral=*m; closestMineralDistance=dist; }
           }
-		  //Broodwar->sendText("min:%.1f",closestMineralDistance);
+		  //Broodwar->printf("min:%.1f",closestMineralDistance);
+		  //Broodwar->printf("endif");
 
 }
