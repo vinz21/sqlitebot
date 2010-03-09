@@ -32,6 +32,11 @@ Pogamut https://artemis.ms.mff.cuni.cz/pogamut/tiki-view_forum_thread.php?forumI
 *Update* - January 26, 2010 <br/>
 Documentation/code for Starcraft AI competition effort posted at [Starcraft1]
 
+*Update* - March 9, 2010 <br/>
+I'm taking a break from development for now - posted some basic documentation on using sqlite with Visual Studio at [VisualStudio] and on the Starcraft AI front, playtesting against 'krasi' who has an excellent tank rush strategy and game experience, I'm feeling a bit overwhelmed that a manual approach might be a never-ending task of programming tactic vs counter-tactic - for a more generalized learning AI I'd probably go in the direction of spatial analysis(starting with just basic radius areas of effects for multiple enemy units vs the current singular first-sighted enemy target) for avoiding formations at their strong points while attacking enemy formations at their weakest points.  Past that, I still need working scouts, for recon and also the ability to change build base build strategy and multiple base expansion.
+
+In the end, at the current time, I think of RTS's like a fluid-dynamics chemical catalyst issue - model the game and units as stream/flow or fluid-mixing physics problem to achieve a desired end mixture or reaction that moves toward a final win state.  The really time-consuming bit is how to model these tactics and countertactics in a way that might work for multiple RTS games and then logging/weighting the optimal strategies accordingly with gameplay experience over time.
+
 ----
 = Pre-install steps =
 
@@ -193,6 +198,9 @@ http://www.crymod.com/thread.php?threadid=9531
 Mario AI<br/>
 http://julian.togelius.com/mariocompetition2009/ <br/>
 http://ice-gic.ieee-cesoc.org/
+
+Google/Tron competition winner forum comments<br/>
+http://csclub.uwaterloo.ca/contest/forums/search.php?keywords=&terms=all&author=a1k0n&sc=1&sf=all&sr=posts&sk=t&sd=d&st=0&ch=300&t=0&submit=Search
 
 http://en.wikipedia.org/wiki/Robocode
 
