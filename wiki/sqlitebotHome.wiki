@@ -256,6 +256,18 @@ http://www.trianglegameconference.com
   * GPU Roadmap http://graphics.cs.williams.edu/archive/SweeneyHPG2009/TimHPG2009.pdf
   * Languages Roadmap http://www.st.cs.uni-sb.de/edu/seminare/2005/advanced-fp/docs/sweeny.pdf
 
+== Developer blogs ==
+
+http://the-witness.net/news <br/>
+http://fullbright.blogspot.com/ <br/>
+http://davidjaffe.biz
+http://magicalwasteland.com
+http://2dboy.com
+http://hcsoftware.sourceforge.net/jason-rohrer
+
+
+
+
 ----
 
 = Gotchas, Tips =
