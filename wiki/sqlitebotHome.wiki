@@ -259,14 +259,11 @@ http://www.trianglegameconference.com
 == Developer blogs ==
 
 http://the-witness.net/news <br/>
-http://fullbright.blogspot.com/ <br/>
-http://davidjaffe.biz
-http://magicalwasteland.com
-http://2dboy.com
-http://hcsoftware.sourceforge.net/jason-rohrer
-
-
-
+http://fullbright.blogspot.com <br/>
+http://davidjaffe.biz <br/>
+http://magicalwasteland.com <br/>
+http://2dboy.com <br/>
+http://hcsoftware.sourceforge.net/jason-rohrer <br/>
 
 ----
 
