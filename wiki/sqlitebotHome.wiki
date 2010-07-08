@@ -9,7 +9,7 @@ youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
 developer blog http://ochopin.blogspot.com
 
-comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gmail.com
+comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gmail.com - I don't get notification of comments on these wiki pages and don't check often so I'm likely to miss any comments on the wiki pages themselves
 
 ----
 *Update* - December 14, 2009 <br/>
