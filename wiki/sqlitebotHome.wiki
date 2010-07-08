@@ -7,6 +7,8 @@ article http://aigamedev.com/open/articles/sqlite-bot <br/>
 powerpoint http://docs.google.com/present/view?id=dg2bz3n6_51dh2xbpcj <br/>
 youtube http://www.youtube.com/watch?v=XWkXcTIPkpM
 
+developer blog http://ochopin.blogspot.com
+
 ----
 *Update* - December 14, 2009 <br/>
 I've grown *bored* working on this project by myself without much *feedback* - if there are others who are interested in seeing this project continue, find it useful or contributing in some way, let me know by email(jeremy.cothran@gmail.com) or post on the google group http://groups.google.com/group/sqlitebot otherwise I just feel a bit that I'm working in a vacuum and don't feel very motivated to continue the interest or work.  I'll probably take a shot at the StarCraft AI competition next September http://eis.ucsc.edu/StarCraftAICompetition using a sqlite relational database for the AI as well and will probably post some documentation regarding that.
