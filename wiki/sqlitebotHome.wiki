@@ -43,6 +43,8 @@ In the end, at the current time, I think of RTS's like a fluid-dynamics chemical
 
 The latest svn source code of BasicAIModule.cpp is a bit better in regards to visual debugging using the draw function - group/troop counts are displayed in the upper left corner, home group0 target is a small red circle and away group1 target is a large red circle, hurt units have a small yellow circle.
 
+*Update* - July 13, 2010 - getting into flash games development - will continue my further developer updates at developer blog http://ochopin.blogspot.com
+
 ----
 = Pre-install steps =
 
