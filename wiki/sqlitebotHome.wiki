@@ -241,6 +241,7 @@ http://www.lostgarden.com/2006/04/joyful-life-of-lapsed-game-developer.html <br/
 http://www.gamasutra.com/view/feature/3656/quality_of_life_does_anyone_still_.php <br/>
 http://makeitbigingames.com/2006/02/five-foundational-steps-to-surviving-as-a-game-developer/ <br/>
 http://makeitbigingames.com/2008/06/working-for-big-publishers/ <br/>
+http://ask.slashdot.org/story/10/10/06/0438203/Best-Education-Path-To-Learn-Video-Game-Programming
 
 == Books ==
 
