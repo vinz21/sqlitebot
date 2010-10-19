@@ -1,6 +1,6 @@
 #summary sqliteBot homepage
 
-http://sqlitebot.googlecode.com/files/Img_2202.png 
+http://sqlitebot.googlecode.com/files/Img_2202.jpg
 
 see also [http://code.google.com/p/sqlitebot/w/list Wiki pages] [SqlitebotFlow] [DevelopmentIdeas] [MapGenerator] [http://code.google.com/p/sqlitebot/wiki/SqlitebotVideos Videos]
 
