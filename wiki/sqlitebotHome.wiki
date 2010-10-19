@@ -1,5 +1,7 @@
 #summary sqliteBot homepage
 
+http://code.google.com/p/sqlitebot/downloads/detail?name=IMG_2202.JPG&can=2&q=
+
 see also [http://code.google.com/p/sqlitebot/w/list Wiki pages] [SqlitebotFlow] [DevelopmentIdeas] [MapGenerator] [http://code.google.com/p/sqlitebot/wiki/SqlitebotVideos Videos]
 
 document http://docs.google.com/Doc?docid=0AUGdvmaCDgbOZGcyYnozbjZfNTdma2g3cWNnZw&hl=en <br/>
