@@ -16,7 +16,8 @@ comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gm
 ----
 <wiki:toc max_depth="6">
 ----
-*Update* - June 27, 2011 <br/>
+= Updates =
+== *Update* - June 27, 2011 ==
 
 Published the first version of 'shadowshot' , a stealth type game at
 
