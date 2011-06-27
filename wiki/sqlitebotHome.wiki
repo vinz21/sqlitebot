@@ -20,6 +20,8 @@ Published the first version of 'shadowshot' , a stealth type game at
 
 http://www.kongregate.com/games/garcia1968/shadowshot
 
+http://sqlitebot.googlecode.com/files/shadowshot_full.png
+
 Fairly straightforward AI that breaks guards into one of several subgroups such as: cover,patrol,pursuit,wander
 
 Created a few subfunctions to return total ground distance of selected paths to determine where good target locations should or should not be placed.
