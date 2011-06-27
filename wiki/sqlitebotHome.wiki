@@ -38,10 +38,11 @@ Used flixel(FlxPath), flixel power tools(collision,fonts), DAME and sfxr.
 I did enjoy and the game was inspired by http://www.kongregate.com/games/mastermax/ultimate-assassin-3 although I'm trying to extend the AI and some other concepts of that game and would like to push it into some multiplayer aspects seen in http://www.frozensynapse.com
 
 ----
-*Update* - July 13, 2010 - getting into flash games development with flixel
+== *Update* - July 13, 2010 ==
+Getting into flash games development with flixel
 
 ----
-*Update* - March 9, 2010 <br/>
+== *Update* - March 9, 2010 ==
 I'm taking a break from development for now - posted some basic documentation on using sqlite with Visual Studio at [VisualStudio] and on the Starcraft AI front, playtesting against 'krasi' who has an excellent tank rush strategy and game experience, I'm feeling a bit overwhelmed that a manual approach might be a never-ending task of game-specific programming tactic vs counter-tactic - for a more generalized learning AI I'd probably go in the direction of spatial analysis(starting with just basic radius areas of effects for multiple enemy units vs the current singular first-sighted enemy target) for avoiding formations at their strong points while attacking enemy formations at their weakest points.  Past that, I still need working scouts, for recon/targeting and also the ability to change build base build strategy and multiple base expansion.
 
 In the end, at the current time, I think of RTS's like a fluid-dynamics chemical catalyst issue - model the game and units as stream/flow or fluid-mixing physics problem to achieve a desired end mixture or reaction that moves toward a final win state.  The really time-consuming bit is how to model these tactics and countertactics in a general way that might work for multiple RTS games and then logging/weighting the optimal strategies accordingly with gameplay experience over time.  A single person/team or closed approach seems like a full-time job while an open-source set of functions/solutions might be a way of distributing and chipping away at the problems over the long term.
@@ -49,11 +50,11 @@ In the end, at the current time, I think of RTS's like a fluid-dynamics chemical
 The latest svn source code of BasicAIModule.cpp is a bit better in regards to visual debugging using the draw function - group/troop counts are displayed in the upper left corner, home group0 target is a small red circle and away group1 target is a large red circle, hurt units have a small yellow circle.
 
 ----
-*Update* - January 26, 2010 <br/>
+== *Update* - January 26, 2010 ==
 Documentation/code for Starcraft AI competition effort posted at [Starcraft1]
 
 ----
-*Update* - January 7, 2010 <br/>
+== *Update* - January 7, 2010 ==
 Questions or suggestions regarding this project or AI competitions in general feel free to post to the google group at http://groups.google.com/group/sqlitebot  If there's a common AI or group AI problem that multiple developers are looking for a solution for in their mod work, then that might help form an interest/focus, but most game AI for now just seems like retreads of the same old solutions(and same poor, memory starved behaviors).  More like a puppet show on a rail/gallery shooter than a truer form of learning AI or AI which makes better use of possible gameplay information over time :)
 
 Developing a general bot API/database for the Unity 3D framework http://forum.unity3d.com/viewtopic.php?t=35592&highlight=sqlitebot might be an interest also for indie/browser-based games.
@@ -72,10 +73,8 @@ Valve TF2 http://forums.steampowered.com/forums/showthread.php?t=1102152 http://
 Pogamut https://artemis.ms.mff.cuni.cz/pogamut/tiki-view_forum_thread.php?forumId=6&comments_parentId=789
 
 ----
-*Update* - December 14, 2009 <br/>
+== *Update* - December 14, 2009 ==
 I've grown *bored* working on this project by myself without much *feedback* - if there are others who are interested in seeing this project continue, find it useful or contributing in some way, let me know by email(jeremy.cothran@gmail.com) or post on the google group http://groups.google.com/group/sqlitebot otherwise I just feel a bit that I'm working in a vacuum and don't feel very motivated to continue the interest or work.  I'll probably take a shot at the StarCraft AI competition next September http://eis.ucsc.edu/StarCraftAICompetition using a sqlite relational database for the AI as well and will probably post some documentation regarding that.
-
-
 
 ----
 = Pre-install steps =
