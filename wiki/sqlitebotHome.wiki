@@ -14,6 +14,8 @@ developer blog http://ochopin.blogspot.com
 comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gmail.com - I don't get notification of comments on these wiki pages and don't check often so I'm likely to miss any comments on the wiki pages themselves
 
 ----
+<wiki:toc max_depth="6">
+----
 *Update* - June 27, 2011 <br/>
 
 Published the first version of 'shadowshot' , a stealth type game at
