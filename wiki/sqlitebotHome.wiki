@@ -35,7 +35,7 @@ Used flixel(FlxPath), flixel power tools(collision,fonts), DAME and sfxr.
 I did enjoy and the game was inspired by http://www.kongregate.com/games/mastermax/ultimate-assassin-3 although I'm trying to extend the AI and some other concepts of that game and would like to push it into some multiplayer aspects seen in http://www.frozensynapse.com
 
 ----
-*Update* - July 13, 2010 - getting into flash games development - will continue my further developer updates at developer blog http://ochopin.blogspot.com
+*Update* - July 13, 2010 - getting into flash games development with flixel
 
 ----
 *Update* - March 9, 2010 <br/>
