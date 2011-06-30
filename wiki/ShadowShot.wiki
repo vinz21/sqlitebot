@@ -1,0 +1,13 @@
+#summary Overview of ShadowShot flash game
+
+= Asset files description = 
+
+zip file http://ratingsbay.com/flash/shadowshot/assets.zip
+
+== Graphics ==
+
+http://ratingsbay.com/flash/shadowshot/assets/graphics
+
+ability.png, health.png, time.png - these are just the indicator bars at the game bottom that are scaled to indicate amounts
+
+knight3.png - the font set used by the game from Photon Storm at 
