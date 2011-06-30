@@ -45,5 +45,3 @@ http://ratingsbay.com/flash/shadowshot/assets/audio
 Audio currently used by the game - descriptions later
 
 8-bit retro sounds created using sfxr http://www.drpetter.se/project_sfxr.html
-
-http://chat.kongregate.com/gamez/0011/6750/live/ultimateassassin3kong.swf
