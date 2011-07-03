@@ -23,7 +23,7 @@ Published the first version of 'shadowshot' , a stealth type game at
 
 http://www.kongregate.com/games/garcia1968/shadowshot
 
-http://sqlitebot.googlecode.com/files/shadowshot_full.png
+http://sqlitebot.googlecode.com/files/shadow_full.jpg
 
 Fairly straightforward AI that breaks guards into one of several subgroups such as: cover,patrol,pursuit,wander
 
