@@ -43,6 +43,7 @@ WorkerManager::WorkerManager(Arbitrator::Arbitrator<Unit*,double>* arbitrator)
 
 bool enableStart = true;
 bool enableManual = false;
+bool baseDefend = false;
 
 //int countTroop = 0;
 //int attackStrength = 5;
@@ -77,6 +78,8 @@ Unit* closestTroopTarget = NULL;
 Unit* closestGeyser=NULL;
 Unit* closestMineral=NULL;
 Unit* scoutWorker=NULL;
+
+int attackTime = 0;
 
 //int scoutCount = 1;
 
@@ -226,7 +229,7 @@ void BasicAIModule::onStart()
       //this->buildOrderManager->buildAdditional(2,UnitTypes::Terran_Medic,100);
       this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Medic,119);
 	  this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,118);
-	  this->buildOrderManager->buildAdditional(6,UnitTypes::Terran_Siege_Tank_Tank_Mode,120);  //was 124,85
+	  this->buildOrderManager->buildAdditional(6,UnitTypes::Terran_Siege_Tank_Tank_Mode,118);  //was 124,85,120
 
       /*this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Medic,117);
 	  this->buildOrderManager->buildAdditional(15,UnitTypes::Terran_Marine,116);
@@ -244,12 +247,12 @@ void BasicAIModule::onStart()
       this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,70);
   	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Siege_Tank_Tank_Mode,71);  //was 124,85
 	  //krasi
-	  //this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Siege_Tank_Tank_Mode,71);  //was 124,85
+	  //this->buildOrderManager->buildAdditional(10,UnitTypes::Terran_Siege_Tank_Tank_Mode,71);  //was 124,85
 
 	  //3rd
 	  this->buildOrderManager->buildAdditional(4,UnitTypes::Terran_Medic,69);
       this->buildOrderManager->buildAdditional(20,UnitTypes::Terran_Marine,68);
-	  this->buildOrderManager->buildAdditional(3,UnitTypes::Terran_Siege_Tank_Tank_Mode,69);  //was 124,85
+	  this->buildOrderManager->buildAdditional(10,UnitTypes::Terran_Siege_Tank_Tank_Mode,69);  //was 124,85, was 3 tanks
 
 	  /*
 	  //4th
@@ -380,12 +383,13 @@ void BasicAIModule::onFrame()
       Broodwar->drawText(CoordinateType::Screen,10,y,"%s",groupStatus[groupID].c_str());
 	}
   }
+  if (baseDefend) { Broodwar->drawText(CoordinateType::Screen,10,40,"baseDefend"); }
 
 if (currentTargetPosition[0].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[0].x(),currentTargetPosition[0].y(),10,Colors::Red); }
 if (currentTargetPosition[1].x()!=NULL) { Broodwar->drawCircle(CoordinateType::Map,currentTargetPosition[1].x(),currentTargetPosition[1].y(),20,Colors::Red); }
 
-if (hurt[0]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[0]->getPosition().x(),hurt[0]->getPosition().y(),5,Colors::Yellow); }
-if (hurt[1]!=NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[1]->getPosition().x(),hurt[1]->getPosition().y(),5,Colors::Yellow); }
+if (hurt[0]!= NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[0]->getPosition().x(),hurt[0]->getPosition().y(),5,Colors::Yellow); }
+if (hurt[1]!= NULL) { Broodwar->drawCircle(CoordinateType::Map,hurt[1]->getPosition().x(),hurt[1]->getPosition().y(),5,Colors::Yellow); }
 
 
 
@@ -512,11 +516,12 @@ void BasicAIModule::onUnitDestroy(BWAPI::Unit* unit)
 		  {
 		  //(*i)->move = false;
 		  mainGroup.erase(i);  
+		  if ((*i)->unitPointer == scoutWorker) { scoutWorker=NULL; Broodwar->printf("new scout!"); } //JTC - FIX
 		  break;
 	      }
 	  }
 
-	if (unit == scoutWorker) { scoutWorker=NULL; } //JTC - FIX
+	//if (unit == scoutWorker) { scoutWorker=NULL; } //JTC - FIX
 
   }
 }
@@ -548,13 +553,14 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
     groupAdd(unit);
     } 
 
-  if (scoutWorker==NULL
+/*  if (scoutWorker==NULL
 	  && enableScout
 	  && !strcmp(unit->getType().getName().c_str(),"Terran SCV")
 	  ) 
     {
     scoutWorker=unit;
-    } 
+    }
+*/
   }
 
 //------------------------  
@@ -562,8 +568,7 @@ void BasicAIModule::onUnitShow(BWAPI::Unit* unit)
   int thisTime = Broodwar->getFrameCount();
   Broodwar->printf("%s[%x]spotted(%d,%d):time:%d",unit->getType().getName().c_str(),unit,unit->getPosition().x(),unit->getPosition().y(),thisTime);
 
-  static int attackTime;
-
+  //static int attackTime;
   if (thisTime < attackTime+24*5) { return; }
   
   //attackTime = thisTime;
@@ -724,6 +729,7 @@ void BasicAIModule::checkIdle()
 	int idleWorkers = 0;
 	int gasWorkers = 0;
 	int mineralWorkers = 0;
+	baseDefend = false;
 	//countTroop = 0;
 	//int totalX = 0;
 	//int totalY = 0;
@@ -814,8 +820,52 @@ void BasicAIModule::checkIdle()
 
     //send each worker to the mineral field that is closest to it
     for(std::set<Unit*>::const_iterator i=Broodwar->self()->getUnits().begin();i!=Broodwar->self()->getUnits().end();i++)
-    {
-	  if (scoutWorker!=NULL && *i==scoutWorker) { continue; }
+	{
+		if ((*i)->getType().isWorker() &&
+			(scoutWorker==NULL || !scoutWorker->exists() || (*i == scoutWorker))
+			) 
+		{
+			scoutWorker=*i;
+
+			//scout
+			if (enableScout)
+			{
+
+			int thisTime = Broodwar->getFrameCount();
+			static int scoutTime;
+
+			if (thisTime > scoutTime+24*30) { 
+				scoutTime = thisTime;
+
+				//Broodwar->printf("scout_change:1");
+
+					BWAPI::Position target_scout;
+					//int random_x = rand() % Broodwar->mapWidth();
+					//int random_y = rand() % Broodwar->mapHeight();
+					int random_x = -1000 + rand() % 2000;
+					int random_y = -1000 + rand() % 2000;
+					target_scout.x() = (*i)->getPosition().x()+random_x;
+					target_scout.y() = (*i)->getPosition().y()+random_y;
+					Broodwar->printf("scout_change:%d/%d",random_x,random_y);
+					
+					(*i)->rightClick(target_scout);
+					
+					/*
+					std::pair<std::list<BWTA::BaseLocation*>, double> getBestPathHelper(std::set<BWTA::BaseLocation* > baseLocations);
+					for(std::set<BWTA::BaseLocation*>::iterator b=baseLocations.begin();b!=baseLocations.end();b++)
+					{
+					  (*i)->rightClick((*b)->getPosition());
+					}
+		  			continue;
+					*/
+		
+			}
+			}
+
+		  continue;
+		}
+		
+
       if ((*i)->getType().isWorker() && (*i)->isIdle())
       {
 		
@@ -844,25 +894,6 @@ void BasicAIModule::checkIdle()
 	  //if ((*i)->getType().isWorker() && !(*i)->isRepairing()) {
 	  if ((*i)->getType().isWorker()) {
 
-//scout
-/*	if (enableScout)
-	{
-		if (scoutWorker==NULL) {
-			scoutWorker=*i;
-		}
-		if (*i == scoutWorker)
-		{
-			std::pair<std::list<BWTA::BaseLocation*>, double> getBestPathHelper(std::set<BWTA::BaseLocation* > baseLocations)
-			for(std::set<BWTA::BaseLocation*>::iterator b=baseLocations.begin();b!=baseLocations.end();b++)
-			{
-			  (*i)->rightClick((*b)->getPosition());
-			}
-		  	continue;
-		}
-	}
-*/
-
-
 //repair
   	  //repair trumps others
           Unit* closestRepair=NULL;
@@ -889,7 +920,7 @@ void BasicAIModule::checkIdle()
 			  //Broodwar->printf("rtype:%s:%d:%d",(*m)->getType().getName().c_str(),(*m)->getHitPoints(),(*m)->getInitialHitPoints());
 			  //Broodwar->printf("m:%d",(*m)->getType().isRefinery());
 			  //repair buildings,detectors(sv,missilesilo),workers
-			  if (((*m)->getType().isBuilding() || (*m)->getType().isDetector() || (*m)->getType().isWorker() || (*m)->getType().isMechanical())
+  if (((*m)->getType().isBuilding() || (*m)->getType().isDetector() || (*m)->getType().isWorker() || (*m)->getType().isMechanical() || (*m)->getType().isFlyer()) //JTC_SEP
 				  //(*m)->getPlayer()==Broodwar->self() &&
 				  //((*m)->getHitPoints() < (*m)->getInitialHitPoints())
 				  && ((*m)->getHitPoints() < (*m)->getType().maxHitPoints())
@@ -909,6 +940,7 @@ void BasicAIModule::checkIdle()
 
     //base defense
 
+	int thisTime = Broodwar->getFrameCount();
 	
 	int enemyCount = 0;
     for(std::set<Unit*>::iterator m=Broodwar->getAllUnits().begin();m!=Broodwar->getAllUnits().end();m++)
@@ -948,7 +980,8 @@ void BasicAIModule::checkIdle()
 			  //FIX
 			  if (currentTargetPosition[1].x()==NULL //if just sitting at base, etc
 				  || groupCount[0] < 10 //if home group is weak, send away troops back
-				  ) { currentTargetPosition[1] = (*m)->getPosition(); }
+				  || thisTime > attackTime+24*40 //JTC_SEP
+				  ) { currentTargetPosition[1] = (*m)->getPosition(); baseDefend = true; }
 			  break; //just focus on first unit that is listed
 			  }
 			//else if ((*i)->isIdle()) { (*i)->attackMove((*m)->getPosition()); }
@@ -960,9 +993,8 @@ void BasicAIModule::checkIdle()
 	  Broodwar->printf("e:%d",enemyCount);
 	}
 
-	if (enemyCount == 0  && mainGroup.size() > 55) { enableScout = true; }
+	if (enemyCount == 0  && mainGroup.size() > 10) { enableScout = true; } //Broodwar->printf("scout enabled??");}
 	else { enableScout = false; }
-
 
 //Broodwar->printf("ciE");
 }
@@ -1007,7 +1039,9 @@ if (!strcmp(unit->getType().getName().c_str(),"Terran Science Vessel"))
 
 if (!strcmp(unit->getType().getName().c_str(),"Terran Siege Tank Tank Mode"))
 {
-	groupID = 1;
+	if (groupCountTank[1] <= 1 || groupCountTank[0] >= 1) { groupID = 1; }
+	else { groupID = 0; }
+	groupCountTank[groupID]++;
 }
 
 groupCount[groupID]++;
@@ -1043,7 +1077,7 @@ int battleTroops[2];
 int targetDistance[2];
 int targetTroops[2];
 
-int tankDistance = 100; //was 200
+int tankDistance = 120; //was 200,100
 
 //----
 stagedTroops[0] = 0;
@@ -1065,9 +1099,9 @@ targetTroops[0] = 0;
 //----
 stagedTroops[1] = 0;
 stagedDistance[1] = 500; //was 1200, 1100, 600 - 380 magic number range for siege
-numStagedAttack[1] = 288; //was 28
+numStagedAttack[1] = 28; //was 28
 battleDistance[1] = 900;  //was 900
-numBattleAttack[1] = 288; //was 5
+numBattleAttack[1] = 5; //was 5
 targetDistance[1] = 40; //was 10
 
 groupCount[1] = 0;
@@ -1104,6 +1138,9 @@ for(std::list<GroupData*>::const_iterator i=mainGroup.begin();i!=mainGroup.end()
 	  }
 	  else { //groupID == 1
 		  dist = BWTA::getGroundDistance(u->getPosition(),currentTargetPosition[groupID]);
+		  if (dist == -1) {  //JTC_SEP
+			dist = u->getDistance(currentTargetPosition[groupID]);
+		  }
 	  }
   }
   else {
@@ -1181,7 +1218,7 @@ if ( currentTargetPosition[groupID].x()!=NULL
    	   || (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Tank Mode"))  //SV gets shot at by direct air, needs to travel safer troop ground path
 	   )
 	) 
-	{ u->attackMove(currentTargetPosition[groupID]);
+	{ u->attackMove(currentTargetPosition[groupID]);  //JTC_SEP
 }
 
 //stop if medic, but continue if someone hurt
@@ -1194,32 +1231,35 @@ if ((!strcmp(u->getType().getName().c_str(),"Terran Marine")
 	&& dist < stagedDistance[groupID]
 	&& stagedTroops[groupID] < numStagedAttack[groupID]
 	&& dist != -1
+	&& !baseDefend
 	)
 	{ u->stop(); (*i)->move = false;
 	}
 
 if (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Tank Mode")	
-	&& battleTroops[groupID] < numBattleAttack[groupID]
-	&& dist < stagedDistance[groupID] - tankDistance
-	&& stagedTroops[groupID] < numStagedAttack[groupID]
+	//&& battleTroops[groupID] < numBattleAttack[groupID]
+	&& ((dist < stagedDistance[groupID] - tankDistance) || (dist < 200))
+	//&& stagedTroops[groupID] < numStagedAttack[groupID]
 	&& dist != -1
+	//&& !baseDefend
 	)
   { u->stop();  u->siege(); (*i)->move = false;
 	}
 
-if (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Siege Mode")	
-	&& dist > stagedDistance[groupID] - tankDistance //|| dist == -1)
+if (!strcmp(u->getType().getName().c_str(),"Terran Siege Tank Siege Mode"))
+	{
+	if ((dist > stagedDistance[groupID] - tankDistance && (dist > 200)) //|| dist == -1)
 	//&& dist != -1
 	)
-  { u->unsiege();
-}
+		{ u->unsiege();	}
+	}
 
 //SV heal priority over marines
 if (!strcmp(u->getType().getName().c_str(),"Terran Medic") && hurt[groupID] != NULL) {
 	//if ((hurt[groupID])->isBlind()) { u->rightClick(hurt[groupID]); u->useTech(BWAPI::TechTypes::Restoration,hurt[groupID]); Broodwar->printf("BlindHeal"); }
 	if ((hurt[groupID])->isBlind()) { u->useTech(BWAPI::TechTypes::Restoration,hurt[groupID]); Broodwar->printf("BlindHeal"); }
 	//else { if (!u->getType().isFlyer()) { u->rightClick(hurt[groupID]);} }
-	else { if (!(u->getType().isFlyer() || u->getType().isMechanical()) || u->getType().isWorker()) { u->rightClick(hurt[groupID]);} }
+	else { if (!(hurt[groupID]->getType().isFlyer() || hurt[groupID]->getType().isMechanical()) || hurt[groupID]->getType().isWorker()) { u->rightClick(hurt[groupID]);} }
 }
 if (!strcmp(u->getType().getName().c_str(),"Terran Science Vessel")
 	&& hurt[groupID] != NULL
