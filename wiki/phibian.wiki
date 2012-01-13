@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="6">
 
-Note:  If interested in submitting a client AI for testing against the phibian game server(in development), please email jeremy.cothran@gmail.com with 'phibian' in the subject line.
+Note:  If interested in submitting a client AI for testing against the phibian game server(in development) or working on game server development, please email jeremy.cothran@gmail.com with 'phibian' in the subject line.  The initial game server is code development(perl) is very crude and experimental, but glad to share code with others as interested(open source project).
 
 = Introduction =
 
