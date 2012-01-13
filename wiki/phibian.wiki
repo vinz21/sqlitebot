@@ -10,6 +10,7 @@ Wanted to try to provide a game server for more continuous AI development and co
 
 To provide an alternative, the 'phibian' (short for amphibian, something between evolutionary stages) project is designed initially to provide a simple game data/event API with which to exchange game information between a game server and clients, allowing AI developers to focus more on the AI development aspects and continual improvement and sharing than a singular, packaged AI designed within the constraints of a singular game.  This design is modeled after human multiplayer interaction, where the only interface a human player has to the game is the screen/audio and controller interfaces and anticipates that at some point machine vision/audio research will progress to the point of being able to 'play' games using the same screen/audio/controller interface that human players use(in other words without having to hack the data stream directly as aimbot cheats do currently).
 
+
 = Initial game - Hunt =
 
 The initial simplest game type would be a top-down 2D map perspective for 2-4 players/clients to 'hunt' each other.  Each player has a map x,y location and a 'cone' of vision with which to detect other players/goals.  Users would provide a username and password to authenticate and register their AI client.  The game server would accept and respond to the below simple commands on port 2346.  The game would create a simple text output file at the game end(not during the game to prevent cheating) detailing the game turn information for game visualization.  Initial game visualization is being developed in flash using some earlier game code with a similar top-down perspective and 'cone' vision http://code.google.com/p/sqlitebot/wiki/ShadowShot
@@ -39,7 +40,6 @@ http://sqlitebot.googlecode.com/files/phibian_map_1.png
   * movement/rotation behaviors, for example
     * when navigating a corridor, align vision with direction along the corrider(don't waste effort looking at walls or places unlikely to find an enemy)
     * when rounding approaching or rounding a corner, 'slice the pie' in regards to rounding the corner slowly to improve accuracy while aiming at the newly exposed area
-
   * team/squad information sharing - 2 or more clients might share information to more quickly or successful track other players/targets.  Will probably setup a gametype to request team play specifically to prevent an unfair game advantage.
-
   * code-library or sharing - bringing together individually developed micro/melee and macro/strategy behaviors into larger packages to 'evolve' the clients with better AI features
+  * game capture/modeling - statistical map/game analysis for player/opponent modeling
