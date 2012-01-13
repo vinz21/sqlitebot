@@ -1,5 +1,7 @@
 #summary project 'phibian' details
 
+<wiki:toc max_depth="6">
+
 = Introduction =
 
 Wanted to try to provide a game server for more continuous AI development and code sharing.  Most AI contests I've seen so far involve sending a code package to a server for execution on a game contest server - while these contests are helpful,fun and informative, they don't provide a forum for sharing and evolving code in a community way.
@@ -21,4 +23,3 @@ rotate,x  #rotate focus to angle x - predetermined rotation speed of angle amoun
 == sample return information
 
 map_info,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y dimensions of the map and whether a map space is open(0=movement allowed) or closed(1=movement not allowed)
-
