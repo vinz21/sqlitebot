@@ -30,7 +30,7 @@ map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y d
 
 = expected AI client development = 
 
-  * A-star - A-star pathing algorithms to navigate the map
+  * A-star - pathing algorithms to navigate the map
   * map waypoints and/or sectors - to 'remember' or have memory of areas already visited or more intense action/scoring opportunities
   * movement/rotation behaviors
     * when navigating a corridor, align vision with direction along the corrider(don't waste effort looking at walls or places unlikely to find an enemy)
