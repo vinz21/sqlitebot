@@ -15,6 +15,10 @@ To provide an alternative, the 'phibian' (short for amphibian, something between
 
 The initial simplest game type would be a top-down 2D map perspective for 2-4 players/clients to 'hunt' each other.  Each player has a map x,y location and a 'cone' of vision with which to detect other players/goals.  Users would provide a username and password to authenticate and register their AI client.  The game server would accept and respond to the below simple commands on port 2346.  The game would create a simple text output file at the game end(not during the game to prevent cheating) detailing the game turn information for game visualization.  Initial game visualization is being developed in flash using some earlier game code with a similar top-down perspective and 'cone' vision http://code.google.com/p/sqlitebot/wiki/ShadowShot
 
+Ongoing AI/player competition match-ups and rankings would be provided.
+
+Initially the focus is on AI vs AI development, but I would like to incorporate a player visualization/control interface to allow human vs AI also.  Better/different independent visualizations of the player/game data are encouraged.
+
 A similar turn-based tactical shooter game concept is seen in the game 'Frozen Synapse' http://www.frozensynapse.com which draws from earlier classic games such as 'XCOM'.
 
 == sample commands ==
