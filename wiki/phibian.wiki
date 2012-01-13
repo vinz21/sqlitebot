@@ -27,3 +27,13 @@ rotate,x  #rotate focus to angle x - predetermined rotation speed of angle amoun
 == sample return information ==
 
 map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y dimensions of the map and whether a map space is open(0=movement allowed) or closed(1=movement not allowed)
+
+= expected AI client development = 
+
+  * A-star - A-star(A*) pathing algorithms to navigate the map
+  * map waypoints and/or sectors - to 'remember' or have memory of areas already visited or more intense action/scoring opportunities
+  * movement/rotation behaviors
+    * when navigating a corridor, align vision with direction along the corrider(don't waste effort looking at walls or places unlikely to find an enemy)
+    * when rounding approaching or rounding a corner, 'slice the pie' in regards to rounding the corner slowly to improve accuracy while aiming at the newly exposed area
+
+  * team/squad information sharing - 2 or more clients might share information to more quickly or successful track other players/targets.  Will probably setup a gametype to request team play specifically to prevent an unfair game advantage.
