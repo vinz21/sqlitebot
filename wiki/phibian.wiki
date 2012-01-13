@@ -28,6 +28,10 @@ rotate,x  #rotate focus to angle x - predetermined rotation speed of angle amoun
 
 map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y dimensions of the map and whether a map space is open(0=movement allowed) or closed(1=movement not allowed)
 
+= sample map =
+
+http://sqlitebot.googlecode.com/files/phibian_map_1.png
+
 = expected AI client development = 
 
   * A-star - pathing algorithms to navigate the map
