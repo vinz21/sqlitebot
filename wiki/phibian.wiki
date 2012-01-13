@@ -19,7 +19,7 @@ Ongoing AI/player competition match-ups and rankings would be provided.
 
 Initially the focus is on AI vs AI development, but I would like to incorporate a player visualization/control interface to allow human vs AI also.  Better/different independent visualizations of the player/game data are encouraged.
 
-A similar turn-based tactical shooter game concept is seen in the game 'Frozen Synapse' http://www.frozensynapse.com which draws from earlier classic games such as 'XCOM'.
+A similar turn-based tactical shooter game concept is seen in the game 'Frozen Synapse' http://www.frozensynapse.com which draws from earlier classic games such as 'XCOM'.  Later melee combat development might be stats/numbers based, such as higher accuracy for slower movement,etc.
 
 == sample commands ==
 
