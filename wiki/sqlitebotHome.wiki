@@ -19,7 +19,7 @@ comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gm
 = Updates =
 == *Update* - January 12, 2012 ==
 
-Project phibian
+Project [phibian]
 
 Wanted to try to provide a game server for more continuous AI development and code sharing. Most AI contests I've seen so far involve sending a code package to a server for execution on a game contest server - while these contests are helpful,fun and informative, they don't provide a forum for sharing and evolving code in a community way.
 
