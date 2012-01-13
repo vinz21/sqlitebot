@@ -26,4 +26,4 @@ rotate,x  #rotate focus to angle x - predetermined rotation speed of angle amoun
 
 == sample return information ==
 
-map_info,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y dimensions of the map and whether a map space is open(0=movement allowed) or closed(1=movement not allowed)
+map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y dimensions of the map and whether a map space is open(0=movement allowed) or closed(1=movement not allowed)
