@@ -37,3 +37,5 @@ map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y d
     * when rounding approaching or rounding a corner, 'slice the pie' in regards to rounding the corner slowly to improve accuracy while aiming at the newly exposed area
 
   * team/squad information sharing - 2 or more clients might share information to more quickly or successful track other players/targets.  Will probably setup a gametype to request team play specifically to prevent an unfair game advantage.
+
+  * code-library or sharing - bringing together individually developed micro/melee and macro/strategy behaviors into larger packages to 'evolve' the clients with better AI features
