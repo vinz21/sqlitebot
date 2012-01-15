@@ -38,6 +38,17 @@ map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y d
 http://sqlitebot.googlecode.com/files/phibian_map_1.png
 
 ----
+= Viewer = 
+
+A basic viewer of the game results is available using some flash scripting, with the viewer link available at x
+
+== File selection ==
+http://sqlitebot.googlecode.com/files/phibian_viewer_1.png
+
+== Results simulation ==
+http://sqlitebot.googlecode.com/files/phibian_viewer_2.png
+
+----
 = expected AI client development = 
 
   * A-star - pathing algorithms to navigate the map
