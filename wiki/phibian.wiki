@@ -23,7 +23,7 @@ A similar turn-based tactical shooter game concept is seen in the game 'Frozen S
 
 == sample client ==
 
-To get started, a simple sample client AI script has been provided at x
+To get started, a simple sample client AI script has been provided at http://sqlitebot.googlecode.com/files/client_5.pl
 
 This script can be run with the following command line twice for example to have the AI compete against itself(note both clients are using the same group_password(grp1),max_players(4) and max_score(3) parameters.  The total number of turns can also be set below 5000.
 
