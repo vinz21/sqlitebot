@@ -43,10 +43,10 @@ http://sqlitebot.googlecode.com/files/phibian_map_1.png
 A basic viewer of the game results is available using some flash scripting, with the viewer link available at x
 
 == File selection ==
-http://sqlitebot.googlecode.com/files/phibian_viewer_1.png
+http://sqlitebot.googlecode.com/files/phibian_viewer_1.jpg
 
 == Results simulation ==
-http://sqlitebot.googlecode.com/files/phibian_viewer_2.png
+http://sqlitebot.googlecode.com/files/phibian_viewer_2.jpg
 
 ----
 = expected AI client development = 
