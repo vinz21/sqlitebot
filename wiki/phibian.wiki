@@ -29,9 +29,36 @@ move,x,y  #move to map location x,y - predetermined speed of 'n' units per turn 
 
 rotate,x  #rotate focus to angle x - predetermined rotation speed of angle amount per turn
 
-== sample return information ==
+== sample client return information ==
 
-map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y dimensions of the map and whether a map space is open(0=movement allowed) or closed(1=movement not allowed)
+the sample perl client should be a simple enough example to get started - the client basically sets up a socket connection with the game server and requests(game_request) a game and is returned a line with the game_start,game_id,player_id for an available game.
+
+{{{
+c:start=====================
+check
+c:game_request
+c:start=====================
+game_start,124013,154084
+}}}
+
+Once the session is established the player attempts to move to the specified move_goal(the play command)
+
+{{{
+c:play,124013,154084,move_goal,102,102
+c:start=====================
+check:0
+}}}
+
+and receives one of the following response lines from the server
+
+  * check:<turn #>
+    * player_info:x,y,rotation
+  * goal_reached
+  * blocked,x,y
+  * respawn,x,y
+  * score,1,kill
+  * game_over
+
 
 ----
 = sample/test maps =
