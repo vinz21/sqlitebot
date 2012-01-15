@@ -43,9 +43,19 @@ http://sqlitebot.googlecode.com/files/phibian_map_1.png
 A basic viewer of the game results is available using some flash scripting, with the viewer link available at x
 
 == File selection ==
+
+file selection - The user enters the game_id given back during the client session to enter for the filename number(like 89980), this is a reference to the .csv file at http://ratingsbay.com/phibian/games
+
+turn time - the amount of time between turns - defaults to shortest 0.001
+
+number of players - 2 to 4 players 
+
 http://sqlitebot.googlecode.com/files/phibian_viewer_1.jpg
 
 == Results simulation ==
+
+The viewer shows a turn-based recreation of the chosen game_id, with the vision 'cones' an approximation to the ray-cast detection used by the game server.  Players currently are randomly respawned to a different location if they are detected by another player and a score point is given to the player that detected.  The username and graph indicated the scoring progress.
+
 http://sqlitebot.googlecode.com/files/phibian_viewer_2.jpg
 
 ----
