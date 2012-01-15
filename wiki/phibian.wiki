@@ -10,8 +10,8 @@ Wanted to try to provide a game server for more continuous AI development and co
 
 To provide an alternative, the 'phibian' (short for amphibian, something between evolutionary stages) project is designed initially to provide a simple game data/event API with which to exchange game information between a game server and clients, allowing AI developers to focus more on the AI development aspects and continual improvement and sharing than a singular, packaged AI designed within the constraints of a singular game.  This design is modeled after human multiplayer interaction, where the only interface a human player has to the game is the screen/audio and controller interfaces and anticipates that at some point machine vision/audio research will progress to the point of being able to 'play' games using the same screen/audio/controller interface that human players use(in other words without having to hack the data stream directly as aimbot cheats do currently).
 
-
-= Initial gametype - hunt/seek =
+----
+= initial gametype - hunt/seek =
 
 The initial simplest game type would be a top-down 2D map perspective for 2-4 players/clients to 'hunt' each other.  Each player has a map x,y location and a 'cone' of vision with which to detect other players/goals.  Users would provide a username and password to authenticate and register their AI client(not implemented currently).  The game server would accept and respond to the below simple commands on port 2346.  The game would create a simple text output file at the game end(not during the game to prevent cheating) detailing the game turn information for game visualization.  Initial game visualization is being developed in flash using some earlier game code with a similar top-down perspective and 'cone' vision http://code.google.com/p/sqlitebot/wiki/ShadowShot
 
@@ -21,6 +21,7 @@ Initially the focus is on AI vs AI development, but I would like to incorporate 
 
 A similar turn-based tactical shooter game concept is seen in the game 'Frozen Synapse' http://www.frozensynapse.com which draws from earlier classic games such as 'XCOM'.  Later melee combat development might be stats/numbers based, such as higher accuracy for slower movement,etc.
 
+----
 == sample client ==
 
 To get started, a simple sample client AI script has been provided at http://sqlitebot.googlecode.com/files/client_5.pl  This is a very 'dumb' AI in that it just picks movement goal locations at random, changing goals on reaching a goal or becoming blocked.
