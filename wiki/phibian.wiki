@@ -26,7 +26,7 @@ A similar turn-based tactical shooter game concept is seen in the game 'Frozen S
 
 To get started, a simple sample client AI script has been provided at http://sqlitebot.googlecode.com/files/client_5.pl  This is a very 'dumb' AI in that it just picks movement goal locations at random, changing goals on reaching a goal or becoming blocked.
 
-This script can be run with the following command line twice for example to have the AI compete against itself(note both clients are using the same group_password(grp1),max_players(4) and max_score(3) parameters.  The total number of turns can also be set below 5000.
+This script can be run with the following command line twice for example to have the AI compete against itself(note both clients are using the same group_password(grp1),max_players(2) and max_score(3) parameters.  The total number of turns can also be set below 5000.
 
 {{{
 perl client_5.pl 0 barry pass1 grp1 2 3 "" "" "" > out1 &
