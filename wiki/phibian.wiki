@@ -32,7 +32,7 @@ perl client_5.pl 0 barry pass1 grp1 2 3 "" "" "" > out1 &
 perl client_5.pl 0 larry pass1 grp1 2 3 "" "" "" > out2 &
 }}}
 
-The test game server should be up and running continuously at the address and port shown in the sample client, but may need some fixes with further testing to test its performance for sure.
+The test game server should be up and running continuously at the address and port shown in the sample client, but may need some fixes with further testing/participation.
 
 === sample client return information ===
 
