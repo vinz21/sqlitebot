@@ -21,7 +21,20 @@ Initially the focus is on AI vs AI development, but I would like to incorporate 
 
 A similar turn-based tactical shooter game concept is seen in the game 'Frozen Synapse' http://www.frozensynapse.com which draws from earlier classic games such as 'XCOM'.  Later melee combat development might be stats/numbers based, such as higher accuracy for slower movement,etc.
 
-== sample client return information ==
+== sample client ==
+
+To get started, a simple sample client AI script has been provided at x
+
+This script can be run with the following command line twice for example to have the AI compete against itself(note both clients are using the same group_password(grp1),max_players(4) and max_score(3) parameters.  The total number of turns can also be set below 5000.
+
+{{{
+perl client_5.pl 0 barry pass1 grp1 4 3 "" "" "" > out30 &
+perl client_5.pl 0 larry pass1 grp1 4 3 "" "" "" > out31 &
+}}}
+
+The test game server should be up and running continuously at the address and port shown in the sample client, but may need some fixes with further testing to test its performance for sure.
+
+=== sample client return information ===
 
 the sample perl client should be a simple enough example to get started - the client basically sets up a socket connection with the game server and requests(game_request) a game and is returned a line with the game_start,game_id,player_id for an available game.
 
