@@ -40,7 +40,7 @@ http://sqlitebot.googlecode.com/files/phibian_map_1.png
 ----
 = Viewer = 
 
-A basic viewer of the game results is available using some flash scripting, with the viewer link available at x
+A basic viewer of the game results is available using some flash scripting, with the viewer link available at http://ratingsbay.com/phibian/viewer.html
 
 == File selection ==
 
