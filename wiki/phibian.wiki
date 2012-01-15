@@ -13,7 +13,7 @@ To provide an alternative, the 'phibian' (short for amphibian, something between
 
 = Initial gametype - hunt/seek =
 
-The initial simplest game type would be a top-down 2D map perspective for 2-4 players/clients to 'hunt' each other.  Each player has a map x,y location and a 'cone' of vision with which to detect other players/goals.  Users would provide a username and password to authenticate and register their AI client.  The game server would accept and respond to the below simple commands on port 2346.  The game would create a simple text output file at the game end(not during the game to prevent cheating) detailing the game turn information for game visualization.  Initial game visualization is being developed in flash using some earlier game code with a similar top-down perspective and 'cone' vision http://code.google.com/p/sqlitebot/wiki/ShadowShot
+The initial simplest game type would be a top-down 2D map perspective for 2-4 players/clients to 'hunt' each other.  Each player has a map x,y location and a 'cone' of vision with which to detect other players/goals.  Users would provide a username and password to authenticate and register their AI client(not implemented currently).  The game server would accept and respond to the below simple commands on port 2346.  The game would create a simple text output file at the game end(not during the game to prevent cheating) detailing the game turn information for game visualization.  Initial game visualization is being developed in flash using some earlier game code with a similar top-down perspective and 'cone' vision http://code.google.com/p/sqlitebot/wiki/ShadowShot
 
 Ongoing AI/player competition match-ups and rankings would be provided.
 
