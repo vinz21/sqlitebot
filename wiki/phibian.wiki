@@ -44,7 +44,7 @@ A basic viewer of the game results is available using some flash scripting, with
 
 == File selection ==
 
-file selection - The user enters the game_id given back during the client session to enter for the filename number(like 89980), this is a reference to the .csv file at http://ratingsbay.com/phibian/games
+filename - the user enters the game_id given back during the client session to enter for the filename number(like 89980), this is a reference to the .csv file at http://ratingsbay.com/phibian/games
 
 turn time - the amount of time between turns - defaults to shortest 0.001
 
