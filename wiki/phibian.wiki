@@ -38,7 +38,9 @@ map_grid,x,y,1,1,1,0,1,...  #basic map setup information detailing the x and y d
 
 == map 1 ==
 
-The following map is the one currently referenced by the game server and is represented in the simple text grid file at the following link where closed pixels=1 and open pixels=0 http://ratingsbay.com/phibian/phibian_map_1.txt  Feed this file data to your AI algorithm for map analysis for this static map.
+The following map is the one currently referenced by the game server and is represented in the simple text grid file at the following link where closed pixels=1 and open pixels=0  Feed this file data to your AI algorithm for map analysis for this static map.
+
+http://ratingsbay.com/phibian/phibian_map_1.txt
 
 http://sqlitebot.googlecode.com/files/phibian_map_1.png
 
