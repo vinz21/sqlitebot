@@ -47,10 +47,10 @@ c:start=====================
 game_start,124013,154084
 }}}
 
-Once the session is established the player attempts to move to the specified move_goal(the play command)
+Once the session is established the player attempts to move to the specified path(the play command)
 
 {{{
-c:play,124013,154084,move_goal,102,102
+c:play,124013,154084,path,102,102
 c:start=====================
 check:0
 }}}
