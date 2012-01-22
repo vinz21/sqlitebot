@@ -26,11 +26,17 @@ A similar turn-based tactical shooter game concept is seen in the game 'Frozen S
 
 To get started, a simple sample client AI script has been provided at http://sqlitebot.googlecode.com/files/client_5.pl  This is a very 'dumb' AI in that it just picks movement goal locations at random, changing goals on reaching a goal or becoming blocked.
 
-This script can be run with the following command line twice for example to have the AI compete against itself(note both clients are using the same group_password(grp1),max_players(2) and max_score(3) parameters.  The total number of turns can also be set below 5000.
+This script can be run with the following command line several times for example to have the AI compete against itself(note all clients are using the same group_password(grp1),max_players(4) and max_score(3) parameters.  The total number of turns can also be set below 5000.  Teams(red1 below) can also be setup(currently teams do not fire on or target each other).
 
 {{{
-perl client_5.pl 0 barry pass1 grp1 2 3 "" "" "" > out1 &
-perl client_5.pl 0 larry pass1 grp1 2 3 "" "" "" > out2 &
+perl client_5.pl 0 jcothran "" grp1 red "" 4 3 "" "" "" > out1 &
+perl client_5.pl 0 joe "" grp1 red "" 4 3 "" "" "" > out2 &
+perl client_5.pl 0 larry "" grp1 "" "" 4 3 "" "" "" > out3 &
+perl client_5.pl 0 barry "" grp1 "" "" 4 3 "" "" "" > out4 &
+}}}
+
+{{{
+my ($player_wait,$username,$password,$group_password,$teamname,$team_password,$max_players,$max_score,$total_time,$gametype,$gamemap) = @ARGV;
 }}}
 
 The test game server should be up and running continuously at the address and port shown in the sample client, but may need some fixes with further testing/participation.
@@ -58,14 +64,16 @@ check:0
 and receives one of the following response lines from the server
 
   * check:<turn #>
-    * player_info:x,y,rotation
+    * player_info,x,y,rotation
   * goal_reached
   * blocked,x,y
   * respawn,x,y
   * score,1,kill
+  * hit,player_slot,x,y
+  * health,x - next update
   * game_over
 
-Currently the server moves the player towards the move_goal at about 2 pixel lengths per turn and auto-faces the player rotation towards the direction of movement(something which will be fixed later so that players can look in a direction other than which they are moving).
+Currently the server moves the player towards the move_goal at about 3 pixel lengths per turn and auto-faces the player rotation towards the direction of movement(something which will be fixed later so that players can look in a direction other than which they are moving).
 
 ----
 = sample/test maps =
