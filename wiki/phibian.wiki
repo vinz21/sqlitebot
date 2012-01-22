@@ -117,7 +117,9 @@ http://sqlitebot.googlecode.com/files/phibian_viewer_1.jpg
 
 == Results simulation ==
 
-The viewer shows a turn-based recreation of the chosen game_id, with the vision 'cones' an approximation to the ray-cast detection used by the game server.  The bot path goals are also shown for debugging purposes.  Players currently are randomly respawned to a different location if they are detected by another player and a score point is given to the player that detected.  The username and graph indicated the scoring progress.
+The viewer shows a turn-based recreation of the chosen game_id, with the vision 'cones' an approximation to the ray-cast detection used by the game server.  The bot path goals are also shown for debugging purposes.
+
+The light red bar over the username indicate the current player health.  If a player 'detects' another player, it will register as a 'hit' and decrease health.  If health goes below zero, the player will respawn and a score given to the player who made the final 'hit'.  The teamname:username and graph indicated the scoring progress.    
 
 http://sqlitebot.googlecode.com/files/phibian_viewer_2.jpg
 
