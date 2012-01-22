@@ -2,6 +2,10 @@
 
 <wiki:toc max_depth="6">
 
+A basic viewer for the game and game results is available  at http://ratingsbay.com/phibian/viewer.html
+
+The viewer has a default sample game '0' loaded with 4 players - just click the 'Start' icon to see the game play.
+
 Note:  If interested in submitting a client AI for testing against the phibian game server(in development) or working on game server development, please email jeremy.cothran@gmail.com with 'phibian' in the subject line.  The initial game server is code development(perl) is very crude and experimental, but glad to share code with others as interested(open source project).
 
 = Introduction =
@@ -98,6 +102,8 @@ most commands in the output .csv file are preceded by the player(0-3) to which t
 = Viewer = 
 
 A basic viewer of the game results is available using some flash scripting, with the viewer link available at http://ratingsbay.com/phibian/viewer.html
+
+The viewer has a default sample game '0' loaded with 4 players - just click the 'Start' icon to see the game play.
 
 == File selection ==
 
