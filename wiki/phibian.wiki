@@ -24,7 +24,7 @@ A similar turn-based tactical shooter game concept is seen in the game 'Frozen S
 ----
 == sample client ==
 
-To get started, a simple sample client AI script has been provided at http://sqlitebot.googlecode.com/files/client_5.pl  This is a very 'dumb' AI in that it just picks movement goal locations at random, changing goals on reaching a goal or becoming blocked.
+To get started, a simple sample client AI script has been provided at http://sqlitebot.googlecode.com/files/client_5.pl  This is a very 'dumb' AI in that it just picks movement goal locations at random, changing goals on reaching a goal or becoming blocked.  It will try to do a simple tracking of enemy bots it sees based on last known location.
 
 This script can be run with the following command line several times for example to have the AI compete against itself(note all clients are using the same group_password(grp1),max_players(4) and max_score(3) parameters.  The total number of turns can also be set below 5000.  Teams(red1 below) can also be setup(currently teams do not fire on or target each other).
 
@@ -70,7 +70,7 @@ and receives one of the following response lines from the server
   * respawn,x,y
   * score,1,kill
   * hit,player_slot,x,y
-  * health,x - next update
+  * health,x  _next update_
   * game_over
 
 Currently the server moves the player towards the move_goal at about 3 pixel lengths per turn and auto-faces the player rotation towards the direction of movement(something which will be fixed later so that players can look in a direction other than which they are moving).
@@ -111,7 +111,7 @@ http://sqlitebot.googlecode.com/files/phibian_viewer_1.jpg
 
 == Results simulation ==
 
-The viewer shows a turn-based recreation of the chosen game_id, with the vision 'cones' an approximation to the ray-cast detection used by the game server.  Players currently are randomly respawned to a different location if they are detected by another player and a score point is given to the player that detected.  The username and graph indicated the scoring progress.
+The viewer shows a turn-based recreation of the chosen game_id, with the vision 'cones' an approximation to the ray-cast detection used by the game server.  The bot path goals are also shown for debugging purposes.  Players currently are randomly respawned to a different location if they are detected by another player and a score point is given to the player that detected.  The username and graph indicated the scoring progress.
 
 http://sqlitebot.googlecode.com/files/phibian_viewer_2.jpg
 
