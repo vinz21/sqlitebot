@@ -2,7 +2,7 @@
 
 http://sqlitebot.googlecode.com/files/Img_2202.jpg
 
-_Any game can be looked at as some version of a tower defense puzzle_
+_Anything can be looked at as some version of a tower defense puzzle_
 
 see also [http://code.google.com/p/sqlitebot/w/list Wiki pages] [SqlitebotFlow] [DevelopmentIdeas] [MapGenerator] [http://code.google.com/p/sqlitebot/wiki/SqlitebotVideos Videos]
 
