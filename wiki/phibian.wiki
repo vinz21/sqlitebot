@@ -138,7 +138,9 @@ http://sqlitebot.googlecode.com/files/phibian_viewer_2.jpg
 ----
 = Map analysis =
 
-Some initial map analysis using the python scripts at x
+Some initial map analysis using the python scripts at 
+
+http://code.google.com/p/sqlitebot/source/browse/#svn%2Ftrunk%2Fphibian%2Fmaps
 
 vision range = 20 pixels - stronger definition of wall cover, more area defined as 'open'
 http://sqlitebot.googlecode.com/files/vis20.png
