@@ -134,3 +134,20 @@ http://sqlitebot.googlecode.com/files/phibian_viewer_2.jpg
   * team/squad information sharing - 2 or more clients might share information to more quickly or successful track other players/targets.  Will probably setup a gametype to request team play specifically to prevent an unfair game advantage.
   * code-library or sharing - bringing together individually developed micro/melee and macro/strategy behaviors into larger packages to 'evolve' the clients with better AI features
   * game capture/modeling - statistical map/game analysis for player/opponent modeling
+
+----
+= Map analysis =
+
+Some initial map analysis using the python scripts at x
+
+vision range = 20 pixels - stronger definition of wall cover, more area defined as 'open'
+http://sqlitebot.googlecode.com/files/vis20.png
+
+vision range = 100 pixels - blue areas show high direction towards large open areas, slight yellows where areas more open
+http://sqlitebot.googlecode.com/files/vis18.png
+
+vision range = 400 pixels - most areas more open
+http://sqlitebot.googlecode.com/files/vis19.png
+
+map rectangle(block) filling experiment - towards auto-defining waypoints
+http://sqlitebot.googlecode.com/files/block1.png
