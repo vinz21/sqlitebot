@@ -152,4 +152,4 @@ vision range = 400 pixels - most areas more open
 http://sqlitebot.googlecode.com/files/vis19.png
 
 map rectangle(block) filling experiment - towards auto-defining waypoints
-http://sqlitebot.googlecode.com/files/block1.png
+http://sqlitebot.googlecode.com/files/block_map.png
