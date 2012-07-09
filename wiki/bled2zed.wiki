@@ -36,7 +36,11 @@ Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
 *Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
 
-A zombie takes about 5 shots to kill.  Zombies alert nearby zombies when they are chasing you.  When a gun fires, zombies within a large radius will temporarily become more alert move toward the gunfire location.
+  *Zombies(cubes)
+    * takes about 5 shots to kill
+    * zombies alert nearby zombies when they are chasing you
+    * when a gun fires, zombies within a large radius will temporarily become more alert move toward the gunfire location
+    * respawn towards a level maximum of 20 zombies total
 
 There are 5 fixed player spawn points on the map indicated by a metal tile.  There's one on top of a building with a plank laid to the building side to go up and down - if you drop off a building you will die from the fall.  If you run off the edge of the map, you will die from the fall.
 
