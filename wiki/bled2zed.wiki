@@ -17,6 +17,10 @@ You'll start out in the middle of the map, next to a large tiled tower where zom
 
 To run, hold left or right shift, but you can only run in small bursts before being forced back to a walk.
 
+Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
+
+*Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
+
 Your status readout(updated every 5 seconds) is upper right corner:
 
   * *time* - seconds since last death
@@ -31,10 +35,6 @@ Your status readout(updated every 5 seconds) is upper right corner:
   * *bullets(reload count)*
     * on new life always start with 3 bullets, max  bullets is 24
     * reload count is 4 - takes 2 seconds to reload - short delay between firing rounds
-
-Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
-
-*Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
 
   * *Zombies(cubes)*
     * takes about 5 shots to kill
