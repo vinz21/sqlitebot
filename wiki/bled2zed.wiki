@@ -1,0 +1,36 @@
+#summary instructions for Unity browser zombie/deathmatch game
+
+= Introduction =
+
+Game may still be very buggy, haven't had a chance to test multiplayer much at all.  Feel free to post comments or feedback at page bottom.
+
+Current game link is at
+http://ratingsbay.com/unity/worker3/WebPlayer.html 
+
+Using an account with a limit of 100 concurrent players.
+
+Just install the browser unity plug-in if not already installed, then the game should appear after a bit.  Click 'go' to create room or join an existing room.  
+
+The goal of the game for the current version is basically to try and get the highest score by staying alive longest the most often.  Matches don't have a fixed endpoint with this playtest.
+
+You'll start out in the middle of the map, next to a large tiled tower where zombie cubes(I don't have models yet) are spit out every 5 seconds to a max of 20 'zombie' cubes - they should be camo textured, but having issues with the texture so they just show up as black cubes for now.  The cubes have a radius of player detection - it's smaller when you're still and wider when you're walking/running.
+
+To run, hold left or right shift, but you can only run in small bursts before being forced back to a walk.
+
+Your status readout(updated every 5 seconds) is upper right corner:
+
+  * *time* - seconds since last death
+  * *score* - a multiplier of time, the longer you stay alive the higher the multiplier
+  * *health* - start at 100 and below zero and you're dead - if you get hit by zombie or player bullet you'll start to bleed out indicated by '(-)' next to your health score, more hits increases the bleed rate
+  * *bandages* - press 'B' to bandage, but you have to stay in the same spot for 6 seconds and not fire your gun - otherwise the bandage doesn't 'take' - max 3 bandages
+  * *bullets(reload count)* - on new life always start with 3 bullets, max  bullets is 24 - reload count is 4 - takes 2 seconds to reload - short delay between firing rounds
+
+Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
+
+Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
+
+A zombie takes about 5 shots to kill.  Zombies alert nearby zombies when they are chasing you.  When a gun fires, zombies within a large radius will temporarily become more alert move toward the gunfire location.
+
+There are 5 fixed player spawn points on the map indicated by a metal tile.  There's one on top of a building with a plank laid to the building side to go up and down - if you drop off a building you will die from the fall.  If you run off the edge of the map, you will die from the fall.
+
+There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup types are small color code cubes - yellow for 3 ammo, white for 1 bandage, red for 30 health.  A pickup(higher chance for ammo) spawns at a random location every 30 seconds.
