@@ -21,13 +21,20 @@ Your status readout(updated every 5 seconds) is upper right corner:
 
   * *time* - seconds since last death
   * *score* - a multiplier of time, the longer you stay alive the higher the multiplier
-  * *health* - start at 100 and below zero and you're dead - if you get hit by zombie or player bullet you'll start to bleed out indicated by '(-)' next to your health score, more hits increases the bleed rate
-  * *bandages* - press 'B' to bandage, but you have to stay in the same spot for 6 seconds and not fire your gun - otherwise the bandage doesn't 'take' - max 3 bandages
-  * *bullets(reload count)* - on new life always start with 3 bullets, max  bullets is 24 - reload count is 4 - takes 2 seconds to reload - short delay between firing rounds
+  * *health* 
+    * start at 100
+    * below zero and you're dead
+    * if you get hit by zombie or player bullet you'll start to bleed out indicated by '(-)' next to your health score, more hits increases the bleed rate
+  * *bandages*
+    * press 'B' to bandage, but you have to stay in the same spot for 6 seconds and not fire your gun - otherwise the bandage doesn't 'take'
+    * max 3 bandages
+  * *bullets(reload count)*
+    * on new life always start with 3 bullets, max  bullets is 24
+    * reload count is 4 - takes 2 seconds to reload - short delay between firing rounds
 
 Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
-Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
+*Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
 
 A zombie takes about 5 shots to kill.  Zombies alert nearby zombies when they are chasing you.  When a gun fires, zombies within a large radius will temporarily become more alert move toward the gunfire location.
 
