@@ -7,9 +7,9 @@ Game may still be very buggy, haven't had a chance to test multiplayer much at a
 Current game link is at
 http://ratingsbay.com/unity/worker3/WebPlayer.html 
 
-Using an account with a limit of 100 concurrent players.
+Using an account with a limit of 100 concurrent players.  10 player max per room.
 
-Just install the browser unity plug-in if not already installed, then the game should appear after a bit.  Click 'go' to create room or join an existing room.  
+Just install the browser unity plug-in if not already installed, then the game should appear after a bit.  Click 'go' to create room or join an existing room.  Can name/create your own room.  Rooms stay up as long as at least 1 player present.
 
 The goal of the game for the current version is basically to try and get the highest score by staying alive longest the most often.  Matches don't have a fixed endpoint with this playtest.
 
