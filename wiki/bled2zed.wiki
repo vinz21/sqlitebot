@@ -19,7 +19,7 @@ To run, hold left or right shift, but you can only run in small bursts before be
 
 Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
-*Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
+*Press 'F' to fire, although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
 
 Your status readout(updated every 5 seconds) is upper right corner:
 
