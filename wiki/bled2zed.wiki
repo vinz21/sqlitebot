@@ -33,7 +33,7 @@ Your status readout(updated every 5 seconds) is upper right corner:
     * *press 'B' to bandage*, but you have to stay in the same spot for 6 seconds and not fire your gun - otherwise the bandage doesn't 'take'
     * max 3 bandages
   * *bullets(reload count)*
-    * on new life always start with 3 bullets, max  bullets is 24
+    * on new life always start with 24 bullets, max  bullets is 24
     * reload count is 4 - takes 2 seconds to reload - short delay between firing rounds
 
   * *Zombies(cubes)*
@@ -44,4 +44,4 @@ Your status readout(updated every 5 seconds) is upper right corner:
 
 There are 5 fixed player spawn points on the map indicated by a metal tile.  There's one on top of a building with a plank laid to the building side to go up and down - if you drop off a building you will die from the fall.  If you run off the edge of the map, you will die from the fall.
 
-There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup types are small color code cubes - yellow for 3 ammo, white for 1 bandage, red for 30 health.  A pickup(higher chance for ammo) spawns at a random location every 30 seconds.
+There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup types are small color code cubes - yellow for 3 ammo, white for 1 bandage, red for 30 health.  A pickup(higher chance for ammo) spawns at a random location every 15 seconds.
