@@ -36,7 +36,7 @@ Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
 *Fire is 'F', although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).
 
-  *Zombies(cubes)
+  * *Zombies(cubes)*
     * takes about 5 shots to kill
     * zombies alert nearby zombies when they are chasing you
     * when a gun fires, zombies within a large radius will temporarily become more alert move toward the gunfire location
