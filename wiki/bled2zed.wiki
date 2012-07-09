@@ -44,7 +44,13 @@ Your status readout(updated every 5 seconds) is upper right corner:
 
 There are 5 fixed player spawn points on the map indicated by a metal tile.  There's one on top of a building with a plank laid to the building side to go up and down - if you drop off a building you will die from the fall.  If you run off the edge of the map, you will die from the fall.
 
+----
+*Pickups* - Ammo,Bandages,Health
+
 There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup types are small color code cubes - yellow for 3 ammo, white for 1 bandage, red for 30 health.  A pickup(higher chance for ammo) spawns at a random location every 15 seconds.
+
+Pickup locations are circled in red on the below map.
+http://sqlitebot.googlecode.com/files/map.jpg
 
 ----
 
