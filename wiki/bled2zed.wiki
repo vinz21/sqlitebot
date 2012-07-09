@@ -5,7 +5,7 @@
 Game may still be very buggy, haven't had a chance to test multiplayer much at all.  Feel free to post comments or feedback at page bottom.
 
 Current game link is at
-http://ratingsbay.com/unity/worker3/WebPlayer.html 
+http://ratingsbay.com/unity/bled2zed/WebPlayer.html 
 
 Using an account with a limit of 100 concurrent players.  10 player max per room.
 
