@@ -55,7 +55,7 @@ Pickup locations are circled in red on the below map.
 http://sqlitebot.googlecode.com/files/map.jpg
 
 ----
-
+http://sqlitebot.googlecode.com/files/show3.jpg
 http://sqlitebot.googlecode.com/files/show2.jpg
 ----
 = Suggested Fixes/Features = 
