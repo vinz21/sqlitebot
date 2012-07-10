@@ -1,5 +1,7 @@
 #summary instructions for Unity browser zombie/deathmatch game
 
+<wiki:toc max_depth="6">
+
 = Introduction =
 
 Game may still be very buggy, haven't had a chance to test multiplayer much at all.  Feel free to post comments or feedback at page bottom.
@@ -45,7 +47,7 @@ Your status readout(updated every 5 seconds) is upper right corner:
 There are 5 fixed player spawn points on the map indicated by a metal tile.  There's one on top of a building with a plank laid to the building side to go up and down - if you drop off a building you will die from the fall.  If you run off the edge of the map, you will die from the fall.
 
 ----
-*Pickups* - Ammo,Bandages,Health
+= *Pickups* - Ammo,Bandages,Health = 
 
 There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup types are small color code cubes - yellow for 3 ammo, white for 1 bandage, red for 30 health.  A pickup(higher chance for ammo) spawns at a random location every 15 seconds.
 
@@ -55,3 +57,9 @@ http://sqlitebot.googlecode.com/files/map.jpg
 ----
 
 http://sqlitebot.googlecode.com/files/show2.jpg
+----
+= Suggested Fixes/Features = 
+
+  * better player model with the usual combat and prone animations
+  * tin cans to toss to distract zombies away from self or towards other players
+ 
