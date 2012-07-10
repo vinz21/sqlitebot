@@ -13,7 +13,7 @@ Just install the browser unity plug-in if not already installed, then the game s
 
 The goal of the game for the current version is basically to try and get the highest score by staying alive longest the most often.  Matches don't have a fixed endpoint with this playtest.
 
-You'll start out in the middle of the map, next to a large tiled tower where zombie cubes(I don't have models yet) are spit out every 5 seconds to a max of 20 'zombie' cubes - they should be camo textured, but having issues with the texture so they just show up as black cubes for now.  The cubes have a radius of player detection - it's smaller when you're still and wider when you're walking/running.
+You'll start out in the middle of the map, next to a large tiled tower where zombie cubes(I don't have models yet) are spit out every 5 seconds to a max of 20 zombies.  The cubes have a radius of player detection - it's smaller when you're still and wider when you're walking/running.
 
 To run, hold left or right shift, but you can only run in small bursts before being forced back to a walk.
 
