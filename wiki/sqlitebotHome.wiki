@@ -25,6 +25,7 @@ comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gm
 Project [bled2zed]
 
 A unity browser based multiplayer zombie/deathmatch project.
+http://sqlitebot.googlecode.com/files/show2.jpg
 
 == *Update* - January 12, 2012 ==
 
