@@ -54,4 +54,4 @@ http://sqlitebot.googlecode.com/files/map.jpg
 
 ----
 
-http://sqlitebot.googlecode.com/files/show1.jpg
+http://sqlitebot.googlecode.com/files/show2.jpg
