@@ -38,7 +38,7 @@ Your status readout(updated every 5 seconds) is upper right corner:
     * on new life always start with 24 bullets, max  bullets is 24
     * reload count is 6 - takes 2 seconds to reload - short delay between firing rounds
 
-  * *Zombies(cubes)*
+  * *Zombies*
     * takes about 5 shots to kill
     * zombies alert nearby zombies when they are chasing you
     * when a gun fires, zombies within a large radius will temporarily become more alert move toward the gunfire location
