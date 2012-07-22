@@ -51,7 +51,7 @@ There are 5 fixed player spawn points on the map indicated by a metal tile.  The
 ----
 = *Pickups* - Ammo,Bandages,Health = 
 
-There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup types are small color code cubes - yellow for 3 ammo, white for 1 bandage, red for 30 health.  A pickup(higher chance for ammo) spawns at a random location every 15 seconds.
+There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup types squares for ammo(pistol = yellow, shotgun = red, sniper rifle =blue) and capsules for bandages(white, 1 bandage) and health(red,30 point health).  A pickup spawns at a random location every 15 seconds - higher chances for ammo.
 
 Pickup locations are circled in red on the below map.
 http://sqlitebot.googlecode.com/files/map.jpg
@@ -59,9 +59,9 @@ http://sqlitebot.googlecode.com/files/map.jpg
 ----
 = Weapon stats = 
 
-weaponDistMaxHit = effective range of the weapon
-weaponDamage = damage per shot
-weaponForceMult = impact force multiplier on kill
+weaponDistMaxHit = effective range of the weapon <br/>
+weaponDamage = damage per shot <br/>
+weaponForceMult = impact force multiplier on kill <br/>
 
 {{{
 		//pistol
