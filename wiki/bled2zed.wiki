@@ -26,7 +26,7 @@ To run, hold left or right shift, but you can only run in small bursts before be
 Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
 *Press 'F' to fire, although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents your aim(less accurate in third person view).  *Press 'R' to reload*.
-
+----
 Your status readout(updated every 5 seconds) is upper right corner:
 
   * *zed* - number of zed/enemy on level
@@ -44,7 +44,7 @@ Your status readout(updated every 5 seconds) is upper right corner:
   * *ammo(reload count)*
     * on new life always start with 24 pistol bullets, max  pistol bullets is 24
     * pistol reload count is 6 - takes 2 seconds to reload - short delay between firing rounds
-
+----
   * *Zombies*
     * takes about 5 shots to kill
     * zombies alert nearby zombies when they are chasing you
