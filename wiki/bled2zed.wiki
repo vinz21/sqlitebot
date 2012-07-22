@@ -17,7 +17,7 @@ If you wish to start a *private* room, create the name of the game with the word
 
 *The goal of the game for the current version is basically to try and get the highest score by staying alive longest the most often.*  You get no score for your initial 30 seconds of time alive, but each 30 seconds after that will accumulate points, with each successive 30 seconds alive acting as a score multiplier(so seconds 30-60 = +x points, 60-90 = +2x points, ...)  The 'round' time is currently 720 seconds(12 minutes) at the end of which the scores are reset to zero.
 
-During the round, the lead scorer will have a small red sphere placed approximately high overhead of where they are - this is to prevent someone from hiding/camping in one spot the whole game.
+During the round, the lead scorer will have a small red sphere placed high approximately overhead of where they are - this is to prevent someone from hiding/camping in one spot the whole game.
 
 You'll start out in the middle of the map, next to a large tiled tower where zombies are spawned out every 5 seconds to a max of 6 zombies.  The zombies have a radius of player detection - it's smaller when you're still and wider when you're walking/running.
 
