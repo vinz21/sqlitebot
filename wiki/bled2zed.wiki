@@ -13,7 +13,7 @@ Using an account with a limit of 100 concurrent players.  10 player max per room
 
 Just install the browser unity plug-in if not already installed, then the game should appear after a bit.  Click 'go' to create room or join an existing room.  Can name/create your own room.  Rooms stay up as long as at least 1 player present.
 
-The goal of the game for the current version is basically to try and get the highest score by staying alive longest the most often.  Matches don't have a fixed endpoint with this playtest.
+The goal of the game for the current version is basically to try and get the highest score by staying alive longest the most often.  You get no score for your initial 30 seconds of time alive, but each 30 seconds after that will accumulate points, with each successive 30 seconds alive acting as a score multiplier(so seconds 30-60 = 30 points, 60-90 = +60 points, ...)  The 'round' time is currently 720 seconds(12 minutes) at the end of which the scores are reset to zero.
 
 You'll start out in the middle of the map, next to a large tiled tower where zombies are spawned out every 5 seconds to a max of 20 zombies.  The zombies have a radius of player detection - it's smaller when you're still and wider when you're walking/running.
 
@@ -21,7 +21,7 @@ To run, hold left or right shift, but you can only run in small bursts before be
 
 Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
-*Press 'F' to fire, although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents the approximate area of your aim(will fix later, its off a bit upwards so aim slightly above your target).  *Press 'R' to reload*.
+*Press 'F' to fire, although you have to be in first person to fire(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents your aim(less accurate in third person view).  *Press 'R' to reload*.
 
 Your status readout(updated every 5 seconds) is upper right corner:
 
@@ -42,7 +42,7 @@ Your status readout(updated every 5 seconds) is upper right corner:
     * takes about 5 shots to kill
     * zombies alert nearby zombies when they are chasing you
     * when a gun fires, zombies within a large radius will temporarily become more alert move toward the gunfire location
-    * respawn towards a level maximum of 20 zombies total
+    * respawn towards a level maximum of 6 zombies total
 
 There are 5 fixed player spawn points on the map indicated by a metal tile.  There's one on top of a building with a plank laid to the building side to go up and down - if you drop off a building you will die from the fall.  If you run off the edge of the map, you will die from the fall.
 
@@ -53,6 +53,48 @@ There are 6 pickup spawns on the map indicated by a white tile.  The 3 pickup ty
 
 Pickup locations are circled in red on the below map.
 http://sqlitebot.googlecode.com/files/map.jpg
+
+----
+= Weapon stats = 
+
+weaponDistMaxHit = effective range of the weapon
+weaponDamage = damage per shot
+weaponForceMult = impact force multiplier on kill
+
+{{{
+		//pistol
+		weaponName[1] = "pistol";
+		weaponAmmoMax[1] = 24;
+		weaponAmmoStart[1] = 24;
+		weaponReloadMax[1] = 6;
+	
+		weaponWaitFire[1] = 0.5f;
+		weaponDistMaxHit[1] = 100.0f;	
+		weaponDamage[1] = 21;	
+		weaponForceMult[1] = 1.0f;
+		
+		//shotgun
+		weaponName[2] = "shotgun";
+		weaponAmmoMax[2] = 16;
+		weaponAmmoStart[2] = 4;
+		weaponReloadMax[2] = 2;
+	
+		weaponWaitFire[2] = 2.0f;
+		weaponDistMaxHit[2] = 10.0f;	
+		weaponDamage[2] = 105;	
+		weaponForceMult[2] = 4.0f;		
+		
+		//sniper
+		weaponName[6] = "sniper rifle";
+		weaponAmmoMax[6] = 16;
+		weaponAmmoStart[6] = 4;
+		weaponReloadMax[6] = 2;
+	
+		weaponWaitFire[6] = 2.5f;
+		weaponDistMaxHit[6] = 600.0f;	
+		weaponDamage[6] = 55;	
+		weaponForceMult[6] = 2.0f;
+}}}
 
 ----
 http://sqlitebot.googlecode.com/files/show3.jpg
