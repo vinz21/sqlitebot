@@ -29,8 +29,10 @@ Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
 Your status readout(updated every 5 seconds) is upper right corner:
 
-  * *time* - seconds since last death
+  * *zed* - number of zed/enemy on level
+  * *timeRound* - seconds left in current round
   * *score* - a multiplier of time, the longer you stay alive the higher the multiplier
+  * *timeAlive* - seconds since last death
   * *health* 
     * start at 100
     * below zero and you're dead
@@ -38,6 +40,7 @@ Your status readout(updated every 5 seconds) is upper right corner:
   * *bandages*
     * *press 'B' to bandage*, but you have to stay in the same spot for 6 seconds and not fire your gun - otherwise the bandage doesn't 'take'
     * max 3 bandages
+  * weapon - current weapon
   * *ammo(reload count)*
     * on new life always start with 24 pistol bullets, max  pistol bullets is 24
     * pistol reload count is 6 - takes 2 seconds to reload - short delay between firing rounds
