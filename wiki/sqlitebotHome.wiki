@@ -269,6 +269,9 @@ http://springrts.com/<br/>
 http://www.boswars.org/<br/>
 http://wargus.sourceforge.net/<br/>
 
+Misc<br />
+https://groups.google.com/forum/#!forum/resistance-ai
+
 == AI Life ==
 
 http://nobleape.com <br/>
