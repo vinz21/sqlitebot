@@ -27,16 +27,16 @@ Movement is 'WASD' or arrow keys.  Mouse to look.  Space to jump.
 
 *Press 'F' to fire, although accuracy is best in first person view(press 'C' to toggle between first and third person view).*  There is a small red dot screen center which represents your aim(less accurate in third person view).  *Press 'R' to reload*.
 
-Weapons:<br />
-(1) pistol
-(2) shotgun
-(3) sniper rifle
-(4) rocket
-(G) grenade - hold key down for throw distance - max 3 seconds
-(T) landmine
+Weapons
+  * (1) pistol
+  * (2) shotgun
+  * (3) sniper rifle
+  * (4) rocket
+  * (G) grenade - hold key down for throw distance - max 3 seconds
+  * (T) landmine
 
-Other keys:<br />
-(V) binoculars
+Other keys
+  * (V) binoculars
 
 ----
 Your status readout(updated every 5 seconds) is upper right corner:
