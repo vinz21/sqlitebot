@@ -105,7 +105,7 @@ weaponForceMult = impact force multiplier on kill <br/>
 
 ----
 http://sqlitebot.googlecode.com/files/show3.jpg
-http://sqlitebot.googlecode.com/files/show2.jpg
+http://sqlitebot.googlecode.com/files/show4.jpg
 ----
 = Suggested Fixes/Features = 
 
