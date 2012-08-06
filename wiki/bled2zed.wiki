@@ -22,7 +22,7 @@ During the round, the lead scorer will have a small red sphere placed high appro
 _Alternate 'kills' scoring goal_
 On kongregate site, ‘kills’ stat tracked every 5 seconds – each round lasts 720 seconds(12 minutes) in which to kill the highest number of zombies/enemies possible, although if you have >= 3 deaths, it resets your score,damage and kills to zero.
 
-You'll start out in the middle of the map, next to a large tiled tower where zombies are spawned out every 5 seconds to a max of 6 zombies.  The zombies have a radius of player detection - it's smaller when you're still and wider when you're walking/running.
+You'll start out in the middle of the map, next to a large tiled tower where zombies are spawned out every 5 seconds to a max of 15 zombies.  The zombies have a radius of player detection - it's smaller when you're still and wider when you're walking/running.
 
 To run, hold left or right shift, but you can only run in small bursts before being forced back to a walk.
 
