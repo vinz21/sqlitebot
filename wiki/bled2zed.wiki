@@ -131,8 +131,9 @@ weaponForceMult = impact force multiplier on kill <br/>
 
 <wiki:video url="http://www.youtube.com/watch?v=_-HiQQhdmBw" />
 
-http://sqlitebot.googlecode.com/files/show3.jpg
 http://sqlitebot.googlecode.com/files/show4.jpg
+http://sqlitebot.googlecode.com/files/show3.jpg
+
 ----
 = Suggested Fixes/Features = 
 
