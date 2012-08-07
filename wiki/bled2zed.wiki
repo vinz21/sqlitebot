@@ -129,7 +129,7 @@ weaponForceMult = impact force multiplier on kill <br/>
 ----
 = Videos/Images =
 
-<wiki:video http://www.youtube.com/watch?v=_-HiQQhdmBw />
+<wiki:video url="http://www.youtube.com/watch?v=_-HiQQhdmBw" />
 
 http://sqlitebot.googlecode.com/files/show3.jpg
 http://sqlitebot.googlecode.com/files/show4.jpg
