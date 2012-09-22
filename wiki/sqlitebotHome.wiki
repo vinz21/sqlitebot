@@ -325,7 +325,15 @@ http://www.develop-online.net/blog/242/Sorry-tech-cant-save-crunch<br/>
 
 http://www.rockpapershotgun.com/2012/09/20/a-peoples-history-part-2-the-mod/#more-125016<br/>
 
+_I started coding around ten, back in the mid ninties. I, like most other geeky kids, wanted to make games. Indeed I participated in quite a few mods with a similar 99% failure rate. After seeing that, and the stories of people sleeping under their desks, never seeing family, and generally being lorded over by petty tyrants in suits sucking all the creativity out of the room I left that dream far behind.
+
+Now I write code for a middling sized American bank. My tasks are not very creative, or particularly interesting. They rarely present interesting problems or challenge my skills. But, I make a handsome salaray and leave work at 4pm every day.
+
+AAA games seem like a silly idea now, why go somewhere that won’t pay very well, where I won’t have any time to myself, and will burn me out only to snag the next batch of college recruits who they can pay less than me and repeat the same cycle._
+
 http://arstechnica.com/gaming/2011/05/the-death-march-the-problem-of-crunch-time-in-game-development/<br/>
+
+_This "culture of fear" isn't something overt, but rather is a subversive, almost jock-like attitude found throughout the industry. It's a sense that if you're not working overtime, you're not part of the team. In late 2008, Mike Capps, president of Epic Games (developers of Gears of War 3 and Bulletstorm) made controversial comments about crunch on an industry panel, going so far as to say that Epic wouldn't hire prospective employees unless they were willing to work upwards of 60 hours per week._
 
 ----
 
