@@ -20,6 +20,12 @@ comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gm
 ----
 = Updates =
 
+== *Update* - November 20, 2012 ==
+
+http://aisandbox.com/start/
+
+_Our Capture The Flag game is a hybrid between the tactical and deterministic combat of FROZEN SYNAPSE, along with the fast objective-based gameplay of franchises like KILLZONE. This provides the best combination of highly predictable skill-based control which is essential for E-Sports (or this competition) along with the complexity of modern levels and gameplay rules._
+
 == *Update* - July 9, 2012 ==
 
 Project [bled2zed]
