@@ -1,6 +1,7 @@
 import png, array, sys
 
-#this script adds a red dot waypoint grid to the existing map image
+# this script adds a red dot waypoint grid to the existing map image
+# for a better optimized waypoint distribution see script block_img.py
 
 def my_range(start, end, step):
   while start<=end:
@@ -35,7 +36,11 @@ for y in range(0,383):
   pix_list[y] = p_row  
 
 #now add waypoint grid
-for y in my_range(0,383,10):
+
+y_step = 10
+x_step = 40
+
+for y in my_range(0,383,y_step):
   p_row = []
   i = 0
   for x in my_range(0,1650,30):
@@ -43,7 +48,7 @@ for y in my_range(0,383,10):
     pix_list[y][x] = 255
     pix_list[y][x+1] = 0
     pix_list[y][x+2] = 0
-    x_lookup = i*40
+    x_lookup = i*x_step
     #print x_lookup
     #print '%d' % (pixels[y][x_lookup])
     if pixels[y][x_lookup] == 248:
