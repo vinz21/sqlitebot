@@ -2,6 +2,8 @@
 # reads a png file pixels into an internal array
 # subdivides that array into a set of block_size rectangles doing los(line-of-sight) checks 
 # colors center and side-point waynodes(red pixels) to those blocks
+#
+# review also sections labeled 'config'
 
 import png, array, sys, math, random
 
