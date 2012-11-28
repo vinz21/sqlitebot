@@ -23,6 +23,8 @@ class KilroyCommander(Commander):
         self.attacker = None
         self.verbose = False
 
+
+	# flanking setup from BalancedCommander
         # Calculate flag positions and store the middle.
         ours = self.game.team.flag.position
         theirs = self.game.enemyTeam.flag.position
@@ -44,6 +46,7 @@ class KilroyCommander(Commander):
         if self.attacker and self.attacker.health <= 0:
             self.attacker = None
 
+	#handle offense/attacker bot(s)
         for bot in self.game.bots_available:
 
             if (not self.attacker or self.attacker == bot) and len(self.game.bots_available) >= 1:
@@ -64,16 +67,11 @@ class KilroyCommander(Commander):
                         self.issue(commands.Move, bot, flank, description = 'running to flank')
 
 
-            """
-            else:
-                if self.attacker == bot:
-                    self.attacker = None
-
-		self.moveOrFace(bot)
-            """
+ 
 
         ####
 
+	#check combatEvents for latest activity
 	if len(self.game.match.combatEvents) > self.lastEventCount:
 	    lastCombatEvent = self.game.match.combatEvents[-1]
 	    #self.log.info('event:'+str(lastCombatEvent.type))
@@ -82,7 +80,8 @@ class KilroyCommander(Commander):
             else:
 	        print "event:%d %f" % (lastCombatEvent.type,lastCombatEvent.time)
 	    self.lastEventCount = len(self.game.match.combatEvents)
-	    	
+
+            #check for any nearby dead teammates to turn towards	    	
 	    if lastCombatEvent.type == 1 and (lastCombatEvent.subject.name.find(self.game.team.name) != -1):
 	        #face our last killed team member
 		deadBot = self.game.bots[lastCombatEvent.subject.name]
@@ -109,6 +108,7 @@ class KilroyCommander(Commander):
             if bot == self.attacker:
                 continue
 
+	    #check for visible enemies
 	    #if bot.visibleEnemies != None:
 	    if len(bot.visibleEnemies) > 0:
                 for visibleEnemy in bot.visibleEnemies:
@@ -125,6 +125,7 @@ class KilroyCommander(Commander):
 	    self.tick_command = self.game.match.timePassed+5
 	    #self.log.info('tick_command:'+str(self.tick_command))
 
+	    #if nearby visible enemy, turn to face/defend
 	    for bot in self.game.bots_alive:
                 if bot == self.attacker:
                     continue
@@ -136,6 +137,7 @@ class KilroyCommander(Commander):
 		    print "%s defending visible bot" % (bot.name)
                     self.issue(commands.Defend, bot, (enemyPosition - bot.position), description = 'defending facing enemy bot')
 
+	#periodically reset back to facing enemy flag 
         elif self.game.match.timePassed > self.tick_command and self.game.match.timePassed > self.tick_command_reset:
 	    self.tick_command_reset = self.game.match.timePassed+10
 	    for bot in self.game.bots_alive:
@@ -145,6 +147,8 @@ class KilroyCommander(Commander):
                 self.moveOrFace(bot)
 		    
     ####
+    
+    #offense/attacker flanking
     def moveOrFace(self, bot):
         enemyFlagLocation = self.game.enemyTeam.flag.position
 
