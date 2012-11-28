@@ -1,3 +1,5 @@
 #summary description of Kilroy bot in aigamedev.com CTF competition
 
-= Introduction =
+commander code at
+
+http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy.py
