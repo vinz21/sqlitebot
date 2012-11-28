@@ -2,6 +2,8 @@
 
 If you find the below info or code useful or have comments/questions, feel free to post a comment below or send email with 'kilroy' in subject line to jeremy.cothran@gmail.com
 
+see also http://code.google.com/p/sqlitebot/wiki/phibian for map analysis scripts and ideas
+
 <wiki:toc max_depth="6">
 
 = Source & Description = 
