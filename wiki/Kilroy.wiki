@@ -1,0 +1,3 @@
+#summary description of Kilroy bot in aigamedev.com CTF competition
+
+= Introduction =
