@@ -6,7 +6,17 @@ commander code at
 
 http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy.py
 
+This 'kilroy' bot/commander is a simple first attempt at something past the example commanders given in examples.py
+
+Did a competition between all the example bots and 'Balanced' came out on top by far, probably because of the advanced goal flanking behavior.
+
+Started with Defender commander and added some adaptations to help it track visible enemies and look towards killed teammates to help make it a better contender, then added Balanced commanders flanking method to the currently single attacker on the team and the flanking allows it to come out ahead on scores.
+
+
+
 == Development ideas = 
+
+lines in bold are next priority for development and testing
 
 ----
 breakout team into squads with command board - offense, defense, scramble
