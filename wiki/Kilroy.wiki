@@ -1,6 +1,10 @@
 #summary description of Kilroy bot in aigamedev.com CTF competition
 
+If you find the below info or code useful or have comments/questions, feel free to post a comment below or send email with 'kilroy' in subject line to jeremy.cothran@gmail.com
+
 <wiki:toc max_depth="6">
+
+= Source & Description = 
 
 commander code at
 
@@ -12,9 +16,14 @@ Did a competition between all the example bots and 'Balanced' came out on top by
 
 Started with Defender commander and added some adaptations to help it track visible enemies and look towards killed teammates to help make it a better contender, then added Balanced commanders flanking method to the currently single attacker on the team and the flanking allows it to come out ahead on scores.
 
+= Sharing development = 
 
+I'm interested to see what an open team-based approach can do in regards to this contest AI and ongoing - particularly if/when a version of the contest might be adapted to other gametypes like deathmatch or include human players.
 
-== Development ideas = 
+If you have improvements you want to incorporate and share, I'm interested to incorporate and promote where competitions.py results show a marked improvement or increase in the official rankings.  Feel free to copy and branch the code as needed and can discuss merging as needed.  Will post a credits wiki page, highlighting any contributions.
+
+----
+= Development ideas = 
 
 lines in bold are next priority for development and testing
 
