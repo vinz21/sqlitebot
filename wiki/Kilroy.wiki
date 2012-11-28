@@ -73,6 +73,8 @@ use los calculations to specify where to position(cover) and *not* to look/scan 
 on dropped flag(killed flag runner) - re-evaluate goal command
   double-check to see flanking goal is flag location and not flagbase for dropped flag
 
+*move flag runners towards less traffic areas (e.g. edges of map, longer paths) - possible use of map analysis, heatmaps*
+
 when runners killed mark high-level grid area and avoid area if consistently killed
 
 runners try random setup locations around enemy flag(direction/radius) to probe weaknesses, repeat/avoid based on success/failure
