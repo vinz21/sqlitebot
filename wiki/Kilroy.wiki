@@ -8,22 +8,10 @@ http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy.py
 
 == Development ideas = 
 
-
+----
 breakout team into squads with command board - offense, defense, scramble
 
-pair or more offense to break through lines - first might die, but second avenges and breaks through
-
-ambush on choke points for defense, offense
-
-use cover for movement, facing, heatmap
-
-use offense to scout - can see direction and use calculated enemy los or predicted movement+los to pathfind where not to be found or distract enemy in needed direction for traps or to get flag
-
-use knowledge of deaths/respawn, team count to change tactics where man advantage
-
->>simple move-behind - track enemy distance/angle vs self to move out of viewing angle or behind - in paired coordinated movement with enemy reaction, kill enemy(s) not facing between pair
-
-==individual bots
+*==individual bot - additional structure variables*
 
 role - attack, defend, scramble
 
@@ -35,9 +23,25 @@ nested dictionary = perl hash?
 http://www.devshed.com/c/a/Python/The-Dictionary-Python-Object-Type/2/
 
 ----
-4 defenders - default 4 direction facing for open flag?
 
-assign nearest defending individual to tracking closest enemy threat - one defense per enemy unit, move defend facing angle if current facing greater than some x(radians? degrees?)
+pair or more offense to break through lines - first might die, but second avenges and breaks through
+
+ambush on choke points for defense, offense
+
+use cover for movement, facing, heatmap
+
+use offense to scout - can see direction and use calculated enemy los or predicted movement+los to pathfind where not to be found or distract enemy in needed direction for traps or to get flag
+
+use knowledge of deaths/respawn, team count to change tactics where man advantage
+
+*simple move-behind - track enemy distance/angle vs self to move out of viewing angle or behind - in paired coordinated movement with enemy reaction, kill enemy(s) not facing between pair*
+
+  * scrambling bots could ‘charge’ down attacking bots/runners from cover/behind
+
+----
+*4 defenders - default 4 direction facing for open flag?*
+
+*assign nearest defending individual to tracking closest enemy threat - one defense per enemy unit, move defend facing angle if current facing greater than some x(radians? degrees?)*
 
 if lose attacker by wall or distance while tracking - start longer cooldown wait to defense reset
 
@@ -51,5 +55,3 @@ on dropped flag(killed flag runner) - re-evaluate goal command
 when runners killed mark high-level grid area and avoid area if consistently killed
 
 runners try random setup locations around enemy flag(direction/radius) to probe weaknesses, repeat/avoid based on success/failure
-
-scrambling bots could ‘charge’ down attacking bots/runners from cover/behind
