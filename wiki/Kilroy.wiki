@@ -19,6 +19,8 @@ http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy14.py
 ----
 = Version 1 = 
 
+http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy.py
+
 This 'kilroy' bot/commander is a simple first attempt at something past the example commanders given in examples.py
 
 Did a competition between all the example bots and 'Balanced' came out on top by far, probably because of the advanced goal flanking behavior.
@@ -45,13 +47,13 @@ On line 76, the combatEvents list is only checked for the last element = [-1], t
 ----
 = Version 14 =
 
+http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy14.py
+
 The main changes with this bot are 
   * using a dictionary (hash in perl terminology) associated with each bot by the key of bot.name for associated roles, state and properties
   * adding a simple 'evade' behavior so runners(att) retreat/attack from moving enemies that see them
   * sorting runner(att) distances so that runners set themselves up between camping the flagspawn and returning the flag 
   * adding a 'bestDefend' function to help a bot only defend angles of interest when near outer map walls and corners
-
-
 
 ----
 = Sharing development = 
