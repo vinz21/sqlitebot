@@ -43,6 +43,17 @@ helps, although the flag.position means the bots will not defend the "base" but 
 On line 76, the combatEvents list is only checked for the last element = [-1], there's probably a subtle error here that if more than one event happens per tick, events other than the last won't be processed, so modify this into a for loop to process all elements after the last processed index element.
 
 ----
+= Version 14 =
+
+The main changes with this bot are 
+  * using a dictionary (hash in perl terminology) associated with each bot by the key of bot.name for associated roles, state and properties
+  * adding a simple 'evade' behavior so runners(att) retreat/attack from moving enemies that see them
+  * sorting runner(att) distances so that runners set themselves up between camping the flagspawn and returning the flag 
+  * adding a 'bestDefend' function to help a bot only defend angles of interest when near outer map walls and corners
+
+
+
+----
 = Sharing development = 
 
 I'm interested to see what an open team-based approach can do in regards to this contest AI and ongoing - particularly if/when a version of the contest might be adapted to other gametypes like deathmatch or include human players.
