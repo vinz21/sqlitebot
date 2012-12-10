@@ -56,6 +56,7 @@ The main changes with this bot are
   * adding a 'bestDefend' function to help a bot only defend angles of interest when near outer map walls and corners
 
 Note:
+  * commented using keyword 'FIX' to denote lines/sections that may need corrections
   * first part of the code is used to setup some later checks, initial sections of the code check the bot 'role' while later parts make no role check and apply to the bot in sequence of execution
   * the bot 'state' check is not uniformly applied yet, just to the active roles currently in needing better coordination of 'state'
   * the 'botTrack' property was something I was experimenting with but decided at this point not to use
