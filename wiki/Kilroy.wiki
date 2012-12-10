@@ -16,6 +16,7 @@ http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy.py
 version 14 - December 10, 2012
 http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy14.py
 
+----
 = Version 1 = 
 
 This 'kilroy' bot/commander is a simple first attempt at something past the example commanders given in examples.py
