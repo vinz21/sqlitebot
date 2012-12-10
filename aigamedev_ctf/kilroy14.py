@@ -35,6 +35,7 @@ class KilroyCommander(Commander):
         #types - def,att,scr,spa
         #spa experiment depends on '4,4' offset and kilroy start in top-right
         #2 def, 2 att, rest scramble the middle
+        #FIX - the below is very hard-coded(and duplicative) and could be fixed to a more dynamic assignment function depending on the team assigned and roles needed - perhaps also as class properties rather than a dictionary also
         self.info = {'Red0': {'timeLastCommand': 0, 'role': 'att1', 'threshEvade': 30, 'distEvade': 4, 'botTrack': '', 'state': ''},\
                      'Red1': {'timeLastCommand': 0, 'role': 'att2', 'threshEvade': 30, 'distEvade': 4, 'botTrack': '', 'state': ''},\
                      'Red2': {'timeLastCommand': 0, 'role': 'attX', 'threshEvade': 30, 'distEvade': 4, 'botTrack': '', 'state': '', 'flagX':0, 'flagY':0},\
@@ -438,7 +439,7 @@ class KilroyCommander(Commander):
     #defense
     def moveOrFace(self, bot):
 
-        #fix - below flow is messy
+        #FIX - below flow is messy
         # defend the flag!
         targetPosition = self.game.team.flagSpawnLocation
         targetMin = targetPosition - Vector2(8.0, 8.0) #was 8.0, 8.0
