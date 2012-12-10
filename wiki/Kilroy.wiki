@@ -10,7 +10,13 @@ see also [http://code.google.com/p/sqlitebot/wiki/phibian phibian] for [http://c
 
 commander code at
 
+version 1 - November 28, 2012
 http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy.py
+
+version 14 - December 10, 2012
+http://code.google.com/p/sqlitebot/source/browse/trunk/aigamedev_ctf/kilroy14.py
+
+= Version 1 = 
 
 This 'kilroy' bot/commander is a simple first attempt at something past the example commanders given in examples.py
 
@@ -18,7 +24,7 @@ Did a competition between all the example bots and 'Balanced' came out on top by
 
 Started with Defender commander and added some adaptations to help it track visible enemies and look towards killed teammates to help make it a better contender, then added Balanced commanders flanking method to the currently single attacker on the team and the flanking allows it to come out ahead on scores.
 
-= Noted errors = 
+== Noted errors - version 1 == 
 
 This initial version has some errors in it - I haven't been posting my latest development and fixes.
 
