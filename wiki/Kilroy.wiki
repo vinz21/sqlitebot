@@ -18,6 +18,24 @@ Did a competition between all the example bots and 'Balanced' came out on top by
 
 Started with Defender commander and added some adaptations to help it track visible enemies and look towards killed teammates to help make it a better contender, then added Balanced commanders flanking method to the currently single attacker on the team and the flanking allows it to come out ahead on scores.
 
+= Noted errors = 
+
+This initial version has some errors in it - I haven't been posting my latest development and fixes.
+
+----
+On map30 the flag must be delivered in a different place than where it is taken from, so there is flagScoreLocation and a different location where the flag spawns. Thus Kilroy will defend the wrong place.
+The reason for this is line 156:
+  targetPosition = self.game.team.flagScoreLocation
+therefor using either 
+  targetPosition = self.game.team.flagSpawnLocation
+or even
+  targetPosition = self.game.team.flag.position
+helps, although the flag.position means the bots will not defend the "base" but will stick around a dropped flag.
+----
+
+On line 76, the combatEvents list is only checked for the last element = [-1], there's probably a subtle error here that if more than one event happens per tick, events other than the last won't be processed, so modify this into a for loop to process all elements after the last processed index element.
+
+----
 = Sharing development = 
 
 I'm interested to see what an open team-based approach can do in regards to this contest AI and ongoing - particularly if/when a version of the contest might be adapted to other gametypes like deathmatch or include human players.
