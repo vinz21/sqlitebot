@@ -55,6 +55,11 @@ The main changes with this bot are
   * sorting runner(att) distances so that runners set themselves up between camping the flagspawn and returning the flag 
   * adding a 'bestDefend' function to help a bot only defend angles of interest when near outer map walls and corners
 
+Note:
+  * first part of the code is used to setup some later checks, initial sections of the code check the bot 'role' while later parts make no role check and apply to the bot in sequence of execution
+  * the bot 'state' check is not uniformly applied yet, just to the active roles currently in needing better coordination of 'state'
+  * the 'botTrack' property was something I was experimenting with but decided at this point not to use
+
 Still haven't gotten into any interesting map analysis yet - would really like the API to support line-of-sight and pathing queries and pathing influence via something like a heat/weight map so I don't have to work those parts up myself.
 
 ----
