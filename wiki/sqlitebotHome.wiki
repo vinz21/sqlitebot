@@ -303,7 +303,10 @@ http://www.amazon.com/C-Game-Programmers-Development/dp/1584504528/ref=sr_1_3?ie
 
 http://www.thinkartificial.org/artificial-intelligence/ai-apparent-intelligences/ <br/>
 http://www.ai-blog.net/archives/000173.html <br/>
-http://www.trianglegameconference.com
+http://www.trianglegameconference.com <br/>
+
+http://www.cp.eng.chula.ac.th/~vishnu/<br/>
+http://www.cp.eng.chula.ac.th/~vishnu/gameResearch/AI/KillzoneAI_Worapoj.pdf<br/>
 
 === Tim Sweeney(Epic Games, Unreal) ===
 
