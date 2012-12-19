@@ -306,7 +306,7 @@ http://www.ai-blog.net/archives/000173.html <br/>
 http://www.trianglegameconference.com <br/>
 
 http://www.cp.eng.chula.ac.th/~vishnu/<br/>
-http://www.cp.eng.chula.ac.th/~vishnu/gameResearch/AI/KillzoneAI_Worapoj.pdf<br/>
+http://aigamedev.com/open/coverage/killzone2/<br/>
 
 === Tim Sweeney(Epic Games, Unreal) ===
 
