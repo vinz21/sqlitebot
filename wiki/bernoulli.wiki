@@ -1,3 +1,5 @@
 #summary description of game bernoulli
 
+http://www.kongregate.com/games/garcia1968/bernoulli
+
 http://sqlitebot.googlecode.com/files/bernoulli.jpg
