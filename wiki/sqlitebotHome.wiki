@@ -20,6 +20,14 @@ comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gm
 ----
 = Updates =
 
+== *Update* - February 6, 2013 ==
+
+Project [bernoulli]
+
+http://www.kongregate.com/games/garcia1968/bernoulli
+
+http://sqlitebot.googlecode.com/files/bernoulli.jpg
+
 == *Update* - November 20, 2012 ==
 
 http://aisandbox.com/start/
