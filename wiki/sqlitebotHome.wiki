@@ -20,6 +20,23 @@ comments/questions http://groups.google.com/group/sqlitebot or jeremy.cothran@gm
 ----
 = Updates =
 
+== *Update* - May 19, 2013 ==
+
+Currently working on an abstract game [http://nestorgames.com/#isaac_detail 'Isaac'] for Board Game Arena website listed below:
+
+For developers interested in playing or developing already published board games, the following two websites may be of interest:
+
+== Boardspace
+
+[url]http://boardspace.net/english/index.shtml[/url]
+
+The above website features mostly single-player abstract games with the AI [url]http://boardspace.net/english/abouttherobot.shtml[/url] developed as far as I can tell by the site developer Dave Dyer.  It's a Java site and the games AI there is unavailable for review to my knowledge, although I don't know if anyone has asked for the AI source code to be shared for learning or experimentation purposes.
+
+== Board Game Arena
+[url]http://en.boardgamearena.com[/url]
+
+The above website is great for finding an online board/card game with multiple players and for developers also features a php/javascript/mysql based platform [url]http://en.boardgamearena.com/#!doc/Studio[/url] for developing out a mutually decided published game.  This site doesn't currently host or develop AI's in favor of finding human opponents, but the development model is a good one to utilize or emulate with respect to board/card games.
+
 == *Update* - February 6, 2013 ==
 
 Project [bernoulli]
