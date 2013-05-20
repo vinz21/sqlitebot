@@ -28,14 +28,14 @@ For developers interested in playing or developing already published board games
 
 == Boardspace
 
-[url]http://boardspace.net/english/index.shtml[/url]
+http://boardspace.net/english/index.shtml
 
-The above website features mostly single-player abstract games with the AI [url]http://boardspace.net/english/abouttherobot.shtml[/url] developed as far as I can tell by the site developer Dave Dyer.  It's a Java site and the games AI there is unavailable for review to my knowledge, although I don't know if anyone has asked for the AI source code to be shared for learning or experimentation purposes.
+The above website features mostly single-player abstract games with the AI http://boardspace.net/english/abouttherobot.shtml developed as far as I can tell by the site developer Dave Dyer.  It's a Java site and the games AI there is unavailable for review to my knowledge, although I don't know if anyone has asked for the AI source code to be shared for learning or experimentation purposes.
 
 == Board Game Arena
-[url]http://en.boardgamearena.com[/url]
+http://en.boardgamearena.com
 
-The above website is great for finding an online board/card game with multiple players and for developers also features a php/javascript/mysql based platform [url]http://en.boardgamearena.com/#!doc/Studio[/url] for developing out a mutually decided published game.  This site doesn't currently host or develop AI's in favor of finding human opponents, but the development model is a good one to utilize or emulate with respect to board/card games.
+The above website is great for finding an online board/card game with multiple players and for developers also features a php/javascript/mysql based platform http://en.boardgamearena.com/#!doc/Studio for developing out a mutually decided published game.  This site doesn't currently host or develop AI's in favor of finding human opponents, but the development model is a good one to utilize or emulate with respect to board/card games.
 
 == *Update* - February 6, 2013 ==
 
