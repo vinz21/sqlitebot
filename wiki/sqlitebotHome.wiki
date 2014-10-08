@@ -28,6 +28,8 @@ https://github.com/garcia1968/rangerfall
 
 https://raw.githubusercontent.com/garcia1968/rangerfall/master/images/ranger2.jpg
 
+https://raw.githubusercontent.com/garcia1968/rangerfall/master/images/ranger.gif
+
 == *Update* - May 19, 2013 ==
 
 Currently working on an abstract game [http://nestorgames.com/#isaac_detail 'Isaac'] for Board Game Arena website listed below:
