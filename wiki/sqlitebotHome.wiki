@@ -360,30 +360,7 @@ http://magicalwasteland.com <br/>
 http://2dboy.com <br/>
 http://hcsoftware.sourceforge.net/jason-rohrer <br/>
 
-= Games industry, quality of life(or lack thereof), crunch =
 
-http://www.lostgarden.com/2006/04/joyful-life-of-lapsed-game-developer.html <br/>
-http://www.gamasutra.com/view/feature/3656/quality_of_life_does_anyone_still_.php <br/>
-http://makeitbigingames.com/2006/02/five-foundational-steps-to-surviving-as-a-game-developer/ <br/>
-http://makeitbigingames.com/2008/06/working-for-big-publishers/ <br/>
-http://ask.slashdot.org/story/10/10/06/0438203/Best-Education-Path-To-Learn-Video-Game-Programming<br/>
-http://www.develop-online.net/blog/242/Sorry-tech-cant-save-crunch<br/>
-
-http://www.rockpapershotgun.com/2012/09/20/a-peoples-history-part-2-the-mod/#more-125016<br/>
-
-_I started coding around ten, back in the mid ninties. I, like most other geeky kids, wanted to make games. Indeed I participated in quite a few mods with a similar 99% failure rate. After seeing that, and the stories of people sleeping under their desks, never seeing family, and generally being lorded over by petty tyrants in suits sucking all the creativity out of the room I left that dream far behind._
-
-_Now I write code for a middling sized American bank. My tasks are not very creative, or particularly interesting. They rarely present interesting problems or challenge my skills. But, I make a handsome salary and leave work at 4pm every day._
-
-_AAA games seem like a silly idea now, why go somewhere that won’t pay very well, where I won’t have any time to myself, and will burn me out only to snag the next batch of college recruits who they can pay less than me and repeat the same cycle._
-
-http://arstechnica.com/gaming/2011/05/the-death-march-the-problem-of-crunch-time-in-game-development/<br/>
-
-_This "culture of fear" isn't something overt, but rather is a subversive, almost jock-like attitude found throughout the industry. It's a sense that if you're not working overtime, you're not part of the team. In late 2008, Mike Capps, president of Epic Games (developers of Gears of War 3 and Bulletstorm) made controversial comments about crunch on an industry panel, going so far as to say that Epic wouldn't hire prospective employees unless they were willing to work upwards of 60 hours per week._
-
-http://www.reddit.com/r/movies/comments/1969o6/more_than_400_vfx_artists_protest_at_the_oscars/c8l8eg8
-
-_VFX studios often have their staff put in TONS of overtime. 10-12 hour days are a norm, and during crunch time 16 hour days, heck, spending the night at the studio, is not unheard of and in fact common. These horrendous hours can last 3-6 months, 7 days a week. On top of this, several VFX companies are not paying for that overtime, because movie studios refuse to pay for the extra hours (remember they are putting on the pressure for cheaper), even though they have insane deadlines for VFX delivery._
 
 ----
 
